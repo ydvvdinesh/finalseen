@@ -16,6 +16,7 @@ function ResetPasswordContent() {
   const [success, setSuccess] = useState(false)
   const [isValidSession, setIsValidSession] = useState(false)
   const [checkingSession, setCheckingSession] = useState(true)
+  const [accessToken, setAccessToken] = useState<string | null>(null)
   const router = useRouter()
   const searchParams = useSearchParams()
   const supabase = createClient()
@@ -34,25 +35,15 @@ function ResetPasswordContent() {
         console.log("URL params:", { accessToken: !!accessToken, refreshToken: !!refreshToken, type })
         
         if (type === 'recovery' && accessToken) {
-          console.log("Recovery tokens found, setting session...")
+          console.log("Recovery tokens found, validating recovery flow...")
           
-          // Set the session with the recovery tokens
-          const { data, error } = await supabase.auth.setSession({
-            access_token: accessToken,
-            refresh_token: refreshToken || ''
-          })
+          // Store the access token for password update
+          setAccessToken(accessToken)
           
-          if (error) {
-            console.error('Session set error:', error)
-            // Try alternative approach - just validate the tokens exist
-            setIsValidSession(true)
-          } else if (data.session) {
-            console.log('Session set successfully')
-            setIsValidSession(true)
-          } else {
-            console.log('No session data, but tokens exist - allowing reset')
-            setIsValidSession(true)
-          }
+          // For password recovery, we don't need to set a session immediately
+          // The session will be established when we update the password
+          console.log('Recovery flow detected, allowing password reset')
+          setIsValidSession(true)
         } else {
           // Check if user already has a valid session
           const { data: { session }, error } = await supabase.auth.getSession()
@@ -99,7 +90,43 @@ function ResetPasswordContent() {
     }
     
     try {
-      // Update the user's password
+      // For recovery flows, we need to establish the session first
+      if (accessToken) {
+        console.log("Establishing session for password update...")
+        
+        // Set the session with the recovery tokens
+        const { data, error: sessionError } = await supabase.auth.setSession({
+          access_token: accessToken,
+          refresh_token: searchParams.get('refresh_token') || ''
+        })
+        
+        console.log("Session establishment result:", { 
+          hasData: !!data, 
+          hasSession: !!data?.session, 
+          error: sessionError?.message 
+        })
+        
+        if (sessionError) {
+          console.error("Session establishment error:", sessionError)
+          setError("Invalid or expired reset link. Please request a new password reset.")
+          setLoading(false)
+          return
+        }
+        
+        if (!data.session) {
+          console.error("No session established")
+          setError("Invalid or expired reset link. Please request a new password reset.")
+          setLoading(false)
+          return
+        }
+        
+        console.log("Session established successfully:", {
+          userId: data.session.user?.id,
+          expiresAt: data.session.expires_at
+        })
+      }
+      
+      // Now update the user's password
       const { error } = await supabase.auth.updateUser({ password })
       
       if (error) {
