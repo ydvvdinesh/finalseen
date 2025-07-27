@@ -62,6 +62,7 @@ export default function Header({ onAuth }: HeaderProps) {
           target.scrollIntoView({ behavior: "smooth", block: "start" })
         }
       } else {
+        // If not on main page, redirect to home page with the hash
         window.location.href = `/${href}`
       }
       setIsMenuOpen(false)
