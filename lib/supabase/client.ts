@@ -21,6 +21,7 @@ function createMockClient() {
       getUser: () => Promise.resolve({ data: { user: null }, error: null }),
       getSession: () => Promise.resolve({ data: { session: null }, error: null }),
       setSession: () => Promise.resolve({ data: { session: null }, error: null }),
+      refreshSession: () => Promise.resolve({ data: { session: null }, error: null }),
       verifyOtp: () => Promise.resolve({ data: { user: null, session: null }, error: null }),
       onAuthStateChange: () => ({ data: { subscription: { unsubscribe: () => {} } } }),
       signUp: () => Promise.resolve({ data: null, error: { message: "Auth not configured" } }),

@@ -107,36 +107,67 @@ function ResetPasswordContent() {
         })
         
         if (typeFromUrl === 'recovery' && accessTokenFromUrl) {
-          // Try to set the session manually
-          const { data, error: sessionError } = await supabase.auth.setSession({
+          console.log("Attempting to set session with tokens:", {
+            accessTokenLength: accessTokenFromUrl.length,
+            refreshTokenLength: refreshTokenFromUrl?.length || 0,
+            accessTokenStart: accessTokenFromUrl.substring(0, 10) + "...",
+            refreshTokenStart: refreshTokenFromUrl?.substring(0, 10) + "..." || "none"
+          })
+          
+          // For recovery flows, we might not need a refresh token
+          // Try to set the session with just the access token if refresh token is empty
+          const sessionParams = {
             access_token: accessTokenFromUrl,
             refresh_token: refreshTokenFromUrl || ''
+          }
+          
+          console.log("Session parameters:", {
+            hasAccessToken: !!sessionParams.access_token,
+            hasRefreshToken: !!sessionParams.refresh_token,
+            refreshTokenEmpty: !sessionParams.refresh_token
           })
+          
+          // Try to set the session manually
+          const { data, error: sessionError } = await supabase.auth.setSession(sessionParams)
           
           console.log("Manual session set result:", {
             hasData: !!data,
             hasSession: !!data?.session,
-            error: sessionError?.message
+            error: sessionError?.message,
+            errorCode: sessionError?.status,
+            errorName: sessionError?.name
           })
           
           if (sessionError) {
             console.error("Manual session set error:", sessionError)
-            setError("The reset link may have expired. Please request a new password reset link.")
-            setLoading(false)
-            return
-          }
-          
-          if (!data.session) {
+            
+            // If session setting fails, try to proceed anyway for recovery flows
+            // Recovery flows might work without a proper session
+            console.log("Session setting failed, but continuing for recovery flow...")
+            
+            // Try to get user info using the access token
+            const { data: userData, error: userError } = await supabase.auth.getUser()
+            console.log("User data check:", {
+              hasUser: !!userData?.user,
+              error: userError?.message
+            })
+            
+            if (userError) {
+              console.log("User data check also failed, but continuing...")
+              // For recovery flows, we might still be able to proceed
+            } else {
+              console.log("User data available, proceeding with password update...")
+            }
+          } else if (!data.session) {
             console.error("No session established from manual set")
-            setError("The reset link may have expired. Please request a new password reset link.")
-            setLoading(false)
-            return
+            // For recovery flows, we might still be able to proceed
+            console.log("No session data, but continuing for recovery flow...")
+          } else {
+            console.log("Session established manually:", {
+              userId: data.session.user?.id,
+              expiresAt: data.session.expires_at
+            })
           }
-          
-          console.log("Session established manually:", {
-            userId: data.session.user?.id,
-            expiresAt: data.session.expires_at
-          })
         }
       }
       
@@ -146,6 +177,34 @@ function ResetPasswordContent() {
       
       if (error) {
         console.error("Password update error:", error)
+        
+        // If the error is session-related, try one more approach
+        if (error.message?.includes('session') || error.message?.includes('Auth session missing')) {
+          console.log("Session error detected, trying fallback approach...")
+          
+          // Try to use the recovery tokens in a different way
+          try {
+            // Attempt to refresh the session or use the tokens directly
+            const { data: refreshData, error: refreshError } = await supabase.auth.refreshSession()
+            console.log("Session refresh attempt:", {
+              success: !refreshError,
+              error: refreshError?.message
+            })
+            
+            if (!refreshError && refreshData.session) {
+              // Try password update again with refreshed session
+              const { error: updateError } = await supabase.auth.updateUser({ password })
+              if (!updateError) {
+                setSuccess(true)
+                await supabase.auth.signOut()
+                return
+              }
+            }
+          } catch (refreshErr) {
+            console.error("Fallback approach failed:", refreshErr)
+          }
+        }
+        
         setError(error.message || "Failed to update password. Please try again.")
       } else {
         setSuccess(true)
