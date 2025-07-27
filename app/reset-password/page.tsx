@@ -70,10 +70,8 @@ function ResetPasswordContent() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900/90 backdrop-blur-xl relative overflow-hidden flex items-center justify-center p-4">
-      {/* Background gradient effects matching the box */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-gray-900 to-cyan-900/20"></div>
-      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]"></div>
+    <div className="min-h-screen bg-slate-900 relative overflow-hidden flex items-center justify-center p-4">
+      {/* Solid darker, desaturated blue-black background */}
       
       <div className="relative bg-gray-900/90 backdrop-blur-xl border border-gray-800/50 rounded-3xl p-8 w-full max-w-md">
         {/* Back button */}
