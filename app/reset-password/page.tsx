@@ -70,8 +70,8 @@ function ResetPasswordContent() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-900 relative overflow-hidden flex items-center justify-center p-4">
-      {/* Solid darker, desaturated blue-black background */}
+    <div className="min-h-screen bg-[#0f1419] relative overflow-hidden flex items-center justify-center p-4">
+      {/* Exact darker, desaturated blue-black background */}
       
       <div className="relative bg-gray-900/90 backdrop-blur-xl border border-gray-800/50 rounded-3xl p-8 w-full max-w-md">
         {/* Back button */}
