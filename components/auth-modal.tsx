@@ -112,20 +112,12 @@ export default function AuthModal({ type, onClose }: AuthModalProps) {
       console.log('Origin:', window.location.origin)
       console.log('NODE_ENV:', process.env.NODE_ENV)
       
-      // Force localhost for development testing
-      // If you're testing locally, uncomment the next line:
-      const baseUrl = 'http://localhost:3000'
-      
-      // Otherwise use automatic detection:
-      // const isLocalhost = window.location.hostname === 'localhost' || 
-      //                    window.location.hostname === '127.0.0.1' ||
-      //                    window.location.hostname.includes('localhost')
-      
-      // const baseUrl = isLocalhost ? 'http://localhost:3000' : window.location.origin
-      console.log('Using baseUrl:', baseUrl)
+      // Use the current origin for the redirect URL
+      const redirectUrl = `${window.location.origin}/reset-password`
+      console.log('Using redirectUrl:', redirectUrl)
       
       const { error } = await supabase.auth.resetPasswordForEmail(formData.email, {
-        redirectTo: `${baseUrl}/reset-password`,
+        redirectTo: redirectUrl,
       })
 
       if (error) {
