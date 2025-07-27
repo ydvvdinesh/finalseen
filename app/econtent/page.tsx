@@ -1,13 +1,31 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "framer-motion"
 import { Clock, Upload } from "lucide-react"
 import Header from "@/components/header"
+import AuthModal from "@/components/auth-modal"
 
 export default function EContentPage() {
+	const [authModal, setAuthModal] = useState<{ type: "login" | "signup" } | null>(null)
+
+	const handleAuth = (type: "login" | "signup") => {
+		setAuthModal({ type })
+	}
+
+	const closeAuthModal = () => {
+		setAuthModal(null)
+	}
+
 	return (
 		<div className="min-h-screen bg-black relative overflow-hidden">
-			<Header onAuth={() => {}} />
+			<Header onAuth={handleAuth} />
+			
+			{/* Auth Modal */}
+			{authModal && (
+				<AuthModal type={authModal.type} onClose={closeAuthModal} />
+			)}
+
 			<section className="relative pt-32 pb-20">
 				<div className="container mx-auto px-4 relative z-10">
 					<motion.div
