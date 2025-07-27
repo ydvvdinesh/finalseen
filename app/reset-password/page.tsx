@@ -90,43 +90,58 @@ function ResetPasswordContent() {
     }
     
     try {
-      // For recovery flows, we need to establish the session first
+      // For recovery flows, manually set the session from URL parameters
       if (accessToken) {
-        console.log("Establishing session for password update...")
+        console.log("Manually setting session from URL parameters...")
         
-        // Set the session with the recovery tokens
-        const { data, error: sessionError } = await supabase.auth.setSession({
-          access_token: accessToken,
-          refresh_token: searchParams.get('refresh_token') || ''
+        // Extract all URL parameters
+        const urlParams = new URLSearchParams(window.location.search)
+        const accessTokenFromUrl = urlParams.get('access_token')
+        const refreshTokenFromUrl = urlParams.get('refresh_token')
+        const typeFromUrl = urlParams.get('type')
+        
+        console.log("URL parameters for session:", {
+          accessToken: !!accessTokenFromUrl,
+          refreshToken: !!refreshTokenFromUrl,
+          type: typeFromUrl
         })
         
-        console.log("Session establishment result:", { 
-          hasData: !!data, 
-          hasSession: !!data?.session, 
-          error: sessionError?.message 
-        })
-        
-        if (sessionError) {
-          console.error("Session establishment error:", sessionError)
-          setError("Invalid or expired reset link. Please request a new password reset.")
-          setLoading(false)
-          return
+        if (typeFromUrl === 'recovery' && accessTokenFromUrl) {
+          // Try to set the session manually
+          const { data, error: sessionError } = await supabase.auth.setSession({
+            access_token: accessTokenFromUrl,
+            refresh_token: refreshTokenFromUrl || ''
+          })
+          
+          console.log("Manual session set result:", {
+            hasData: !!data,
+            hasSession: !!data?.session,
+            error: sessionError?.message
+          })
+          
+          if (sessionError) {
+            console.error("Manual session set error:", sessionError)
+            setError("The reset link may have expired. Please request a new password reset link.")
+            setLoading(false)
+            return
+          }
+          
+          if (!data.session) {
+            console.error("No session established from manual set")
+            setError("The reset link may have expired. Please request a new password reset link.")
+            setLoading(false)
+            return
+          }
+          
+          console.log("Session established manually:", {
+            userId: data.session.user?.id,
+            expiresAt: data.session.expires_at
+          })
         }
-        
-        if (!data.session) {
-          console.error("No session established")
-          setError("Invalid or expired reset link. Please request a new password reset.")
-          setLoading(false)
-          return
-        }
-        
-        console.log("Session established successfully:", {
-          userId: data.session.user?.id,
-          expiresAt: data.session.expires_at
-        })
       }
       
-      // Now update the user's password
+      // Now try to update the password
+      console.log("Attempting password update...")
       const { error } = await supabase.auth.updateUser({ password })
       
       if (error) {
