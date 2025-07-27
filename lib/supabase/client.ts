@@ -19,11 +19,15 @@ function createMockClient() {
   return {
     auth: {
       getUser: () => Promise.resolve({ data: { user: null }, error: null }),
+      getSession: () => Promise.resolve({ data: { session: null }, error: null }),
+      setSession: () => Promise.resolve({ data: { session: null }, error: null }),
+      verifyOtp: () => Promise.resolve({ data: { user: null, session: null }, error: null }),
       onAuthStateChange: () => ({ data: { subscription: { unsubscribe: () => {} } } }),
       signUp: () => Promise.resolve({ data: null, error: { message: "Auth not configured" } }),
       signInWithPassword: () => Promise.resolve({ data: null, error: { message: "Auth not configured" } }),
       signOut: () => Promise.resolve({ error: null }),
       updateUser: () => Promise.resolve({ error: { message: "Auth not configured" } }),
+      resetPasswordForEmail: () => Promise.resolve({ error: { message: "Auth not configured" } }),
     },
     from: () => ({
       insert: () => Promise.resolve({ error: { message: "Database not configured" } }),
