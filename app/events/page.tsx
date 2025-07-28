@@ -61,7 +61,7 @@ export default function EventsPage() {
       date: "July 19, 2025",
       location: "Google Meet",
       attendees: 233,
-      image: "/images/Sonu yadav Poster.png",
+      image: "/images/Sonu yadav Poster.webp",
       category: "Session",
       duration: "2 Hours",
       highlights: ["DSA", "Gate Prepartion", "AI & ML", "Project Deployment"]

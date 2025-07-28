@@ -95,7 +95,7 @@ export default function HomePage() {
       description: "Intensive hands-on workshop covering Basic to Advance,Module.",
       status: "upcoming",
       registrationLink: "#",
-      image: "/images/cnxx-logo.png",
+      image: "/images/cnxx-logo-zoom.webp",
     },
     {
       title: "Breaking SDE by Amazon Professional – How to Become a Software Engineer & get job into Amazon",
@@ -106,7 +106,7 @@ export default function HomePage() {
       description: "Industry experts discuss career paths, skills needed, and opportunities in SDE field.",
       status: "ongoing",
       registrationLink: "#",
-      image: "/images/cnxx-logo.png",
+      image: "/images/cnxx-logo-zoom.webp",
     },
   ]
 
@@ -149,7 +149,7 @@ export default function HomePage() {
             '@type': 'Organization',
             name: 'CodeNeuraX',
             url: 'https://www.codeneurax.in/',
-            logo: 'https://www.codeneurax.in/images/codeneurax-logo.png',
+            logo: 'https://www.codeneurax.in/images/codeneurax-logo.webp',
             sameAs: [
               'https://www.linkedin.com/company/codeneurax/',
               'https://www.instagram.com/codeneurax/',
@@ -178,7 +178,7 @@ export default function HomePage() {
               "name": "CodeNeuraX",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://www.codeneurax.in/images/codeneurax-logo.png"
+                "url": "https://www.codeneurax.in/images/codeneurax-logo.webp"
               }
             }
           })
@@ -395,11 +395,11 @@ export default function HomePage() {
                   >
                     <CarouselContent className="h-96">
                       {[
-                        "/images/Founder - CNX -1.jpg",
-                        "/images/From the backstage.jpg",
-                        "/images/Founder - CNX -2.jpg",
-                        "/images/CodeNeuraX.jpg",
-                        "/images/Career Guidance by sonu yadav.jpg"
+                        "/images/Founder - CNX -1.webp",
+                        "/images/From the backstage.webp",
+                        "/images/Founder - CNX -2.webp",
+                        "/images/CodeNeuraX.webp",
+                        "/images/Career Guidance by sonu yadav.webp"
                       ].map((image, index) => (
                         <CarouselItem key={index} className="relative h-96">
                           <img

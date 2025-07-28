@@ -85,7 +85,7 @@ export default function Header({ onAuth }: HeaderProps) {
       <div className="flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
-          <Image src="/images/codeneurax-logo.png" alt="Logo" width={32} height={32} className="h-8 w-8 object-contain" />
+          <Image src="/images/codeneurax-logo.webp" alt="Logo" width={32} height={32} className="h-8 w-8 object-contain" />
           <span className="text-xl font-bold">
             Code<span className="text-blue-400">NeuraX</span>
           </span>
