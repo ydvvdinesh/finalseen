@@ -7,7 +7,7 @@ import Header from "@/components/header"
 const sections = [
 	{
 		title: "Python Notes",
-		description: "Comprehensive Python notes for beginners and advanced learners.",
+		description: "Python notes for beginners and advanced learners.",
 		link: "/downloads/python-notes.pdf",
 	},
 	{
