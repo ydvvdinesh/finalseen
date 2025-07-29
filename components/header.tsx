@@ -45,7 +45,7 @@ export default function Header({ onAuth }: HeaderProps) {
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
     { name: "Community", href: "#community" },
-    { name: "Team", href: "#team" },
+    // { name: "Team", href: "#team" },
     { name: "Events", href: "/events" },
     { name: "Econtent", href: "/econtent" },
     { name: "Study", href: "/study", requiresAuth: true },
