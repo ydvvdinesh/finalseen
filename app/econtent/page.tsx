@@ -1,4 +1,4 @@
-/*"use client"
+"use client"
 
 import { motion } from "framer-motion"
 import { BookOpen, FileText, Download, Star } from "lucide-react"
@@ -148,9 +148,9 @@ export default function EContentPage() {
 			</footer>
 		</div>
 	)
-}*/
+}
 
-"use client"
+/*"use client"
 
 import { useState } from "react"
 import { motion } from "framer-motion"
@@ -173,6 +173,7 @@ export default function EContentPage() {
 		<div className="min-h-screen bg-black relative overflow-hidden">
 			<Header onAuth={handleAuth} />
 			
+			//{ Auth Modal }
 			{authModal && (
 				<AuthModal type={authModal.type} onClose={closeAuthModal} />
 			)}
@@ -221,3 +222,4 @@ export default function EContentPage() {
 	)
 }
 
+*/
