@@ -20,7 +20,7 @@ const sections = [
 		description: "All GATE DA previous year papers.",
 		link: "/downloads/Data Science and Artificial Intelligence (DA).zip",
 	},
-	{
+/*	{
 		title: "Algorithms Notes",
 		description: "Algorithm theory and practice notes.",
 		link: "/downloads/algorithms-notes.pdf",
@@ -79,7 +79,7 @@ const sections = [
 		title: "Software Engineering",
 		description: "SE notes and models.",
 		link: "/downloads/se-notes.pdf",
-	},
+	},*/
 ]
 
 export default function EContentPage() {
