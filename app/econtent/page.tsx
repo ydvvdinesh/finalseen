@@ -1,10 +1,15 @@
-"use client"
+/*"use client"
 
 import { motion } from "framer-motion"
 import { BookOpen, FileText, Download, Star } from "lucide-react"
 import Header from "@/components/header"
 
 const sections = [
+	{
+		title: "Python Notes",
+		description: "Comprehensive Python notes for beginners and advanced learners.",
+		link: "/downloads/python-notes.pdf",
+	},
 	{
 		title: "GATE - CS Previous Year Ques",
 		description: "All GATE CSE previous year papers.",
@@ -15,12 +20,7 @@ const sections = [
 		description: "All GATE DA previous year papers.",
 		link: "/downloads/Data Science and Artificial Intelligence (DA).zip",
 	},
-	/*{
-		title: "Python Notes",
-		description: "Python notes for beginners and advanced learners.",
-		link: "/downloads/python-notes.pdf",
-	},*/
-	/*	{
+	{
 		title: "Algorithms Notes",
 		description: "Algorithm theory and practice notes.",
 		link: "/downloads/algorithms-notes.pdf",
@@ -79,7 +79,7 @@ const sections = [
 		title: "Software Engineering",
 		description: "SE notes and models.",
 		link: "/downloads/se-notes.pdf",
-	},*/
+	},
 ]
 
 export default function EContentPage() {
@@ -148,9 +148,9 @@ export default function EContentPage() {
 			</footer>
 		</div>
 	)
-}
+}*/
 
-/*"use client"
+"use client"
 
 import { useState } from "react"
 import { motion } from "framer-motion"
@@ -173,7 +173,7 @@ export default function EContentPage() {
 		<div className="min-h-screen bg-black relative overflow-hidden">
 			<Header onAuth={handleAuth} />
 			
-			//{ Auth Modal }
+			{ /*AuthModal */}
 			{authModal && (
 				<AuthModal type={authModal.type} onClose={closeAuthModal} />
 			)}
@@ -222,4 +222,3 @@ export default function EContentPage() {
 	)
 }
 
-*/
