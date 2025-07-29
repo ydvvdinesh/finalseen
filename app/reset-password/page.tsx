@@ -14,15 +14,12 @@ function ResetPasswordContent() {
   const [error, setError] = useState("")
   const [success, setSuccess] = useState("")
   const [loading, setLoading] = useState(false)
-  const [isCheckingToken, setIsCheckingToken] = useState(true)
 
   const access_token = searchParams.get("access_token") ?? ""
   const refresh_token = searchParams.get("refresh_token") ?? ""
 
   useEffect(() => {
     const supabase = createClient()
-    
-    // Check if we have the required tokens
     if (access_token && refresh_token) {
       supabase.auth.setSession({ access_token, refresh_token })
         .then(({ data, error }) => {
@@ -32,21 +29,13 @@ function ResetPasswordContent() {
           } else {
             console.log("Session established successfully")
           }
-          setIsCheckingToken(false)
         })
         .catch((err) => {
           console.error("Session error:", err)
           setError("Invalid or expired reset token.")
-          setIsCheckingToken(false)
         })
     } else {
-      // Only show error if we're sure there are no tokens
-      setTimeout(() => {
-        if (!access_token || !refresh_token) {
-          setError("Missing reset token.")
-        }
-        setIsCheckingToken(false)
-      }, 1000) // Small delay to avoid flashing error
+      // setError("Missing reset token.")
     }
   }, [access_token, refresh_token])
 
@@ -91,16 +80,8 @@ function ResetPasswordContent() {
           <p className="text-gray-400">Enter your new password below to reset your account password.</p>
         </div>
 
-        {/* Loading State while checking token */}
-        {isCheckingToken && (
-          <div className="text-center py-8">
-            <div className="w-8 h-8 border-2 border-cyan-400 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-            <p className="text-gray-300">Verifying reset link...</p>
-          </div>
-        )}
-
         {/* Error Message */}
-        {error && !isCheckingToken && (
+        {error && (
           <div className="flex items-center gap-2 bg-red-900/30 border border-red-800/50 rounded-xl p-4 mb-6">
             <div className="w-5 h-5 bg-red-500 rounded-full flex items-center justify-center">
               <span className="text-white text-xs font-bold">!</span>
@@ -122,9 +103,8 @@ function ResetPasswordContent() {
           </div>
         )}
 
-        {/* Password Form - Only show when not checking token and no error */}
-        {!isCheckingToken && !error && (
-          <div className="space-y-6">
+        {/* Password Form */}
+        <div className="space-y-6">
           <div>
             <label className="block text-sm font-medium text-gray-300 mb-2">New Password</label>
             <div className="relative">
@@ -180,12 +160,11 @@ function ResetPasswordContent() {
             ) : (
               "Set Password"
             )}
-                     </button>
-         </div>
-        )}
-       </div>
-     </div>
-   )
+          </button>
+        </div>
+      </div>
+    </div>
+  )
  }
 
 // Loading component for Suspense fallback
