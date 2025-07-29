@@ -6,11 +6,6 @@ import Header from "@/components/header"
 
 const sections = [
 	{
-		title: "Python Notes",
-		description: "Python notes for beginners and advanced learners.",
-		link: "/downloads/python-notes.pdf",
-	},
-	{
 		title: "GATE - CS Previous Year Ques",
 		description: "All GATE CSE previous year papers.",
 		link: "/downloads/Computer Science and Information Technology (CS).zip",
@@ -20,7 +15,12 @@ const sections = [
 		description: "All GATE DA previous year papers.",
 		link: "/downloads/Data Science and Artificial Intelligence (DA).zip",
 	},
-/*	{
+	/*{
+		title: "Python Notes",
+		description: "Python notes for beginners and advanced learners.",
+		link: "/downloads/python-notes.pdf",
+	},*/
+	/*	{
 		title: "Algorithms Notes",
 		description: "Algorithm theory and practice notes.",
 		link: "/downloads/algorithms-notes.pdf",
