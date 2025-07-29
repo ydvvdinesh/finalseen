@@ -17,6 +17,7 @@ function ResetPasswordContent() {
   const [success, setSuccess] = useState("")
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+  const [sessionEstablished, setSessionEstablished] = useState(false)
 
   useEffect(() => {
     const access_token = searchParams.get("access_token")
@@ -24,16 +25,35 @@ function ResetPasswordContent() {
     const type = searchParams.get("type")
 
     if (access_token && type === "recovery") {
-      supabase.auth.setSession({ access_token, refresh_token }).catch((err) => {
-        console.error("Session error", err)
-        setError("Invalid or expired recovery link.")
-      })
+      console.log("Setting up session with tokens...")
+      supabase.auth.setSession({ access_token, refresh_token })
+        .then(({ data, error }) => {
+          if (error) {
+            console.error("Session error", error)
+            setError("Invalid or expired recovery link.")
+          } else {
+            console.log("Session established successfully", data.session)
+            setSessionEstablished(true)
+          }
+        })
+        .catch((err) => {
+          console.error("Session error", err)
+          setError("Invalid or expired recovery link.")
+        })
+    } else {
+      console.error("Missing required parameters:", { access_token: !!access_token, type })
+      setError("Invalid recovery link. Please request a new password reset.")
     }
   }, [searchParams, supabase])
 
   const handleResetPassword = async () => {
     setError("")
     setSuccess("")
+
+    if (!sessionEstablished) {
+      setError("Please wait while we verify your recovery link...")
+      return
+    }
 
     if (password !== confirmPassword) {
       setError("Passwords do not match.")
@@ -46,10 +66,22 @@ function ResetPasswordContent() {
     }
 
     setLoading(true)
+    
+    // Verify session is still valid before updating password
+    const { data: { session }, error: sessionError } = await supabase.auth.getSession()
+    
+    if (sessionError || !session) {
+      console.error("Session verification failed:", sessionError)
+      setError("Your session has expired. Please request a new password reset link.")
+      setLoading(false)
+      return
+    }
+
     const { error } = await supabase.auth.updateUser({ password })
 
     if (error) {
       console.error("Error updating password:", error.message)
+      console.error("Full error object:", error)
       // Provide more specific error messages
       if (error.message.includes('Auth not configured')) {
         setError("Authentication is not properly configured. Please contact support.")
@@ -60,7 +92,7 @@ function ResetPasswordContent() {
       } else if (error.message.includes('expired')) {
         setError("Password reset link has expired. Please request a new one.")
       } else {
-        setError("Failed to update password. Please try again.")
+        setError(`Failed to update password: ${error.message}`)
       }
     } else {
       setSuccess("Password updated successfully!")
@@ -176,13 +208,18 @@ function ResetPasswordContent() {
 
           <button
             onClick={handleResetPassword}
-            disabled={loading}
+            disabled={loading || !sessionEstablished}
             className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
           >
             {loading ? (
               <div className="flex items-center justify-center gap-2">
                 <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
                 Updating Password...
+              </div>
+            ) : !sessionEstablished ? (
+              <div className="flex items-center justify-center gap-2">
+                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                Verifying Link...
               </div>
             ) : (
               "Set Password"
