@@ -122,13 +122,24 @@ export default function AuthModal({ type, onClose }: AuthModalProps) {
 
       if (error) {
         console.error("Password reset error:", error)
-        setError(error.message || "Failed to send password reset email. Please try again.")
+        // Provide more specific error messages based on the error type
+        if (error.message.includes('Auth not configured')) {
+          setError("Authentication is not properly configured. Please contact support.")
+        } else if (error.message.includes('Email not confirmed')) {
+          setError("Please check your email and confirm your account first.")
+        } else if (error.message.includes('Invalid email')) {
+          setError("Please enter a valid email address.")
+        } else if (error.message.includes('Too many requests')) {
+          setError("Too many reset attempts. Please wait a few minutes before trying again.")
+        } else {
+          setError("Failed to send password reset email. Please check your email address and try again.")
+        }
       } else {
         setResetEmailSent(true)
       }
     } catch (err) {
       console.error("Password reset error:", err)
-      setError("Something went wrong. Please try again.")
+      setError("Network error. Please check your internet connection and try again.")
     } finally {
       setLoading(false)
     }

@@ -50,7 +50,18 @@ function ResetPasswordContent() {
 
     if (error) {
       console.error("Error updating password:", error.message)
-      setError("Failed to reset password. Try again.")
+      // Provide more specific error messages
+      if (error.message.includes('Auth not configured')) {
+        setError("Authentication is not properly configured. Please contact support.")
+      } else if (error.message.includes('Password should be at least')) {
+        setError("Password must be at least 6 characters long.")
+      } else if (error.message.includes('Invalid')) {
+        setError("Invalid password format. Please try a different password.")
+      } else if (error.message.includes('expired')) {
+        setError("Password reset link has expired. Please request a new one.")
+      } else {
+        setError("Failed to update password. Please try again.")
+      }
     } else {
       setSuccess("Password updated successfully!")
       console.log("Password updated successfully, redirecting to home page...")

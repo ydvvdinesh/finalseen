@@ -173,7 +173,6 @@ export default function EContentPage() {
 		<div className="min-h-screen bg-black relative overflow-hidden">
 			<Header onAuth={handleAuth} />
 			
-			{ /*AuthModal */}
 			{authModal && (
 				<AuthModal type={authModal.type} onClose={closeAuthModal} />
 			)}
