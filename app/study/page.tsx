@@ -448,7 +448,7 @@ export default function StudyPage() {
       {/* Footer */}
       <footer className="border-t border-gray-800/50 py-12 relative">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-400 text-lg">Build with ❤️ by Dinesh Yadav</p>
+          <p className="text-gray-400 text-lg">Team CodeNeuraX</p>
         </div>
       </footer>
 

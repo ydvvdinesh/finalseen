@@ -9,6 +9,7 @@ import AuthModal from "@/components/auth-modal"
 import Link from "next/link"
 import { createClient } from "@/lib/supabase/client"
 import type { User } from "@supabase/supabase-js"
+import Image from "next/image"
 
 interface EventPageProps {
   params: {
@@ -272,10 +273,14 @@ export default function EventPage({ params }: EventPageProps) {
               {/* Event Image */}
               <div className="relative">
                 <div className="relative h-96 rounded-3xl overflow-hidden">
-                  <img
+                  <Image
                     src={event.image}
                     alt={event.title}
-                    className="w-full h-full object-cover"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover"
+                    priority
+                    quality={85}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute top-6 left-6">

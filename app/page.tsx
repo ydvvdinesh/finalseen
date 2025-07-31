@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, Suspense } from "react"
 import { motion } from "framer-motion"
 import {
   Code,
@@ -22,15 +22,30 @@ import Header from "@/components/header"
 import ProgrammingLanguages from "@/components/programming-languages"
 import Image from "next/image"
 import AuthModal from "@/components/auth-modal"
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselPrevious,
-  CarouselNext
-} from "@/components/ui/carousel";
+import dynamic from "next/dynamic"
 import Autoplay from "embla-carousel-autoplay";
-import { useRef } from "react";
+
+// Dynamic imports for better performance
+const Carousel = dynamic(() => import("@/components/ui/carousel").then(mod => ({ default: mod.Carousel })), {
+  ssr: false,
+  loading: () => <div className="w-full h-96 bg-gray-800/50 rounded-3xl animate-pulse" />
+})
+
+const CarouselContent = dynamic(() => import("@/components/ui/carousel").then(mod => ({ default: mod.CarouselContent })), {
+  ssr: false
+})
+
+const CarouselItem = dynamic(() => import("@/components/ui/carousel").then(mod => ({ default: mod.CarouselItem })), {
+  ssr: false
+})
+
+const CarouselPrevious = dynamic(() => import("@/components/ui/carousel").then(mod => ({ default: mod.CarouselPrevious })), {
+  ssr: false
+})
+
+const CarouselNext = dynamic(() => import("@/components/ui/carousel").then(mod => ({ default: mod.CarouselNext })), {
+  ssr: false
+})
 
 export default function HomePage() {
   const [showAuthModal, setShowAuthModal] = useState(false)
@@ -402,10 +417,15 @@ export default function HomePage() {
                         "/images/Career Guidance by sonu yadav.webp"
                       ].map((image, index) => (
                         <CarouselItem key={index} className="relative h-96">
-                          <img
+                          <Image
                             src={image}
                             alt={`Team photo ${index + 1}`}
-                            className="w-full h-full object-cover rounded-3xl"
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            className="object-cover rounded-3xl"
+                            priority={index === 0}
+                            loading={index === 0 ? "eager" : "lazy"}
+                            quality={85}
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-purple-900/50 to-transparent" />
                         </CarouselItem>

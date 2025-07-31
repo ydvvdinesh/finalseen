@@ -1,10 +1,12 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import PerformanceMonitor from '@/components/ui/performance-monitor'
 
 export const metadata: Metadata = {
   title: 'CodeNeuraX | Student-Led Tech Community & Coding Resources',
   description: 'Join CodeNeuraX, a vibrant student-led tech community offering coding challenges, events, resources, mentorship, and career support for aspiring developers and students.',
   generator: 'CodeNeuraX',
+  metadataBase: new URL('https://www.codeneurax.in'),
   openGraph: {
     title: 'CodeNeuraX | Student-Led Tech Community & Coding Resources',
     description: 'Join CodeNeuraX, a vibrant student-led tech community offering coding challenges, events, resources, mentorship, and career support for aspiring developers and students.',
@@ -37,6 +39,11 @@ export const metadata: Metadata = {
   other: {
     author: 'Dinesh Yadav',
   },
+  viewport: 'width=device-width, initial-scale=1',
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function RootLayout({
@@ -45,8 +52,26 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className="scroll-smooth">
+      <head>
+        {/* Preconnect to external domains for faster loading */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        
+        {/* Preload critical resources */}
+        <link rel="preload" href="/images/codeneurax-logo.webp" as="image" type="image/webp" />
+        <link rel="preload" href="/images/Founder - CNX -1.webp" as="image" type="image/webp" />
+        
+        {/* Resource hints for better performance */}
+        <link rel="prefetch" href="/events" />
+        <link rel="prefetch" href="/econtent" />
+        <link rel="prefetch" href="/study" />
+      </head>
+      <body className="bg-black text-white antialiased">
+        <PerformanceMonitor />
+        {children}
+      </body>
     </html>
   )
 }
