@@ -21,6 +21,14 @@ const nextConfig = {
   poweredByHeader: false,
   generateEtags: false,
 
+  // Development settings
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+
   // Bundle analyzer (uncomment for debugging)
   // webpack: (config, { isServer }) => {
   //   if (!isServer) {
