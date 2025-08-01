@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import PerformanceMonitor from '@/components/ui/performance-monitor'
 
@@ -39,11 +39,16 @@ export const metadata: Metadata = {
   other: {
     author: 'Dinesh Yadav',
   },
-  viewport: 'width=device-width, initial-scale=1',
   robots: {
     index: true,
     follow: true,
   },
+}
+
+// ✅ NEW: Move viewport to separate export
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({
