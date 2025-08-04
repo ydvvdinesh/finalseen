@@ -73,7 +73,7 @@ export default function EventPage({ params }: EventPageProps) {
       category: "Session",
       duration: "2 Hours",
       highlights: ["DSA", "Gate Prepartion", "AI & ML", "Project Deployment"],
-      youtubeId: "t_MyTagczmQ", // Sample YouTube video ID
+      youtubeId: "3Cr3gEoN9mk", // Sample YouTube video ID
       instructor: "Sonu Yadav",
       rating: 5,
       totalRatings: 10,
