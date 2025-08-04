@@ -26,24 +26,24 @@ import dynamic from "next/dynamic"
 import Autoplay from "embla-carousel-autoplay";
 
 // Dynamic imports for better performance
-const Carousel = dynamic(() => import("@/components/ui/carousel").then(mod => ({ default: mod.Carousel })), {
+const Carousel = dynamic(() => import("@/components/ui/carousel").then(mod => mod.Carousel), {
   ssr: false,
   loading: () => <div className="w-full h-96 bg-gray-800/50 rounded-3xl animate-pulse" />
 })
 
-const CarouselContent = dynamic(() => import("@/components/ui/carousel").then(mod => ({ default: mod.CarouselContent })), {
+const CarouselContent = dynamic(() => import("@/components/ui/carousel").then(mod => mod.CarouselContent), {
   ssr: false
 })
 
-const CarouselItem = dynamic(() => import("@/components/ui/carousel").then(mod => ({ default: mod.CarouselItem })), {
+const CarouselItem = dynamic(() => import("@/components/ui/carousel").then(mod => mod.CarouselItem), {
   ssr: false
 })
 
-const CarouselPrevious = dynamic(() => import("@/components/ui/carousel").then(mod => ({ default: mod.CarouselPrevious })), {
+const CarouselPrevious = dynamic(() => import("@/components/ui/carousel").then(mod => mod.CarouselPrevious), {
   ssr: false
 })
 
-const CarouselNext = dynamic(() => import("@/components/ui/carousel").then(mod => ({ default: mod.CarouselNext })), {
+const CarouselNext = dynamic(() => import("@/components/ui/carousel").then(mod => mod.CarouselNext), {
   ssr: false
 })
 
@@ -336,7 +336,7 @@ export default function HomePage() {
                 </span>
               </h2>
               <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                CodeNeuraX is a platform that provides all the essential resources a computer science student needs to grow and succeed.
+                CodeNeuraX is a platform that provides all the essential resources for computer science student needs to grow and succeed.
               </p>
             </motion.div>
 
@@ -405,7 +405,7 @@ export default function HomePage() {
                   {/* Carousel with Autoplay and Manual Controls */}
                   <Carousel
                     opts={{ loop: true }}
-                    plugins={[autoplay.current]}
+                    plugins={[autoplay.current as any]}
                     className="w-full h-full"
                   >
                     <CarouselContent className="h-96">
