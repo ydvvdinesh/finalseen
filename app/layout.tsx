@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import PerformanceMonitor from '@/components/ui/performance-monitor'
+import Script from 'next/script'
+import Chatbot from '@/components/Chatbot';
 
 export const metadata: Metadata = {
   title: 'CodeNeuraX | Student-Led Tech Community & Coding Resources',
@@ -76,6 +78,8 @@ export default function RootLayout({
       <body className="bg-black text-white antialiased">
         <PerformanceMonitor />
         {children}
+        {/* Integrate Chatbot component globally */}
+        <Chatbot />
       </body>
     </html>
   )

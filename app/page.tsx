@@ -23,7 +23,8 @@ import ProgrammingLanguages from "@/components/programming-languages"
 import Image from "next/image"
 import AuthModal from "@/components/auth-modal"
 import dynamic from "next/dynamic"
-import Autoplay from "embla-carousel-autoplay";
+import Autoplay from "embla-carousel-autoplay"
+import Chatbot from "@/components/Chatbot";
 
 // Dynamic imports for better performance
 const Carousel = dynamic(() => import("@/components/ui/carousel").then(mod => mod.Carousel), {
@@ -100,7 +101,19 @@ export default function HomePage() {
     },
   ]
 
-  const events = [
+  type EventType = {
+    title: string;
+    date: string;
+    time: string;
+    location: string;
+    type: string;
+    description: string;
+    status: string;
+    registrationLink: string;
+    image: string;
+  };
+
+  const events: EventType[] = [
     {
       title: "Python With Peers",
       date: "TBA",
@@ -123,31 +136,7 @@ export default function HomePage() {
       registrationLink: "#",
       image: "/images/cnxx-logo-zoom.webp",
     },
-  ]
-
-  const knowledgeResources = [
-    {
-      title: "Complete DSA Roadmap 2025",
-      type: "Guide",
-      description: "Comprehensive guide to master Data Structures and Algorithms for coding interviews.",
-      readTime: "15 min read",
-      category: "Programming",
-    },
-    {
-      title: "Python Best Practices",
-      type: "Article",
-      description: "Essential React patterns and practices every developer should know.",
-      readTime: "8 min read",
-      category: "AI & ML",
-    },
-    {
-      title: "Career Switch to Tech",
-      type: "Guide",
-      description: "Complete roadmap for transitioning from non-tech to tech career successfully.",
-      readTime: "12 min read",
-      category: "Career",
-    },
-  ]
+  ];
 
   const autoplay = useRef(
     Autoplay({ delay: 4000, stopOnInteraction: false })
@@ -155,61 +144,7 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Google tag (gtag.js) */}
-      <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-38QJS834B2"></script>
-        <script dangerouslySetInnerHTML={{
-          __html: `window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-38QJS834B2');`
-        }} />
-      </head>
-      <script
-        key="org-jsonld"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Organization',
-            name: 'CodeNeuraX',
-            url: 'https://www.codeneurax.in/',
-            logo: 'https://www.codeneurax.in/images/codeneurax-logo.webp',
-            sameAs: [
-              'https://www.linkedin.com/company/codeneurax/',
-              'https://www.instagram.com/codeneurax/',
-              'https://www.youtube.com/@codeneurax',
-              'https://chat.whatsapp.com/LqYC0LCO02hGCRTMeQoFLQ'
-            ],
-            description: 'Platform offering coding challenges, events, resources, mentorship, and career support for aspiring developers and students.'
-          })
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": "CodeNeuraX | Student-Led Tech Community & Coding Resources",
-            "description": "Join CodeNeuraX, a vibrant student-led tech community offering coding challenges, events, resources, mentorship, and career support for aspiring developers and students.",
-            "author": {
-              "@type": "Person",
-              "name": "Dinesh Yadav"
-            },
-            "datePublished": "2025-07-19T12:00:00+05:30",
-            "publisher": {
-              "@type": "Organization",
-              "name": "CodeNeuraX",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.codeneurax.in/images/codeneurax-logo.webp"
-              }
-            }
-          })
-        }}
-      />
-      
+      {/* ...existing code... */}
       <div className="min-h-screen bg-black relative overflow-hidden" id="home" key="main-content">
         {/* Animated Background */}
         <div className="absolute inset-0">
@@ -874,5 +809,5 @@ export default function HomePage() {
         </footer>
       </div>
     </>
-  )
+  );
 }
