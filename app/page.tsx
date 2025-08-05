@@ -361,7 +361,7 @@ export default function HomePage() {
                 >
                   <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
                     <p>
-                      Founded in 2025, CodeNeuraX Community is a welcoming tech community designed specifically for computer science students and recent graduates. The community is organized into four WhatsApp groups to serve different needs:
+                      Founded in 2025 by Dinesh Yadav, CodeNeuraX Community is a welcoming tech community designed specifically for computer science students and recent graduates. The community is organized into four WhatsApp groups to serve different needs:
                     </p>
                     <p>
                       Through workshops, hackathons, research projects, and industry partnerships, we provide our members
