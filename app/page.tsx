@@ -155,6 +155,16 @@ export default function HomePage() {
 
   return (
     <>
+      {/* Google tag (gtag.js) */}
+      <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-38QJS834B2"></script>
+        <script dangerouslySetInnerHTML={{
+          __html: `window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-38QJS834B2');`
+        }} />
+      </head>
       <script
         key="org-jsonld"
         type="application/ld+json"
