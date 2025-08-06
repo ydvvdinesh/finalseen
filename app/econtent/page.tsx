@@ -46,8 +46,8 @@ const categorizedSections = {
   ],
   Notes: [
     {
-      title: "Python Notes",
-      description: "Python notes for beginners and advanced learners.",
+      title: "Python Practice Questions",
+      description: "Python questions for beginners and advanced learners.",
       link: "/downloads/python-notes.pdf",
     },
 	/*{
@@ -83,7 +83,7 @@ const categorizedSections = {
   ],
   "Problem Statement / Practice Question": [
     	  {
-		title: "CMR Hackfest Hackathon",
+		title: "Hackfest Hackathon - 2024",
 		description: "Organized by CMR COLLEGE OF ENGINEERING.",
 		link: "/downloads/CMR HACKFEST HACKATHON.pdf",
 	  },
@@ -93,19 +93,19 @@ const categorizedSections = {
 		link: "/downloads/Code Coalescence-2025.pdf",
 	  },
 	  {
-		title: "Traffic Hackathon",
+		title: "Traffic Hackathon 2024",
 		description: "Organized by - IIT Jammu.",
-		link: "/downloads/Traffic hackathon Problem Statements",
+		link: "/downloads/Traffic hackathon Problem Statements.pdf",
 	  },
      {
-		title: "Intellify Hackathon",
+		title: "Intellify Hackathon 2025",
 		description: "Organized by - Marwadi University.",
 		link: "/downloads/intellify_hackathon.pdf",
 	  },
     {
 		title: "Smart India Hackathon 2024",
 		description: "Organized by government of India.",
-		link: "/downloads/SIH_PS_2024.pdf",
+		link: "/downloads/SIH_PS_2024.xlsx",
 	  },
   ],
 }
