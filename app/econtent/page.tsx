@@ -1,4 +1,4 @@
-/*"use client"
+"use client"
 
 import { useState } from "react"
 import { motion } from "framer-motion"
@@ -50,7 +50,7 @@ const categorizedSections = {
       description: "Python notes for beginners and advanced learners.",
       link: "/downloads/python-notes.pdf",
     },
-	{
+	/*{
 		title: "Python Notes",
 		description: "Python notes for beginners and advanced learners.",
 		link: "/downloads/python-notes.pdf",
@@ -79,10 +79,34 @@ const categorizedSections = {
 		title: "Python Notes",
 		description: "Python notes for beginners and advanced learners.",
 		link: "/downloads/python-notes.pdf",
-	  },
+	  },*/
   ],
   "Problem Statement / Practice Question": [
-    // Add items here if needed
+    	  {
+		title: "CMR Hackfest Hackathon",
+		description: "Organized by CMR COLLEGE OF ENGINEERING.",
+		link: "/downloads/CMR HACKFEST HACKATHON.pdf",
+	  },
+	  {
+		title: "Code Coalescence-2025",
+		description: "Organized by MITS-DU, Gwalior.",
+		link: "/downloads/Code Coalescence-2025.pdf",
+	  },
+	  {
+		title: "Traffic Hackathon",
+		description: "Organized by - IIT Jammu.",
+		link: "/downloads/Traffic hackathon Problem Statements",
+	  },
+     {
+		title: "Intellify Hackathon",
+		description: "Organized by - Marwadi University.",
+		link: "/downloads/intellify_hackathon.pdf",
+	  },
+    {
+		title: "Smart India Hackathon 2024",
+		description: "Organized by government of India.",
+		link: "/downloads/SIH_PS_2024.pdf",
+	  },
   ],
 }
 
@@ -125,7 +149,7 @@ export default function EContentPage() {
             </p>
           </motion.div>
 
-          {/* Navigation buttons above the first section }
+          {/* Navigation buttons above the first section*/ }
           <div className="flex justify-center gap-2 mb-8">
             <a href="#previous-year-question" className="px-3 py-1 rounded-full text-xs font-semibold bg-black text-white shadow hover:bg-gradient-to-r hover:from-purple-500 hover:via-pink-500 hover:to-cyan-500 hover:text-white hover:shadow-lg hover:scale-105 transition-all duration-200">Previous Year Question</a>
             <a href="#notes" className="px-3 py-1 rounded-full text-xs font-semibold bg-black text-white shadow hover:bg-gradient-to-r hover:from-purple-500 hover:via-pink-500 hover:to-cyan-500 hover:text-white hover:shadow-lg hover:scale-105 transition-all duration-200">Notes</a>
@@ -189,8 +213,8 @@ export default function EContentPage() {
       </footer>
     </div>
   )
-}*/
-
+}
+/*
 "use client"
 
 import { useState } from "react"
@@ -214,7 +238,7 @@ export default function EContentPage() {
 		<div className="min-h-screen bg-black relative overflow-hidden">
 			<Header onAuth={handleAuth} />
 			
-			{ /*AuthModal */}
+			{ /*AuthModal }
 			{authModal && (
 				<AuthModal type={authModal.type} onClose={closeAuthModal} />
 			)}
@@ -261,4 +285,4 @@ export default function EContentPage() {
 			</footer>
 		</div>
 	)
-}
+}*/
