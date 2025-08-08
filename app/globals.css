@@ -1,3 +1,13 @@
+@keyframes purpleBlink {
+  0%, 100% {
+    opacity: 0.5;
+    filter: blur(24px);
+  }
+  50% {
+    opacity: 0.9;
+    filter: blur(40px);
+  }
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
