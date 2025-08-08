@@ -115,15 +115,15 @@ export default function HomePage() {
 
   const events: EventType[] = [
     {
-      title: "Python With Peers",
-      date: "TBA",
+      title: "How to Win Smart India Hackathon 2025",
+      date: "Sep 1,2025",
       time: "06:00 PM - 8:00 PM",
       location: "Online",
       type: "Workshop",
-      description: "Intensive hands-on workshop covering Basic to Advance,Module.",
-      status: "upcoming",
-      registrationLink: "#",
-      image: "/images/cnxx-logo-zoom.webp",
+      description: "Join our expert-led session by Arkja Gaur and take the first step toward winning hackathon.",
+      status: "ongoing",
+      registrationLink: "https://lu.ma/rtfoub6j",
+      image: "/images/Arkja Gaur - SIH Winner 2024.webp",
     },
     {
       title: "Breaking SDE by Amazon Professional – How to Become a Software Engineer & get job into Amazon",
@@ -555,7 +555,7 @@ export default function HomePage() {
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-medium px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm"
                           >
-                            Coming Soon
+                            Register Now
                             <ExternalLink className="w-4 h-4" />
                           </a>
                         )}
