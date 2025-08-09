@@ -462,7 +462,13 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="text-center mb-12 sm:mb-16 md:mb-20"
             >
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-6 sm:mb-8">Events & Knowledge</h2>
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-black mb-6 sm:mb-8">
+                <span className="">
+                  <span className="text-white">Events</span>
+                  <span> & </span>
+                  <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">Knowledge</span>
+                </span>
+              </h2>
               <p className="text-lg sm:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-2">
                 Stay updated with our latest events, workshops, and curated knowledge resources to accelerate your tech
                 journey.
@@ -479,7 +485,7 @@ export default function HomePage() {
                 className="flex items-center gap-3 mb-8 sm:mb-12"
               >
                 <Calendar className="w-6 h-6 sm:w-8 sm:h-8 text-purple-400" />
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">Upcoming Events</h3>
+                <h3 id="upcoming-events" className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">Upcoming Events</h3>
               </motion.div>
               
               <div className="grid md:grid-cols-2 gap-6 sm:gap-8">

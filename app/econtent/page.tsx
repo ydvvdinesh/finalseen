@@ -198,10 +198,10 @@ export default function EContentPage() {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-3 py-1 rounded-full text-xs font-semibold transition-all duration-200 focus:outline-none ${
+                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 focus:outline-none ${
                   activeCategory === cat
-                    ? "bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 text-white shadow"
-                    : "bg-black text-white border border-gray-700 hover:bg-gradient-to-r hover:from-purple-500 hover:via-pink-500 hover:to-cyan-500 hover:text-white hover:shadow-lg hover:scale-105"
+                    ? "bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white shadow"
+                    : "bg-black text-white border border-gray-700 hover:bg-gradient-to-r hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 hover:text-white hover:shadow-lg hover:scale-105"
                 }`}
               >
                 {cat}
@@ -235,7 +235,7 @@ export default function EContentPage() {
                         <a
                           href={section.link}
                           download
-                          className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 text-white font-bold px-6 py-3 rounded-xl transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30"
+                          className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-bold px-6 py-3 rounded-xl transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/30"
                         >
                           <Download className="w-5 h-5" />
                           Download

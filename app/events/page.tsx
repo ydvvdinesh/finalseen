@@ -183,6 +183,17 @@ export default function EventsPage() {
                 <br />
                 <span className="text-purple-400 font-semibold">and connect with fellow developers.</span>
               </p>
+
+
+      {/* Button directly above Completed Events title */}
+  <div className="flex justify-center">
+        <a
+          href="/#upcoming-events"
+          className="inline-block bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-bold px-8 py-3 rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300"
+        >
+          Go to Upcoming Events
+        </a>
+      </div>
             </motion.div>
           </div>
         </div>
