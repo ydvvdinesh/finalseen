@@ -26,6 +26,7 @@ function createMockClient() {
       onAuthStateChange: () => ({ data: { subscription: { unsubscribe: () => {} } } }),
       signUp: () => Promise.resolve({ data: null, error: { message: "Auth not configured" } }),
       signInWithPassword: () => Promise.resolve({ data: null, error: { message: "Auth not configured" } }),
+      signInWithOAuth: () => Promise.resolve({ data: null, error: { message: "Auth not configured" } }),
       signOut: () => Promise.resolve({ error: null }),
       updateUser: () => Promise.resolve({ error: { message: "Auth not configured" } }),
       resetPasswordForEmail: () => Promise.resolve({ error: { message: "Auth not configured" } }),

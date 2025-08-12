@@ -26,6 +26,14 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #fff;
+  color: #111;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background: #111;
+  color: #fff;
 }
 
 /* Optimize image loading */
@@ -267,11 +275,33 @@ img {
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+/* Peaceful, animated, pink-purple glowing blobs */
+.peace-blob {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.5;
+  filter: blur(60px);
+  animation: blobMove 12s ease-in-out infinite alternate, blobBlink 3s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.peace-blob.pink {
+  background: radial-gradient(circle at 30% 30%, #ffb6f9 60%, #ff5ecf 100%);
+}
+
+.peace-blob.purple {
+  background: radial-gradient(circle at 70% 70%, #bca7ff 60%, #7f5cff 100%);
+}
+
+@keyframes blobMove {
+  0%   { transform: translateY(0) scale(1); }
+  50%  { transform: translateY(-40px) scale(1.08); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+@keyframes blobBlink {
+  0%   { opacity: 0.4; }
+  50%  { opacity: 0.7; }
+  100% { opacity: 0.4; }
 }

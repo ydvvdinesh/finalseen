@@ -127,19 +127,39 @@ export default function AuthModal({ type, onClose }: AuthModalProps) {
           setError("Authentication is not properly configured. Please contact support.")
         } else if (error.message.includes('Email not confirmed')) {
           setError("Please check your email and confirm your account first.")
-        } else if (error.message.includes('Invalid email')) {
-          setError("Please enter a valid email address.")
-        } else if (error.message.includes('Too many requests')) {
-          setError("Too many reset attempts. Please wait a few minutes before trying again.")
         } else {
-          setError("Failed to send password reset email. Please check your email address and try again.")
+          setError(error.message || "Failed to send reset email. Please try again.")
         }
       } else {
         setResetEmailSent(true)
       }
     } catch (err) {
       console.error("Password reset error:", err)
-      setError("Network error. Please check your internet connection and try again.")
+      setError("Something went wrong. Please try again.")
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const handleGoogleSignIn = async () => {
+    try {
+      setLoading(true)
+      setError("")
+      const redirectTo = `${window.location.origin}/auth/callback`
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo,
+        },
+      } as any)
+      if (error) {
+        console.error('Google sign-in error:', error)
+        setError(error.message || 'Failed to sign in with Google. Please try again.')
+      }
+      // On success, Supabase will redirect; auth state listener will handle close/redirect on return
+    } catch (err) {
+      console.error('Google sign-in error:', err)
+      setError('Something went wrong with Google sign-in. Please try again.')
     } finally {
       setLoading(false)
     }
@@ -380,6 +400,30 @@ export default function AuthModal({ type, onClose }: AuthModalProps) {
                 ) : (
                   "Create Account"
                 )}
+              </button>
+
+              {/* Divider */}
+              <div className="flex items-center gap-4">
+                <div className="h-px bg-gray-800 flex-1" />
+                <span className="text-gray-500 text-sm">or continue with</span>
+                <div className="h-px bg-gray-800 flex-1" />
+              </div>
+
+              {/* Google OAuth Button */}
+              <button
+                type="button"
+                onClick={handleGoogleSignIn}
+                disabled={loading}
+                className="w-full bg-white text-gray-900 hover:bg-gray-100 font-semibold py-3 rounded-xl transition-colors border border-gray-200 flex items-center justify-center gap-3"
+                aria-label="Continue with Google"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" className="w-5 h-5">
+                  <path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303C33.94 32.333 29.418 36 24 36 16.82 36 11 30.18 11 23S16.82 10 24 10c3.06 0 5.84 1.153 7.961 3.039l5.657-5.657C34.46 3.553 29.478 1.5 24 1.5 11.573 1.5 1.5 11.573 1.5 24S11.573 46.5 24 46.5 46.5 36.427 46.5 24c0-1.312-.135-2.593-.389-3.917z"/>
+                  <path fill="#FF3D00" d="M6.306 14.691l6.571 4.817C14.623 16.151 18.961 13 24 13c3.06 0 5.84 1.153 7.961 3.039l5.657-5.657C34.46 3.553 29.478 1.5 24 1.5 16.104 1.5 9.241 6.019 6.306 14.691z"/>
+                  <path fill="#4CAF50" d="M24 46.5c5.356 0 10.248-1.985 13.986-5.262l-6.461-5.472C29.445 37.575 26.92 38.5 24 38.5c-5.392 0-9.9-3.626-11.557-8.533l-6.5 5.01C8.822 41.66 15.886 46.5 24 46.5z"/>
+                  <path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303C34.94 32.333 31 35.5 24 35.5c-5.392 0-9.9-3.626-11.557-8.533l-6.5 5.01C8.822 41.66 15.886 46 24 46c12.427 0 22.5-10.073 22.5-22.5 0-1.312-.135-2.593-.389-3.917z"/>
+                </svg>
+                <span>Continue with Google</span>
               </button>
             </form>
           )}
