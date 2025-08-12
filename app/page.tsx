@@ -57,6 +57,50 @@ export default function HomePage() {
     setShowAuthModal(true)
   }
 
+  // Contact form state
+  const [cfName, setCfName] = useState("")
+  const [cfEmail, setCfEmail] = useState("")
+  const [cfMobile, setCfMobile] = useState(""); // Add mobile number state
+  const [cfTopic, setCfTopic] = useState("career_guidance")
+  const [cfMessage, setCfMessage] = useState("")
+  const [cfSending, setCfSending] = useState(false)
+  const [cfSuccess, setCfSuccess] = useState<string | null>(null)
+  const [cfError, setCfError] = useState<string | null>(null)
+
+  const submitContact = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setCfError(null)
+    setCfSuccess(null)
+    setCfSending(true)
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: cfName,
+          email: cfEmail,
+          mobile: cfMobile, // <-- add mobile
+          topic: cfTopic,
+          message: cfMessage,
+        }),
+      })
+      const data = await res.json()
+      if (!res.ok) {
+        throw new Error(data?.error || 'Failed to send message')
+      }
+      setCfSuccess('Thanks! Your request has been sent.')
+      setCfName('')
+      setCfEmail('')
+      setCfMobile('')
+      setCfTopic('career_guidance')
+      setCfMessage('')
+    } catch (err: any) {
+      setCfError(err?.message || 'Something went wrong. Please try again.')
+    } finally {
+      setCfSending(false)
+    }
+  }
+
   const features = [
     {
       icon: <Users className="w-8 h-8" />,
@@ -713,7 +757,7 @@ export default function HomePage() {
                     <div className="text-blue-400 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 flex justify-center">
                       <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                      </svg>
+                    </svg>
                     </div>
                     <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 group-hover:text-blue-400 transition-colors">
                       LinkedIn
@@ -803,6 +847,123 @@ export default function HomePage() {
                   </div>
                 </div>
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Request Form Section (Service Support) */}
+        <section id="contact-request" className="py-16 sm:py-20 md:py-24 relative">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-12">
+              {/* Left: Heading & Description */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="md:w-1/2 text-center md:text-left mb-8 md:mb-0 flex flex-col justify-center"
+              >
+                <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-6 sm:mb-8">
+                  Service <span className="bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent">Support</span>
+                </h2>
+                <p className="text-lg sm:text-xl text-gray-300 max-w-xl leading-relaxed px-2 md:px-0">
+                  Need career guidance, want a website, promotion, or have another request? Fill out the form and our team will get back to you!
+                </p>
+              </motion.div>
+              {/* Right: Form */}
+              <form
+                onSubmit={submitContact}
+                className="md:w-1/2 max-w-xl mx-auto bg-gray-900/50 backdrop-blur-xl border border-gray-800/50 rounded-2xl sm:rounded-3xl p-6 sm:p-10 shadow-xl"
+              >
+                {cfSuccess && (
+                  <div className="mb-4 text-green-400 font-semibold text-center">{cfSuccess}</div>
+                )}
+                {cfError && (
+                  <div className="mb-4 text-red-400 font-semibold text-center">{cfError}</div>
+                )}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                  <div>
+                    <label className="block text-gray-300 font-medium mb-2" htmlFor="cfName">
+                      Name
+                    </label>
+                    <input
+                      id="cfName"
+                      type="text"
+                      className="w-full px-4 py-3 rounded-lg bg-gray-800/80 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
+                      placeholder="Your Name"
+                      value={cfName}
+                      onChange={e => setCfName(e.target.value)}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-gray-300 font-medium mb-2" htmlFor="cfEmail">
+                      Email
+                    </label>
+                    <input
+                      id="cfEmail"
+                      type="email"
+                      className="w-full px-4 py-3 rounded-lg bg-gray-800/80 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
+                      placeholder="you@email.com"
+                      value={cfEmail}
+                      onChange={e => setCfEmail(e.target.value)}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-gray-300 font-medium mb-2" htmlFor="cfMobile">
+                      Mobile Number
+                    </label>
+                    <input
+                      id="cfMobile"
+                      type="tel"
+                      className="w-full px-4 py-3 rounded-lg bg-gray-800/80 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
+                      placeholder="Your Mobile Number"
+                      value={cfMobile}
+                      onChange={e => setCfMobile(e.target.value)}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-gray-300 font-medium mb-2" htmlFor="cfTopic">
+                      What do you need help with?
+                    </label>
+                    <select
+                      id="cfTopic"
+                      className="w-full px-4 py-3 rounded-lg bg-gray-800/80 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
+                      value={cfTopic}
+                      onChange={e => setCfTopic(e.target.value)}
+                      required
+                    >
+                      <option value="career_guidance">Career Guidance</option>
+                      <option value="make_website">Make My Website</option>
+                      <option value="promotion">For Promotion</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                </div>
+                <div className="mb-8">
+                  <label className="block text-gray-300 font-medium mb-2" htmlFor="cfMessage">
+                    Message
+                  </label>
+                  <textarea
+                    id="cfMessage"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-800/80 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
+                    placeholder="Describe your request..."
+                    rows={5}
+                    value={cfMessage}
+                    onChange={e => setCfMessage(e.target.value)}
+                    required
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white font-bold py-3 rounded-xl text-lg transition-all duration-300 shadow-lg"
+                  disabled={cfSending}
+                >
+                  {cfSending ? "Sending..." : "Submit Request"}
+                </button>
+              </form>
             </div>
           </div>
         </section>
