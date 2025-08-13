@@ -44,12 +44,10 @@ export default function Header({ onAuth }: HeaderProps) {
   const navItems = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
-    { name: "Community", href: "#community" },
-    // { name: "Team", href: "#team" },
     { name: "Events", href: "/events" },
     { name: "Econtent", href: "/econtent" },
     { name: "Study", href: "/study", requiresAuth: true },
-    { name: "Services", href: "#contact-request" }, // <-- Added Services button
+    { name: "Services", href: "#contact-request" },
     { name: "Contact", href: "#contact" },
   ]
 
