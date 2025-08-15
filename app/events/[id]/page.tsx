@@ -75,8 +75,8 @@ export default function EventPage({ params }: EventPageProps) {
       highlights: ["DSA", "Gate Prepartion", "AI & ML", "Project Deployment"],
       youtubeId: "3Cr3gEoN9mk", // Sample YouTube video ID
       instructor: "Sonu Yadav",
-      rating: 5,
-      totalRatings: 10,
+      rating: 4.9,
+      totalRatings: 46,
       agenda: [
         { day: "Part 1", topics: ["Gate Roadmap", "Resource", "Mistake which have to Avoid"] },
         { day: "Part 2", topics: ["Doubts", "Gate Notes", "How to prepare with job"] },
@@ -513,7 +513,7 @@ export default function EventPage({ params }: EventPageProps) {
       {/* Footer */}
       <footer className="border-t border-gray-800/50 py-12 relative">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-400 text-lg">Team CodeNeuraX</p>
+          <p className="text-gray-400 text-lg">Team CodeNeuraX 💙</p>
         </div>
       </footer>
 

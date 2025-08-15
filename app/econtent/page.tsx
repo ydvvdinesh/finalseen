@@ -17,6 +17,16 @@ type Category = "Previous Year Question" | "Notes" | "Problem Statement / Practi
 const categorizedSections: Record<Category, Section[]> = {
   "Previous Year Question": [
     {
+      title: "Google DSA Ques",
+      description: "150+ previous Google DSA interview questions.",
+      link: "/downloads/Google DSA.pdf",
+    },
+    {
+      title: "Microsoft DSA Ques",
+      description: "150+ previous Microsoft DSA interview questions.",
+      link: "/downloads/Microsoft DSA.pdf",
+    },
+    {
       title: "GATE - CS Previous Year Ques",
       description: "All GATE CSE previous year papers.",
       link: "/downloads/Computer Science and Information Technology (CS).zip",
@@ -25,16 +35,6 @@ const categorizedSections: Record<Category, Section[]> = {
       title: "GATE - DA Previous Year Ques",
       description: "All GATE DA previous year papers.",
       link: "/downloads/Data Science and Artificial Intelligence (DA).zip",
-    },
-    {
-      title: "Microsoft DSA Ques",
-      description: "150+ previous Microsoft DSA interview questions.",
-      link: "/downloads/Microsoft DSA.pdf",
-    },
-    {
-      title: "Google DSA Ques",
-      description: "150+ previous Google DSA interview questions.",
-      link: "/downloads/Google DSA.pdf",
     },
     {
       title: "Linkedin DSA Ques",
@@ -62,19 +62,9 @@ const categorizedSections: Record<Category, Section[]> = {
   ],
   "Problem Statement / Practice Question": [
     {
-      title: "Hackfest Hackathon - 2024",
-      description: "Organized by CMR COLLEGE OF ENGINEERING.",
-      link: "/downloads/CMR HACKFEST HACKATHON.pdf",
-    },
-    {
-      title: "Code Coalescence-2025",
-      description: "Organized by MITS-DU, Gwalior.",
-      link: "/downloads/Code Coalescence-2025.pdf",
-    },
-    {
-      title: "Traffic Hackathon 2024",
-      description: "Organized by - IIT Jammu.",
-      link: "/downloads/Traffic hackathon Problem Statements.pdf",
+      title: "Bharatiya Antariksh 2025",
+      description: "Organized by government of India.",
+      link: "/downloads/antariksha problem.pdf",
     },
     {
       title: "Intellify Hackathon 2025",
@@ -82,16 +72,11 @@ const categorizedSections: Record<Category, Section[]> = {
       link: "/downloads/intellify_hackathon.pdf",
     },
     {
-      title: "Smart India Hackathon 2024",
-      description: "Organized by government of India.",
-      link: "/downloads/SIH_PS_2024.xlsx",
+      title: "Code Coalescence-2025",
+      description: "Organized by MITS-DU, Gwalior.",
+      link: "/downloads/Code Coalescence-2025.pdf",
     },
-        {
-      title: "Bharatiya Antariksh 2025",
-      description: "Organized by government of India.",
-      link: "/downloads/antariksha problem.pdf",
-    },
-     {
+    {
       title: "CNX Selected 2025",
       description: "Selected by CodeNeuraX.",
       link: "/downloads/cnx-problem statement.pdf",
@@ -101,10 +86,25 @@ const categorizedSections: Record<Category, Section[]> = {
       description: "Organized by Cloud Technologies.",
       link: "/downloads/cloud problem.pdf",
     },
-        {
+    {
       title: "Oddo Hackathon 2025",
       description: "Organized by Oddo.",
       link: "/downloads/oddo problem.pdf",
+    },
+    {
+      title: "Traffic Hackathon 2024",
+      description: "Organized by - IIT Jammu.",
+      link: "/downloads/Traffic hackathon Problem Statements.pdf",
+    },
+    {
+      title: "Smart India Hackathon 2024",
+      description: "Organized by government of India.",
+      link: "/downloads/SIH_PS_2024.xlsx",
+    },
+    {
+      title: "Hackfest Hackathon - 2024",
+      description: "Organized by CMR COLLEGE OF ENGINEERING.",
+      link: "/downloads/CMR HACKFEST HACKATHON.pdf",
     },
   ],
 };
@@ -169,7 +169,7 @@ export default function EContentPage() {
             className="text-center max-w-5xl mx-auto mb-6"
           >
             <h1 className="text-5xl md:text-6xl font-black mb-3 bg-gradient-to-r from-purple-400 via-pink-500 to-cyan-400 bg-clip-text text-transparent animate-gradient-x">
-              E-Content Library
+              CodeNeuraX Library
             </h1>
             <p className="text-base md:text-lg text-gray-300 mb-5 leading-relaxed">
               Access notes, previous year papers, and resources for your success.
@@ -251,7 +251,7 @@ export default function EContentPage() {
       </section>
       <footer className="border-t border-gray-800/50 py-12 relative mt-16">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-400 text-lg">Team CodeNeuraX</p>
+          <p className="text-gray-400 text-lg">Team CodeNeuraX 💙</p>
         </div>
       </footer>
     </div>

@@ -124,8 +124,15 @@ export default function StudyPage() {
     return null
   }
 
-  const courses = [
-    {
+  const courses = [      
+    {title: "Aayenge Jaldi , Sabar Rakho 💙👍",
+      description: "CodeNeuraX",
+      duration: "Soon",
+      level: "Under Development",
+      icon: <Code className="#" />,
+      color: "#",
+    },
+  /*  {
       title: "Full Stack Web Development",
       description: "Master React, Node.js, and modern web technologies",
       duration: "12 weeks",
@@ -156,7 +163,7 @@ export default function StudyPage() {
       level: "Advanced",
       icon: <Star className="w-8 h-8" />,
       color: "from-orange-500 to-red-500",
-    },
+    },*/
   ]
 
   const features = [
@@ -367,7 +374,7 @@ export default function StudyPage() {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Features Section }
       <section className="py-24 relative">
         <div className="container mx-auto px-4">
           <motion.div
@@ -448,7 +455,7 @@ export default function StudyPage() {
       {/* Footer */}
       <footer className="border-t border-gray-800/50 py-12 relative">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-400 text-lg">Team CodeNeuraX</p>
+          <p className="text-gray-400 text-lg">Team CodeNeuraX 💙</p>
         </div>
       </footer>
 

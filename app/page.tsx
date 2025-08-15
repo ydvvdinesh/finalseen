@@ -281,7 +281,7 @@ export default function HomePage() {
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center relative z-10">
                     <motion.div whileHover={{ scale: 1.05 }} className="group">
                       <div className="text-3xl sm:text-4xl font-black text-white mb-1 sm:mb-2 group-hover:text-cyan-400 transition-colors">
-                        2300+
+                        2400+
                       </div>
                       <div className="text-gray-400 text-sm sm:text-base font-medium">Active Members</div>
                     </motion.div>
@@ -361,7 +361,7 @@ export default function HomePage() {
                   <div className="text-left">
                     <div className="flex items-center gap-3 mb-3">
                       <Users className="w-6 h-6 text-purple-400" />
-                      <div className="text-2xl font-black text-white">2300+</div>
+                      <div className="text-2xl font-black text-white">2400+</div>
                     </div>
                     <div className="text-gray-400 text-sm">Active Members</div>
                   </div>
@@ -601,8 +601,6 @@ export default function HomePage() {
                         {event.status !== "Ongoing" && (
                           <a
                             href={event.registrationLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-medium px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm"
                           >
                             Register Now
@@ -653,9 +651,10 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Get in Touch Section */}
-        <section id="contact" className="py-16 sm:py-20 md:py-24 relative">
-          <div className="container mx-auto px-4 sm:px-6">
+
+        {/* Founder Section */}
+        <section id="founder" className="py-16 sm:py-20 md:py-24 relative">
+          <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -663,18 +662,23 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="text-center mb-12 sm:mb-16 md:mb-20"
             >
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-6 sm:mb-8">
-                Get in{" "}
-                <span className="bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">Touch</span>
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-6 sm:mb-8">
+                <Trophy className="w-5 h-5 text-white animate-pulse" />
+                <span className="text-white text-xs sm:text-sm font-medium tracking-wide">
+                  Team Member
+                </span>
+              </div>
+              
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-4 sm:mb-6 tracking-tight">
+                Meet Our <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-500 bg-clip-text text-transparent">Team</span>
               </h2>
-              <p className="text-lg sm:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-2">
-                Ready to join our community? Connect with us through any of these channels and start your tech journey
-                today.
+              <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                The passionate individuals driving CodeNeuraX forward and building an amazing platform.
               </p>
             </motion.div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 max-w-7xl mx-auto">
-              {/* Email */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 max-w-6xl mx-auto">
+              {/* Founder */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -682,33 +686,50 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="group text-center"
               >
-                <div className="bg-gray-900/50 backdrop-blur-xl border border-gray-800/50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-red-500/30 transition-all duration-500 hover:transform hover:scale-[1.02] sm:hover:scale-105 relative overflow-hidden h-full">
-                  <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="bg-gray-900/50 backdrop-blur-xl border border-gray-800/50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-cyan-500/30 transition-all duration-500 hover:transform hover:scale-[1.02] sm:hover:scale-105 relative overflow-hidden h-full">
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   
                   <div className="relative z-10">
-                    <div className="text-red-400 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 flex justify-center">
-                      <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                      </svg>
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 flex items-center justify-center text-white text-2xl sm:text-3xl font-bold">
+                      DY
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 group-hover:text-red-400 transition-colors">
-                      Email
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2 group-hover:text-cyan-400 transition-colors">
+                      Dinesh Yadav
                     </h3>
+                    <p className="text-cyan-400 font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Founder & Convener</p>
                     <p className="text-gray-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
-                      Drop us a line for partnerships and inquiries.
+                      Passionate about empowering the next generation of developers through community-driven learning and
+                      innovation.
                     </p>
-                    <a
-                      href="mailto:team@codeneurax.in"
-                      className="inline-flex items-center gap-2 text-red-400 hover:text-red-300 font-medium transition-colors group/link text-sm sm:text-base"
-                    >
-                      Contact Us
-                      <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 group-hover/link:translate-x-1 transition-transform" />
-                    </a>
+
+                    {/* Social Links */}
+                    <div className="flex justify-center gap-3 sm:gap-4">
+                      <a
+                        href="https://www.linkedin.com/in/dinesh-yadav-1b462831a/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/social bg-blue-600 hover:bg-blue-700 p-2 sm:p-3 rounded-lg sm:rounded-xl transition-all duration-300 transform hover:scale-110"
+                      >
+                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                      </a>
+                      <a
+                        href="https://www.instagram.com/ydvv.dinesh/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/social bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 p-2 sm:p-3 rounded-lg sm:rounded-xl transition-all duration-300 transform hover:scale-110"
+                      >
+                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.663.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.358-.2 6.78-2.618 6.98-6.98.058-1.281.072-1.689.072-4.948 0-3.259-.014-3.667-.072-4.947-.2-4.358-2.618-6.78-6.98-6.98C15.668.014 15.259 0 12 0zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </motion.div>
 
-              {/* WhatsApp */}
+              {/* Content Manager */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -716,33 +737,49 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="group text-center"
               >
-                <div className="bg-gray-900/50 backdrop-blur-xl border border-gray-800/50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-green-500/30 transition-all duration-500 hover:transform hover:scale-[1.02] sm:hover:scale-105 relative overflow-hidden h-full">
-                  <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
+                <div className="bg-gray-900/50 backdrop-blur-xl border border-gray-800/50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-purple-500/30 transition-all duration-500 hover:transform hover:scale-[1.02] sm:hover:scale-105 relative overflow-hidden h-full">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
                   <div className="relative z-10">
-                    <div className="text-green-400 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 flex justify-center">
-                      <MessageCircle className="w-8 h-8 sm:w-10 sm:h-10" />
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 rounded-full bg-gradient-to-r from-purple-400 to-pink-500 flex items-center justify-center text-white text-2xl sm:text-3xl font-bold">
+                      RI
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 group-hover:text-green-400 transition-colors">
-                      WhatsApp
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2 group-hover:text-purple-400 transition-colors">
+                      Rayan Ishani
                     </h3>
+                    <p className="text-purple-400 font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Content Head</p>
                     <p className="text-gray-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
-                      Join our main community group instantly.
+                      Creative content strategist focused on delivering engaging educational materials and community-driven content.
                     </p>
-                    <a
-                      href="https://chat.whatsapp.com/LqYC0LCO02hGCRTMeQoFLQ"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-green-400 hover:text-green-300 font-medium transition-colors group/link text-sm sm:text-base"
-                    >
-                      Join Community
-                      <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 group-hover/link:translate-x-1 transition-transform" />
-                    </a>
+
+                    {/* Social Links */}
+                    <div className="flex justify-center gap-3 sm:gap-4">
+                      <a
+                        href="https://www.linkedin.com/in/rayan-ishani-008528320/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/social bg-blue-600 hover:bg-blue-700 p-2 sm:p-3 rounded-lg sm:rounded-xl transition-all duration-300 transform hover:scale-110"
+                      >
+                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                      </a>
+                      <a
+                        href="https://www.instagram.com/rayanishani/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/social bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 p-2 sm:p-3 rounded-lg sm:rounded-xl transition-all duration-300 transform hover:scale-110"
+                      >
+                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.663.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.358-.2 6.78-2.618 6.98-6.98.058-1.281.072-1.689.072-4.948 0-3.259-.014-3.667-.072-4.947-.2-4.358-2.618-6.78-6.98-6.98C15.668.014 15.259 0 12 0zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </motion.div>
 
-              {/* LinkedIn */}
+              {/* Outreach Manager */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -751,99 +788,44 @@ export default function HomePage() {
                 className="group text-center"
               >
                 <div className="bg-gray-900/50 backdrop-blur-xl border border-gray-800/50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-blue-500/30 transition-all duration-500 hover:transform hover:scale-[1.02] sm:hover:scale-105 relative overflow-hidden h-full">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                  <div className="relative z-10">
-                    <div className="text-blue-400 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 flex justify-center">
-                      <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                    </svg>
-                    </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 group-hover:text-blue-400 transition-colors">
-                      LinkedIn
-                    </h3>
-                    <p className="text-gray-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
-                      Connect with us professionally.
-                    </p>
-                    <a
-                      href="https://www.linkedin.com/company/codeneurax/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-medium transition-colors group/link text-sm sm:text-base"
-                    >
-                      Follow Us
-                      <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 group-hover/link:translate-x-1 transition-transform" />
-                    </a>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Instagram */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                viewport={{ once: true }}
-                className="group text-center"
-              >
-                <div className="bg-gray-900/50 backdrop-blur-xl border border-gray-800/50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-pink-500/30 transition-all duration-500 hover:transform hover:scale-[1.02] sm:hover:scale-105 relative overflow-hidden h-full">
-                  <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-400/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   
                   <div className="relative z-10">
-                    <div className="text-pink-400 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 flex justify-center">
-                      <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.663.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.358-.2 6.78-2.618 6.98-6.98.058-1.281.072-1.689.072-4.948 0-3.259-.014-3.667-.072-4.947-.2-4.358-2.618-6.78-6.98-6.98C15.668.014 15.259 0 12 0zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                      </svg>
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 rounded-full bg-gradient-to-r from-blue-400 to-cyan-500 flex items-center justify-center text-white text-2xl sm:text-3xl font-bold">
+                      SN
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 group-hover:text-pink-400 transition-colors">
-                      Instagram
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2 group-hover:text-blue-400 transition-colors">
+                      Shiva Nagesh
                     </h3>
+                    <p className="text-blue-400 font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Outreach Manager</p>
                     <p className="text-gray-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
-                      Follow us for community highlights.
+                    Forging powerful partnerships and driving greater impact and extending our reach to empower more tech enthusiasts worldwide.
                     </p>
-                    <a
-                      href="https://www.instagram.com/codeneurax/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-pink-400 hover:text-pink-300 font-medium transition-colors group/link text-sm sm:text-base"
-                    >
-                      Follow Us
-                      <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 group-hover/link:translate-x-1 transition-transform" />
-                    </a>
-                  </div>
-                </div>
-              </motion.div>
 
-              {/* YouTube */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true }}
-                className="group text-center"
-              >
-                <div className="bg-gray-900/50 backdrop-blur-xl border border-gray-800/50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-red-600/30 transition-all duration-500 hover:transform hover:scale-[1.02] sm:hover:scale-105 relative overflow-hidden h-full">
-                  <div className="absolute inset-0 bg-gradient-to-br from-red-600/5 to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                  <div className="relative z-10">
-                    <div className="text-red-500 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 flex justify-center">
-                      <Youtube className="w-8 h-8 sm:w-10 sm:h-10" />
+                    {/* Social Links */}
+                    <div className="flex justify-center gap-3 sm:gap-4">
+                      <a
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/social bg-blue-600 hover:bg-blue-700 p-2 sm:p-3 rounded-lg sm:rounded-xl transition-all duration-300 transform hover:scale-110"
+                      >
+                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                      </a>
+                      <a
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <div className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 p-3 rounded-xl transition-all duration-300">
+                          <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.663.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.358-.2 6.78-2.618 6.98-6.98.058-1.281.072-1.689.072-4.948 0-3.259-.014-3.667-.072-4.947-.2-4.358-2.618-6.78-6.98-6.98C15.668.014 15.259 0 12 0zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                          </svg>
+                        </div>
+                      </a>
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 group-hover:text-red-500 transition-colors">
-                      YouTube
-                    </h3>
-                    <p className="text-gray-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
-                      Watch our tutorials and events.
-                    </p>
-                    <a
-                      href="https://www.youtube.com/@codeneurax"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-red-500 hover:text-red-400 font-medium transition-colors group/link text-sm sm:text-base"
-                    >
-                      Subscribe
-                      <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 group-hover/link:translate-x-1 transition-transform" />
-                    </a>
                   </div>
                 </div>
               </motion.div>
@@ -968,10 +950,208 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Get in Touch Section */}
+        <section id="contact" className="py-16 sm:py-20 md:py-24 relative">
+          <div className="container mx-auto px-4 sm:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-12 sm:mb-16 md:mb-20"
+            >
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-6 sm:mb-8">
+                Get in{" "}
+                <span className="bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">Touch</span>
+              </h2>
+              <p className="text-lg sm:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-2">
+                Ready to join our community? Connect with us through any of these channels and start your tech journey
+                today.
+              </p>
+            </motion.div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 max-w-7xl mx-auto">
+              {/* Email */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="group text-center"
+              >
+                <div className="bg-gray-900/50 backdrop-blur-xl border border-gray-800/50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-red-500/30 transition-all duration-500 hover:transform hover:scale-[1.02] sm:hover:scale-105 relative overflow-hidden h-full">
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  <div className="relative z-10">
+                    <div className="text-red-400 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 flex justify-center">
+                      <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 group-hover:text-red-400 transition-colors">
+                      Email
+                    </h3>
+                    <p className="text-gray-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
+                      Drop us a line for partnerships and inquiries.
+                    </p>
+                    <a
+                      href="mailto:team@codeneurax.in"
+                      className="inline-flex items-center gap-2 text-red-400 hover:text-red-300 font-medium transition-colors group/link text-sm sm:text-base"
+                    >
+                      Contact Us
+                      <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 group-hover/link:translate-x-1 transition-transform" />
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* WhatsApp */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="group text-center"
+              >
+                <div className="bg-gray-900/50 backdrop-blur-xl border border-gray-800/50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-green-500/30 transition-all duration-500 hover:transform hover:scale-[1.02] sm:hover:scale-105 relative overflow-hidden h-full">
+                  <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  <div className="relative z-10">
+                    <div className="text-green-400 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 flex justify-center">
+                      <MessageCircle className="w-8 h-8 sm:w-10 sm:h-10" />
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 group-hover:text-green-400 transition-colors">
+                      WhatsApp
+                    </h3>
+                    <p className="text-gray-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
+                      Join our main community group instantly.
+                    </p>
+                    <a
+                      href="https://chat.whatsapp.com/LqYC0LCO02hGCRTMeQoFLQ"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-green-400 hover:text-green-300 font-medium transition-colors group/link text-sm sm:text-base"
+                    >
+                      Join Community
+                      <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 group-hover/link:translate-x-1 transition-transform" />
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* LinkedIn */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="group text-center"
+              >
+                <div className="bg-gray-900/50 backdrop-blur-xl border border-gray-800/50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-blue-500/30 transition-all duration-500 hover:transform hover:scale-[1.02] sm:hover:scale-105 relative overflow-hidden h-full">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  <div className="relative z-10">
+                    <div className="text-blue-400 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 flex justify-center">
+                      <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 group-hover:text-blue-400 transition-colors">
+                      LinkedIn
+                    </h3>
+                    <p className="text-gray-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
+                      Connect with us professionally.
+                    </p>
+                    <a
+                      href="https://www.linkedin.com/company/codeneurax/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-medium transition-colors group/link text-sm sm:text-base"
+                    >
+                      Follow Us
+                      <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 group-hover/link:translate-x-1 transition-transform" />
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Instagram */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="group text-center"
+              >
+                <div className="bg-gray-900/50 backdrop-blur-xl border border-gray-800/50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-pink-500/30 transition-all duration-500 hover:transform hover:scale-[1.02] sm:hover:scale-105 relative overflow-hidden h-full">
+                  <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  <div className="relative z-10">
+                    <div className="text-pink-400 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 flex justify-center">
+                      <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.663.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.358-.2 6.78-2.618 6.98-6.98.058-1.281.072-1.689.072-4.948 0-3.259-.014-3.667-.072-4.947-.2-4.358-2.618-6.78-6.98-6.98C15.668.014 15.259 0 12 0zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 group-hover:text-pink-400 transition-colors">
+                      Instagram
+                    </h3>
+                    <p className="text-gray-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
+                      Follow us for community highlights.
+                    </p>
+                    <a
+                      href="https://www.instagram.com/codeneurax/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-pink-400 hover:text-pink-300 font-medium transition-colors group/link text-sm sm:text-base"
+                    >
+                      Follow Us
+                      <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 group-hover/link:translate-x-1 transition-transform" />
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* YouTube */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="group text-center"
+              >
+                <div className="bg-gray-900/50 backdrop-blur-xl border border-gray-800/50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-red-600/30 transition-all duration-500 hover:transform hover:scale-[1.02] sm:hover:scale-105 relative overflow-hidden h-full">
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-600/5 to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  <div className="relative z-10">
+                    <div className="text-red-500 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 flex justify-center">
+                      <Youtube className="w-8 h-8 sm:w-10 sm:h-10" />
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 group-hover:text-red-500 transition-colors">
+                      YouTube
+                    </h3>
+                    <p className="text-gray-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
+                      Watch our tutorials and events.
+                    </p>
+                    <a
+                      href="https://www.youtube.com/@codeneurax"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-red-500 hover:text-red-400 font-medium transition-colors group/link text-sm sm:text-base"
+                    >
+                      Subscribe
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* Footer */}
         <footer className="border-t border-gray-800/50 py-12 relative">
           <div className="container mx-auto px-4 text-center">
-            <p className="text-gray-400 text-lg">Team CodeNeuraX</p>
+            <p className="text-gray-400 text-lg">Team CodeNeuraX 💙</p>
           </div>
         </footer>
       </div>
