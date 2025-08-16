@@ -662,12 +662,6 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="text-center mb-12 sm:mb-16 md:mb-20"
             >
-              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-6 sm:mb-8">
-                <Trophy className="w-5 h-5 text-white animate-pulse" />
-                <span className="text-white text-xs sm:text-sm font-medium tracking-wide">
-                  Team Member
-                </span>
-              </div>
               
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-4 sm:mb-6 tracking-tight">
                 Meet Our <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-500 bg-clip-text text-transparent">Team</span>
