@@ -805,7 +805,7 @@ export default function HomePage() {
                     {/* Social Links */}
                     <div className="flex justify-center gap-3 sm:gap-4">
                       <a
-                        href="#"
+                        href="https://www.linkedin.com/in/padala-siva-nagesh-908300343"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group/social bg-blue-600 hover:bg-blue-700 p-2 sm:p-3 rounded-lg sm:rounded-xl transition-all duration-300 transform hover:scale-110"
@@ -815,7 +815,7 @@ export default function HomePage() {
                         </svg>
                       </a>
                       <a
-                        href="#"
+                        href="https://www.instagram.com/shhivaa_.001?igsh=MTN5YWNxMG1tdG12Nw=="
                         target="_blank"
                         rel="noopener noreferrer"
                       >
