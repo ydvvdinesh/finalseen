@@ -170,15 +170,15 @@ export default function HomePage() {
       image: "/images/Arkja Gaur - SIH Winner 2024.webp",
     },
     {
-      title: "Breaking SDE by Amazon Professional – How to Become a Software Engineer & get job into Amazon",
-      date: "TBA",
+      title: "CodeNeuraX Webinar: Data Science & AI Roadmap",
+      date: "Sep 19,2025",
       time: "6:00 PM - 8:00 PM",
       location: "Online",
       type: "Webinar",
-      description: "Industry experts discuss career paths, skills needed, and opportunities in SDE field.",
-      status: "ongoing",
-      registrationLink: "#",
-      image: "/images/cnxx-logo-zoom.webp",
+      description: "​From Resume to Research: A step-by-step guide to crafting your career in Data Science & AI. ​Abhinav Kumar – Data Scientist (4+ years) at LTIMindtree, Stealth Startup Founder and NIT Warangal alumnus.",
+      status: "Upcoming",
+      registrationLink: "https://lu.ma/5b175jfy",
+      image: "/images/Abhinav Kumar - CodeNeuraX - 11 - Final.webp",
     },
   ];
 
