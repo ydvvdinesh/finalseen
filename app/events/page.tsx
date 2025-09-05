@@ -67,19 +67,19 @@ export default function EventsPage() {
       duration: "2 Hours",
       highlights: ["DSA", "Gate Prepartion", "AI & ML", "Project Deployment"]
     },
-    /*{
-      id: 2,
-      title: "AI & Machine Learning Summit",
-      description: "Industry experts sharing insights on the latest trends in artificial intelligence and machine learning applications.",
-      date: "February 28, 2024",
-      location: "Virtual Event",
-      attendees: 300,
-      image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800",
-      category: "Conference",
-      duration: "1 Day",
-      highlights: ["Deep Learning", "Neural Networks", "AI Ethics", "Industry Applications"]
-    },
     {
+      id: 2,
+      title: "How to Win Smart India Hackathon 2025",
+      description: "Expect practical checklists for SIH readiness, plug-and-play templates for planning and pitching, and a live Q&A with feedback on your approach.",
+      date: "September  1, 2025",
+      location: "Google Meet",
+      attendees: 172,
+      image: "/images/Arkja Gaur - SIH Winner 2024.webp",
+      category: "Webinar",
+      duration: "2 Hours",
+      highlights: ["Team Formation", "Judges", "Problem Statement", "Industry Applications"]
+    },
+    /*{
       id: 3,
       title: "Mobile App Development Workshop",
       description: "Hands-on workshop for building cross-platform mobile applications using React Native and Flutter.",

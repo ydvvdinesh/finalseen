@@ -89,26 +89,37 @@ export default function EventPage({ params }: EventPageProps) {
     },
     "2": {
       id: 2,
-      title: "AI & Machine Learning Summit",
-      description: "Industry experts sharing insights on the latest trends in artificial intelligence and machine learning applications. A full-day conference featuring keynotes, panel discussions, and networking opportunities.",
-      date: "February 28, 2024",
-      location: "Virtual Event",
-      attendees: 300,
-      image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      category: "Conference",
-      duration: "1 Day",
-      highlights: ["Deep Learning", "Neural Networks", "AI Ethics", "Industry Applications"],
-      youtubeId: "jNQXAC9IVRw", // Sample YouTube video ID
-      instructor: "Dr. Michael Roberts",
-      rating: 4.9,
-      totalRatings: 287,
+      title: "How to Win Smart India Hackathon 2025",
+      description: "Expect practical checklists for SIH readiness, plug-and-play templates for planning and pitching, and a live Q&A with feedback on your approach.",
+      date: "Sepptember 1, 2025",
+      location: "Google Meet",
+      attendees: 172,
+      image: "/images/Arkja Gaur - SIH Winner 2024.webp",
+      category: "Webinar",
+      duration: "2 Hours",
+      highlights: ["Team Formation", "Judges", "Problem Statement", "Industry Applications"],
+      youtubeId: "bL79zxRykuo", // Sample YouTube video ID
+      instructor: "Arkja Gaur",
+      rating: 5,
+      totalRatings: 15,
       agenda: [
-        { day: "Morning", topics: ["AI Trends 2024", "Deep Learning Advances", "Ethics in AI"] },
-        { day: "Afternoon", topics: ["Industry Case Studies", "Future of ML", "Q&A Panel"] }
+        { day: "Part 1", topics: [      "Overview of Smart India Hackathon",
+          "Key Benefits of Participation",
+          "Success Story: Winning SIH 2024"] },
+        { day: "Part 2", topics: [      "Overview of Smart India Hackathon & Success Story (2024 Winner)",
+          "How to Choose the Right Problem Statement",
+          "Effective Team Formation and Role Division",
+          "Tools & Platforms for Smooth Collaboration",
+          "Building a Prototype under Time Constraints",
+          "Judging Criteria & How to Impress the Panel",
+          "Pitching and Presentation Skills",
+          "Industry Applications of SIH Projects",
+          "Live Q&A and Personalized Feedback"
+        ] }
       ],
       testimonials: [
-        { name: "David Kim", role: "Data Scientist", comment: "Incredible insights from industry leaders!" },
-        { name: "Lisa Wang", role: "ML Engineer", comment: "The networking opportunities were invaluable." }
+        { name: "Divya Parmar", role: "3rd year,B.tech", comment: "Incredible insights from industry leaders!" },
+        { name: "Navadeep", role: "2nd year,B.tech", comment: "The networking opportunities were invaluable." }
       ]
     },
     "3": {

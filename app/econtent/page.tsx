@@ -51,6 +51,21 @@ const categorizedSections: Record<Category, Section[]> = {
       description: "150+ previous Amazon DSA interview questions.",
       link: "/downloads/Amazon DSA.pdf",
     },
+    {
+      title: "Capgemini DSA Ques",
+      description: "150+ previous Capgemini DSA interview questions.",
+      link: "/downloads/capgemini question.pdf",
+    },
+    {
+      title: "Deloitte DSA Ques",
+      description: "150+ previous Deloitte DSA interview questions.",
+      link: "/downloads/deloitte question.pdf",
+    },
+    {
+      title: "TCS DSA Ques",
+      description: "150+ previous TCS DSA interview questions.",
+      link: "/downloads/tcs question.pdf",
+    },
   ],
   Notes: [
     {

@@ -158,7 +158,7 @@ export default function HomePage() {
   };
 
   const events: EventType[] = [
-    {
+   /* {
       title: "How to Win Smart India Hackathon 2025",
       date: "Sep 1,2025",
       time: "06:00 PM - 8:00 PM",
@@ -168,7 +168,7 @@ export default function HomePage() {
       status: "ongoing",
       registrationLink: "https://lu.ma/rtfoub6j",
       image: "/images/Arkja Gaur - SIH Winner 2024.webp",
-    },
+    },*/
     {
       title: "CodeNeuraX Webinar: Data Science & AI Roadmap",
       date: "Sep 19,2025",
@@ -281,7 +281,7 @@ export default function HomePage() {
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center relative z-10">
                     <motion.div whileHover={{ scale: 1.05 }} className="group">
                       <div className="text-3xl sm:text-4xl font-black text-white mb-1 sm:mb-2 group-hover:text-cyan-400 transition-colors">
-                        2500+
+                        2700+
                       </div>
                       <div className="text-gray-400 text-sm sm:text-base font-medium">Active Members</div>
                     </motion.div>
@@ -361,7 +361,7 @@ export default function HomePage() {
                   <div className="text-left">
                     <div className="flex items-center gap-3 mb-3">
                       <Users className="w-6 h-6 text-purple-400" />
-                      <div className="text-2xl font-black text-white">2500+</div>
+                      <div className="text-2xl font-black text-white">2700+</div>
                     </div>
                     <div className="text-gray-400 text-sm">Active Members</div>
                   </div>
@@ -399,11 +399,13 @@ export default function HomePage() {
                   >
                     <CarouselContent className="h-96">
                       {[
+                        "/images/CodeNeuraX.webp",
                         "/images/Founder - CNX -1.webp",
                         "/images/From the backstage.webp",
                         "/images/Founder - CNX -2.webp",
-                        "/images/CodeNeuraX.webp",
-                        "/images/Career Guidance by sonu yadav.webp"
+                        "/images/Career Guidance by sonu yadav.webp",
+                        "/images/mam with cnxx.webp",
+                        "/images/conxx-team.webp",
                       ].map((image, index) => (
                         <CarouselItem key={index} className="relative h-96">
                           <Image
