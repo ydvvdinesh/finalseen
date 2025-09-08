@@ -281,7 +281,7 @@ export default function HomePage() {
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center relative z-10">
                     <motion.div whileHover={{ scale: 1.05 }} className="group">
                       <div className="text-3xl sm:text-4xl font-black text-white mb-1 sm:mb-2 group-hover:text-cyan-400 transition-colors">
-                        2700+
+                        2900+
                       </div>
                       <div className="text-gray-400 text-sm sm:text-base font-medium">Active Members</div>
                     </motion.div>
@@ -361,7 +361,7 @@ export default function HomePage() {
                   <div className="text-left">
                     <div className="flex items-center gap-3 mb-3">
                       <Users className="w-6 h-6 text-purple-400" />
-                      <div className="text-2xl font-black text-white">2700+</div>
+                      <div className="text-2xl font-black text-white">2900+</div>
                     </div>
                     <div className="text-gray-400 text-sm">Active Members</div>
                   </div>
