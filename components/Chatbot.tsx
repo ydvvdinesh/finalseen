@@ -74,6 +74,7 @@ const Chatbot: React.FC = () => {
     if (lowerInput.includes('about') || lowerInput.includes('what is codeneura')) {
       return {
         text: "CodeNeuraX is a student-led tech community founded in 2025 by Dinesh Yadav. We connect, inspire, and empower the next generation of coders, developers, and innovators. With 2900+ active members, we offer:\n\n• 4 specialized WhatsApp groups\n• Monthly workshops and events\n• Coding challenges and competitions\n• Career guidance and internship support\n• Learning resources for multiple programming languages",
+
         quickActions: [
           { label: "Join Community", action: "join" },
           { label: "View Events", action: "events" },

@@ -41,5 +41,6 @@ function createMockClient() {
         getPublicUrl: () => ({ data: { publicUrl: "" }, error: null }),
       }),
     },
+
   }
 }
