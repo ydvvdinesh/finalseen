@@ -80,12 +80,12 @@ const categorizedSections: Record<Category, Section[]> = {
     },
         {
       title: "C++ Practice Questions",
-      description: "Python questions for beginners and advanced learners.",
+      description: "C++ questions for beginners and advanced learners.",
       link: "/downloads/c++ question.pdf",
     },
         {
       title: "Java Practice Questions",
-      description: "Python questions for beginners and advanced learners.",
+      description: "Java questions for beginners and advanced learners.",
       link: "/downloads/java question.pdf",
     },
   ],
