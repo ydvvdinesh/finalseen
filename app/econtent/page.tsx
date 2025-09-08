@@ -73,7 +73,21 @@ const categorizedSections: Record<Category, Section[]> = {
       description: "Python questions for beginners and advanced learners.",
       link: "/downloads/python-notes.pdf",
     },
-    // ...existing code...
+       {
+      title: "C Practice Questions",
+      description: "C questions for beginners and advanced learners.",
+      link: "/downloads/c question.pdf",
+    },
+        {
+      title: "C++ Practice Questions",
+      description: "Python questions for beginners and advanced learners.",
+      link: "/downloads/c++ question.pdf",
+    },
+        {
+      title: "Java Practice Questions",
+      description: "Python questions for beginners and advanced learners.",
+      link: "/downloads/java question.pdf",
+    },
   ],
   "Problem Statement / Practice Question": [
     {
