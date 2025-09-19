@@ -104,6 +104,7 @@ export default function CampusAmbassadorsPage() {
             </h1>
             <p className="text-gray-300 text-lg md:text-xl max-w-3xl">
               Join CodeNeuraX as a Campus Ambassador for (2025-26). Organize events, grow communities, and unlock exclusive perks.
+
             </p>
           </motion.div>
         </div>

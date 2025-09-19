@@ -41,6 +41,7 @@ export const AMBASSADORS: Ambassador[] = [
   {
     id: "3",
     name: "Khushi Sharma",
+
     tenure: "Tenure (2025–26)",
     university: "Indira Gandhi Delhi Technical University For Women",
     department: "Bachelor of Business Administration",
@@ -72,3 +73,4 @@ export const AMBASSADORS: Ambassador[] = [
     socials: [{ platform: "LinkedIn", url: "https://www.linkedin.com/in/gecrai240200143027/" }],
   }
 ]
+
