@@ -79,19 +79,19 @@ export default function EventsPage() {
       duration: "2 Hours",
       highlights: ["Team Formation", "Judges", "Problem Statement", "Industry Applications"]
     },
-    /*{
+    {
       id: 3,
-      title: "Mobile App Development Workshop",
-      description: "Hands-on workshop for building cross-platform mobile applications using React Native and Flutter.",
-      date: "January 20-21, 2024",
-      location: "Innovation Hub, Downtown",
-      attendees: 80,
-      image: "https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=800",
-      category: "Workshop",
-      duration: "2 Days",
+      title: "CodeNeuraX Webinar: Data Science & AI Roadmap",
+      description: "From Resume to Research: A step-by-step guide to crafting your career in Data Science & AI. ​Abhinav Kumar – Data Scientist (4+ years) at LTIMindtree, Stealth Startup Founder and NIT Warangal alumnus.",
+      date: "September 19,2025",
+      location: "Google Meet",
+      attendees: 109,
+      image: "/images/Abhinav Kumar - CodeNeuraX - 11 - Final.webp",
+      category: "Webinar",
+      duration: "2 Hours",
       highlights: ["React Native", "Flutter", "App Store Deployment", "UI/UX Design"]
     },
-    {
+   /* {
       id: 4,
       title: "Cybersecurity Awareness Seminar",
       description: "Essential cybersecurity practices for developers and IT professionals in the modern digital landscape.",

@@ -158,18 +158,18 @@ export default function HomePage() {
   };
 
   const events: EventType[] = [
-   /* {
-      title: "How to Win Smart India Hackathon 2025",
-      date: "Sep 1,2025",
+    {
+      title: "From Tier-3 to Flipkart : Software Developer Roadmap",
+      date: "October 15,2025",
       time: "06:00 PM - 8:00 PM",
       location: "Online",
-      type: "Workshop",
-      description: "Join our expert-led session by Arkja Gaur and take the first step toward winning hackathon.",
-      status: "ongoing",
-      registrationLink: "https://lu.ma/rtfoub6j",
-      image: "/images/Arkja Gaur - SIH Winner 2024.webp",
-    },*/
-    {
+      type: "Webinar",
+      description: "Join our expert-led session by Mansi Somani and take the first step toward yours goal.",
+      status: "coming soon",
+      registrationLink: "https://luma.com/wzwud1ym",
+      image: "/images/Mansi Somani - 1.webp",
+    },
+   /* {
       title: "CodeNeuraX Webinar: Data Science & AI Roadmap",
       date: "Sep 19,2025",
       time: "6:00 PM - 8:00 PM",
@@ -179,7 +179,7 @@ export default function HomePage() {
       status: "Upcoming",
       registrationLink: "https://lu.ma/5b175jfy",
       image: "/images/Abhinav Kumar - CodeNeuraX - 11 - Final.webp",
-    },
+    },*/
   ];
 
   const autoplay = useRef(
