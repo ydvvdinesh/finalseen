@@ -159,7 +159,7 @@ export default function HomePage() {
 
   const events: EventType[] = [
     {
-      title: "From Tier-3 to Flipkart : Software Developer Roadmap",
+      title: "From Tier-3 to Flipkart : A Complete Software Developer Roadmap",
       date: "October 15,2025",
       time: "06:00 PM - 8:00 PM",
       location: "Online",
