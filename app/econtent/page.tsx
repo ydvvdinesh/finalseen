@@ -69,25 +69,35 @@ const categorizedSections: Record<Category, Section[]> = {
   ],
   Notes: [
     {
-      title: "Python Practice Questions",
-      description: "Python questions for beginners and advanced learners.",
-      link: "/downloads/python-notes.pdf",
+      title: "Python Notes",
+      description: "Python Handwritten Notes for beginners and advanced learners.",
+      link: "/downloads/python programming-notes.pdf",
     },
        {
-      title: "C Practice Questions",
-      description: "C questions for beginners and advanced learners.",
-      link: "/downloads/c question.pdf",
+      title: "C Notes",
+      description: "C Handwritten Notes for beginners and advanced learners.",
+      link: "/downloads/C-Notes.pdf",
     },
         {
-      title: "C++ Practice Questions",
-      description: "C++ questions for beginners and advanced learners.",
-      link: "/downloads/c++ questions.pdf",
+      title: "C++ Notes",
+      description: "C++ Handwritten Notes for beginners and advanced learners",
+      link: "/downloads/C++-Notes.pdf",
 
     },
         {
-      title: "Java Practice Questions",
-      description: "Java questions for beginners and advanced learners.",
-      link: "/downloads/java question.pdf",
+      title: "DSA Notes",
+      description: "DSA Handwritten Notes for beginners and advanced learners",
+      link: "/downloads/DSA-Notes.pdf",
+    },
+    {
+      title: "SQL Notes",
+      description: "SQL Handwritten Notes for beginners and advanced learners",
+      link: "/downloads/SQL-Notes.pdf",
+    },
+    {
+      title: "OoPs Concept Notes",
+      description: "OoPs Handwritten Notes for beginners and advanced learners",
+      link: "/downloads/OOPs -Notes.pdf",
     },
   ],
   "Problem Statement / Practice Question": [
@@ -135,6 +145,27 @@ const categorizedSections: Record<Category, Section[]> = {
       title: "Hackfest Hackathon - 2024",
       description: "Organized by CMR COLLEGE OF ENGINEERING.",
       link: "/downloads/CMR HACKFEST HACKATHON.pdf",
+    },
+       {
+      title: "Python Practice Questions",
+      description: "Python questions for beginners and advanced learners.",
+      link: "/downloads/python-notes.pdf",
+    },
+       {
+      title: "C Practice Questions",
+      description: "C questions for beginners and advanced learners.",
+      link: "/downloads/c question.pdf",
+    },
+        {
+      title: "C++ Practice Questions",
+      description: "C++ questions for beginners and advanced learners.",
+      link: "/downloads/c++ questions.pdf",
+
+    },
+        {
+      title: "Java Practice Questions",
+      description: "Java questions for beginners and advanced learners.",
+      link: "/downloads/java question.pdf",
     },
   ],
 };
