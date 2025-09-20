@@ -90,8 +90,8 @@ const categorizedSections: Record<Category, Section[]> = {
       link: "https://vyyrpodenrxjgjgmlxeu.supabase.co/storage/v1/object/sign/Notes/DSA-Notes-min.pdf?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8wMDUxZTBjYS05MDlmLTQxMWItYjc1NC0wODM3NjdlY2YyNjYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJOb3Rlcy9EU0EtTm90ZXMtbWluLnBkZiIsImlhdCI6MTc1ODM5NzQwNywiZXhwIjozMTU1MzU4Mzk3NDA3fQ.lDtEz_liqRBzu6Chy_yAnepyGDT4fYcgzzk6rXDV6Sw",
     },
     {
-      title: "SQL Notes",
-      description: "SQL Handwritten Notes for beginners and advanced learners",
+      title: "SQL/DBMS Notes",
+      description: "SQL/DBMS Handwritten Notes for beginners and advanced learners",
       link: "https://vyyrpodenrxjgjgmlxeu.supabase.co/storage/v1/object/sign/Notes/SQL-Notes.pdf?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8wMDUxZTBjYS05MDlmLTQxMWItYjc1NC0wODM3NjdlY2YyNjYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJOb3Rlcy9TUUwtTm90ZXMucGRmIiwiaWF0IjoxNzU4Mzk2ODU0LCJleHAiOjIwNzM3NTY4NTR9.M13tD1ebPiNn7TRD0lR6JBp6cedNJvNpv0ohRF_CCsU",
     },
     {
