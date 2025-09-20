@@ -71,17 +71,17 @@ const categorizedSections: Record<Category, Section[]> = {
     {
       title: "Python Notes",
       description: "Python Handwritten Notes for beginners and advanced learners.",
-      link: "/downloads/python programming-notes.pdf",
+      link: "https://vyyrpodenrxjgjgmlxeu.supabase.co/storage/v1/object/sign/Notes/python%20programming-notes.pdf?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8wMDUxZTBjYS05MDlmLTQxMWItYjc1NC0wODM3NjdlY2YyNjYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJOb3Rlcy9weXRob24gcHJvZ3JhbW1pbmctbm90ZXMucGRmIiwiaWF0IjoxNzU4Mzk2NTU2LCJleHAiOjIwNzM3NTY1NTZ9.6iFn4Jn7CkoWgV1vY5i5SSqrNv8olpmipcAM3r8fAVM",
     },
        {
       title: "C Notes",
       description: "C Handwritten Notes for beginners and advanced learners.",
-      link: "/downloads/C-Notes.pdf",
+      link: "https://vyyrpodenrxjgjgmlxeu.supabase.co/storage/v1/object/sign/Notes/C-Notes.pdf?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8wMDUxZTBjYS05MDlmLTQxMWItYjc1NC0wODM3NjdlY2YyNjYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJOb3Rlcy9DLU5vdGVzLnBkZiIsImlhdCI6MTc1ODM5NjU5MCwiZXhwIjoyMDczNzU2NTkwfQ.1S-kWVF_aRnIpP4RqORy_l83SrO1bAghC8yvjzdP0bU",
     },
         {
       title: "C++ Notes",
       description: "C++ Handwritten Notes for beginners and advanced learners",
-      link: "/downloads/C++-Notes.pdf",
+      link: "https://vyyrpodenrxjgjgmlxeu.supabase.co/storage/v1/object/sign/Notes/C++-Notes.pdf?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8wMDUxZTBjYS05MDlmLTQxMWItYjc1NC0wODM3NjdlY2YyNjYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJOb3Rlcy9DKystTm90ZXMucGRmIiwiaWF0IjoxNzU4Mzk2Njg0LCJleHAiOjIwNzM3NTY2ODR9.l1RvMsueT3OMb6ybsMx1tjK3Op8bwYYbXmhyp3WzJAQ",
 
     },
         {
@@ -92,12 +92,12 @@ const categorizedSections: Record<Category, Section[]> = {
     {
       title: "SQL Notes",
       description: "SQL Handwritten Notes for beginners and advanced learners",
-      link: "/downloads/SQL-Notes.pdf",
+      link: "https://vyyrpodenrxjgjgmlxeu.supabase.co/storage/v1/object/sign/Notes/SQL-Notes.pdf?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8wMDUxZTBjYS05MDlmLTQxMWItYjc1NC0wODM3NjdlY2YyNjYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJOb3Rlcy9TUUwtTm90ZXMucGRmIiwiaWF0IjoxNzU4Mzk2ODU0LCJleHAiOjIwNzM3NTY4NTR9.M13tD1ebPiNn7TRD0lR6JBp6cedNJvNpv0ohRF_CCsU",
     },
     {
       title: "OoPs Concept Notes",
       description: "OoPs Handwritten Notes for beginners and advanced learners",
-      link: "/downloads/OOPs -Notes.pdf",
+      link: "https://vyyrpodenrxjgjgmlxeu.supabase.co/storage/v1/object/sign/Notes/OOPs%20-Notes.pdf?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8wMDUxZTBjYS05MDlmLTQxMWItYjc1NC0wODM3NjdlY2YyNjYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJOb3Rlcy9PT1BzIC1Ob3Rlcy5wZGYiLCJpYXQiOjE3NTgzOTY4ODksImV4cCI6MjA3Mzc1Njg4OX0.ZZbYA3CHKouK9iB2LGZ1TbnlJcUxvCTgE5sUNUP78JQ",
     },
   ],
   "Problem Statement / Practice Question": [
