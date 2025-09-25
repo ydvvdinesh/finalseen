@@ -60,7 +60,7 @@ export default function HomePage() {
   // Contact form state
   const [cfName, setCfName] = useState("")
   const [cfEmail, setCfEmail] = useState("")
-  const [cfMobile, setCfMobile] = useState(""); // Add mobile number state
+  const [cfMobile, setCfMobile] = useState("")
   const [cfTopic, setCfTopic] = useState("career_guidance")
   const [cfMessage, setCfMessage] = useState("")
   const [cfSending, setCfSending] = useState(false)
@@ -79,7 +79,7 @@ export default function HomePage() {
         body: JSON.stringify({
           name: cfName,
           email: cfEmail,
-          mobile: cfMobile, // <-- add mobile
+          mobile: cfMobile,
           topic: cfTopic,
           message: cfMessage,
         }),
@@ -169,17 +169,15 @@ export default function HomePage() {
       registrationLink: "https://luma.com/wzwud1ym",
       image: "/images/Mansi Somani - 1.webp",
     },
-   /* {
-      title: "CodeNeuraX Webinar: Data Science & AI Roadmap",
-      date: "Sep 19,2025",
-      time: "6:00 PM - 8:00 PM",
-      location: "Online",
-      type: "Webinar",
-      description: "​From Resume to Research: A step-by-step guide to crafting your career in Data Science & AI. ​Abhinav Kumar – Data Scientist (4+ years) at LTIMindtree, Stealth Startup Founder and NIT Warangal alumnus.",
-      status: "Upcoming",
-      registrationLink: "https://lu.ma/5b175jfy",
-      image: "/images/Abhinav Kumar - CodeNeuraX - 11 - Final.webp",
-    },*/
+  ];
+
+  // Fixed: Define sponsor images as an array
+  const sponsorImages = [
+    "/images/paranox2.png",
+    "/images/intellify.png",
+    "/images/techxninja.jpg",
+    "/images/RC.png",
+    "/images/Marwadi university.png",
   ];
 
   const autoplay = useRef(
@@ -188,7 +186,6 @@ export default function HomePage() {
 
   return (
     <>
-      {/* ...existing code... */}
       <div className="min-h-screen bg-black relative overflow-hidden" id="home" key="main-content">
         {/* Animated Background */}
         <div className="absolute inset-0">
@@ -281,9 +278,7 @@ export default function HomePage() {
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center relative z-10">
                     <motion.div whileHover={{ scale: 1.05 }} className="group">
                       <div className="text-3xl sm:text-4xl font-black text-white mb-1 sm:mb-2 group-hover:text-cyan-400 transition-colors">
-
-                        3200+
-
+                        3300+
                       </div>
                       <div className="text-gray-400 text-sm sm:text-base font-medium">Active Members</div>
                     </motion.div>
@@ -363,8 +358,7 @@ export default function HomePage() {
                   <div className="text-left">
                     <div className="flex items-center gap-3 mb-3">
                       <Users className="w-6 h-6 text-purple-400" />
-                      <div className="text-2xl font-black text-white">3200+</div>
-
+                      <div className="text-2xl font-black text-white">3300+</div>
                     </div>
                     <div className="text-gray-400 text-sm">Active Members</div>
                   </div>
@@ -656,7 +650,6 @@ export default function HomePage() {
           </div>
         </section>
 
-
         {/* Founder Section */}
         <section id="founder" className="py-16 sm:py-20 md:py-24 relative">
           <div className="container mx-auto px-4">
@@ -817,12 +810,11 @@ export default function HomePage() {
                         href="https://www.instagram.com/shhivaa_.001?igsh=MTN5YWNxMG1tdG12Nw=="
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 p-2 sm:p-3 rounded-lg sm:rounded-xl transition-all duration-300 transform hover:scale-110"
                       >
-                        <div className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 p-3 rounded-xl transition-all duration-300">
-                          <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.663.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.358-.2 6.78-2.618 6.98-6.98.058-1.281.072-1.689.072-4.948 0-3.259-.014-3.667-.072-4.947-.2-4.358-2.618-6.78-6.98-6.98C15.668.014 15.259 0 12 0zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                          </svg>
-                        </div>
+                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.663.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.358-.2 6.78-2.618 6.98-6.98.058-1.281.072-1.689.072-4.948 0-3.259-.014-3.667-.072-4.947-.2-4.358-2.618-6.78-6.98-6.98C15.668.014 15.259 0 12 0zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
                       </a>
                     </div>
                   </div>
@@ -832,7 +824,61 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Contact Request Form Section (Service Support) */}
+{/* Community Partners Section - TRULY INFINITE */}
+<section id="partners" className="py-16 sm:py-20 md:py-24 relative">
+  <div className="container mx-auto px-4 sm:px-6">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="text-center mb-12 sm:mb-16 md:mb-20"
+    >
+      <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-6 sm:mb-8">
+        As <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">Community Partners</span>
+      </h2>
+      <p className="text-lg sm:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-2">
+        We are proud to collaborate with these amazing organizations that support CodeNeuraX in building a stronger tech community.
+      </p>
+    </motion.div>
+
+    {/* INFINITE MARQUEE - NEVER STOPS */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="infinite-marquee overflow-hidden rounded-2xl bg-gray-900/30"
+    >
+      <div className="marquee-content">
+        {/* Triple the content for true infinite effect */}
+        {[...Array(3)].map((_, setIndex) => (
+          <div key={setIndex} className="marquee-set">
+            {sponsorImages.map((src, idx) => (
+              <div
+                key={`${setIndex}-${idx}`}
+                className="min-w-[260px] sm:min-w-[320px] bg-gray-900/50 backdrop-blur-xl border border-gray-800/50 rounded-2xl p-6 flex-shrink-0 mx-3"
+              >
+                <div className="relative h-28 sm:h-36 flex items-center justify-center">
+                  <Image
+                    src={src}
+                    alt={`Community Partner ${idx + 1}`}
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 640px) 60vw, 320px"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+    </motion.div>
+  </div>
+</section>
+
+
+        {/* Contact Request Form Section */}
         <section id="contact-request" className="py-16 sm:py-20 md:py-24 relative">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-12">
@@ -1095,7 +1141,7 @@ export default function HomePage() {
                       Instagram
                     </h3>
                     <p className="text-gray-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
-                      Follow us for community highlights.
+                      Follow us for updates and behind-the-scenes content.
                     </p>
                     <a
                       href="https://www.instagram.com/codeneurax/"
@@ -1118,8 +1164,8 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="group text-center"
               >
-                <div className="bg-gray-900/50 backdrop-blur-xl border border-gray-800/50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-red-600/30 transition-all duration-500 hover:transform hover:scale-[1.02] sm:hover:scale-105 relative overflow-hidden h-full">
-                  <div className="absolute inset-0 bg-gradient-to-br from-red-600/5 to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="bg-gray-900/50 backdrop-blur-xl border border-gray-800/50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-red-500/30 transition-all duration-500 hover:transform hover:scale-[1.02] sm:hover:scale-105 relative overflow-hidden h-full">
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-red-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   
                   <div className="relative z-10">
                     <div className="text-red-500 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 flex justify-center">
@@ -1129,16 +1175,16 @@ export default function HomePage() {
                       YouTube
                     </h3>
                     <p className="text-gray-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
-                      Watch our tutorials and events.
+                      Watch our tutorials and event recordings.
                     </p>
                     <a
-                      href="https://www.youtube.com/@codeneurax"
+                      href="https://www.youtube.com/@CodeNeuraX"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-red-500 hover:text-red-400 font-medium transition-colors group/link text-sm sm:text-base"
                     >
                       Subscribe
-                      <ExternalLink className="w-4 h-4" />
+                      <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 group-hover/link:translate-x-1 transition-transform" />
                     </a>
                   </div>
                 </div>
@@ -1147,13 +1193,8 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Footer */}
-        <footer className="border-t border-gray-800/50 py-12 relative">
-          <div className="container mx-auto px-4 text-center">
-            <p className="text-gray-400 text-lg">Team CodeNeuraX 💙</p>
-          </div>
-        </footer>
+        <Chatbot />
       </div>
     </>
-  );
+  )
 }

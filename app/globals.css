@@ -175,6 +175,100 @@ img {
   }
 }
 
+@keyframes autoSlide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause animation on hover */
+.sponsors-slideshow:hover {
+  animation-play-state: paused;
+}
+
+/* Smooth infinite scroll */
+.sponsors-slideshow {
+  animation: autoSlide 15s infinite linear;
+}
+
+.partners-wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.partners-track {
+  display: flex;
+  width: calc(200% + 48px); /* Double width plus gaps */
+  animation: seamlessScroll 20s linear infinite;
+}
+
+/* Seamless infinite scroll - no restart */
+@keyframes seamlessScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause on hover */
+.partners-wrapper:hover .partners-track {
+  animation-play-state: paused;
+}
+
+/* Smooth performance optimization */
+.partners-track {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* INFINITE MARQUEE - NEVER STOPS */
+.infinite-marquee {
+  position: relative;
+  overflow: hidden;
+}
+
+.marquee-content {
+  display: flex;
+  width: fit-content;
+  animation: infiniteScroll 30s linear infinite;
+}
+
+.marquee-set {
+  display: flex;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+/* TRULY INFINITE KEYFRAMES */
+@keyframes infiniteScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% / 3));
+  }
+}
+
+/* Performance optimizations for smooth infinite loop */
+.marquee-content {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Optional: Pause on hover */
+.infinite-marquee:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+
 /* Optimize for high DPI displays */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .high-dpi {
