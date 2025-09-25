@@ -838,7 +838,7 @@ export default function HomePage() {
         As <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">Community Partners</span>
       </h2>
       <p className="text-lg sm:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-2">
-        We are proud to collaborate with these amazing organizations that support CodeNeuraX in building a stronger tech community.
+        We’re proud to collaborate with these amazing organizations, who help CodeNeuraX bring together innovators, developers, and problem-solvers to create an extraordinary hackathon experience.
       </p>
     </motion.div>
 
