@@ -176,7 +176,7 @@ export default function HomePage() {
     "/images/paranox2.png",
     "/images/intellify.png",
     "/images/techxninja.jpg",
-    "/images/RC.png",
+    "/images/pec.png",
     "/images/Marwadi university.png",
   ];
 
