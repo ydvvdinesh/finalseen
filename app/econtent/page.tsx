@@ -99,6 +99,11 @@ const categorizedSections: Record<Category, Section[]> = {
       description: "OoPs Handwritten Notes for beginners and advanced learners",
       link: "https://vyyrpodenrxjgjgmlxeu.supabase.co/storage/v1/object/sign/Notes/OOPs%20-Notes.pdf?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8wMDUxZTBjYS05MDlmLTQxMWItYjc1NC0wODM3NjdlY2YyNjYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJOb3Rlcy9PT1BzIC1Ob3Rlcy5wZGYiLCJpYXQiOjE3NTgzOTY4ODksImV4cCI6MjA3Mzc1Njg4OX0.ZZbYA3CHKouK9iB2LGZ1TbnlJcUxvCTgE5sUNUP78JQ",
     },
+        {
+      title: "Javascript Concept Notes",
+      description: "Javascript Handwritten Notes for beginners and advanced learners",
+      link: "https://vyyrpodenrxjgjgmlxeu.supabase.co/storage/v1/object/sign/Notes/JavaScript%20Handwritten%20Notes.pdf?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8wMDUxZTBjYS05MDlmLTQxMWItYjc1NC0wODM3NjdlY2YyNjYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJOb3Rlcy9KYXZhU2NyaXB0IEhhbmR3cml0dGVuIE5vdGVzLnBkZiIsImlhdCI6MTc1OTcxMDUwMiwiZXhwIjoyMDc1MDcwNTAyfQ.D8j8dp6CUQZs8lmJKjwJ4rGpphYgY9lyKg8AOdzpQ4o",
+    },
   ],
   "Problem Statement / Practice Question": [
     {
@@ -175,6 +180,9 @@ export default function EContentPage() {
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState<Category>("Previous Year Question");
 
+  // Simple external redirect for the "hello" button (replace with your link or set NEXT_PUBLIC_HELLO_URL)
+  const HELLO_URL = process.env.NEXT_PUBLIC_HELLO_URL || "https://forms.gle/T7RBi8dk1LS9XFkH7";
+
   const handleAuth = (type: "login" | "signup") => {
     setAuthModal({ type })
   }
@@ -235,6 +243,19 @@ export default function EContentPage() {
             <p className="text-base md:text-lg text-gray-300 mb-5 leading-relaxed">
               Access notes, previous year papers, and resources for your success.
             </p>
+
+           {/* Simple "hello" button with same UI — opens external link in new tab */}
+           <div className="flex justify-center mt-4">
+             <a
+               href={HELLO_URL}
+               target="_blank"
+               rel="noopener noreferrer"
+               className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-400 text-white font-bold px-6 py-3 rounded-xl shadow hover:scale-105 transition-transform"
+             >
+               <BookOpen className="w-5 h-5" />
+               Upload Your E-content
+             </a>
+           </div>
           </motion.div>
           {/* Search bar */}
           <div className="flex justify-center mb-6">
