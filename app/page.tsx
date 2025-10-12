@@ -106,7 +106,7 @@ export default function HomePage() {
       icon: <Users className="w-8 h-8" />,
       title: "Community Driven",
       description: "Connect with like-minded students and professionals in an inclusive environment",
-      link: "https://chat.whatsapp.com/LqYC0LCO02hGCRTMeQoFLQ",
+      link: "https://chat.whatsapp.com/KCycVh7WjLT3l9RiTItb7O",
       hasWhatsApp: true,
     },
     {
@@ -126,21 +126,21 @@ export default function HomePage() {
       icon: <Trophy className="w-8 h-8" />,
       title: "Hackathons & Events",
       description: "Stay updated with the latest hackathons and tech events worldwide",
-      link: "https://chat.whatsapp.com/Fn3OMDXcC48DZYboMDhsQP",
+      link: "https://chat.whatsapp.com/FKAngxCIAjq8QgjCwQIQJZ",
       hasWhatsApp: true,
     },
     {
       icon: <BookOpen className="w-8 h-8" />,
       title: "Learning Resources",
       description: "Curated tech news, insights, and learning materials for continuous growth",
-      link: "https://chat.whatsapp.com/BV8EWgMA4V3FWUjybtw2Ue",
+      link: " https://chat.whatsapp.com/BbtjvzjJ4JJLK5SBmeGs7V",
       hasWhatsApp: true,
     },
     {
       icon: <Zap className="w-8 h-8" />,
       title: "Career Opportunities",
-      description: "Access to internships, job opportunities, and career guidance",
-      link: "https://chat.whatsapp.com/LpMpa6jpI1OGqQDrACQnxW",
+      description: "Access to internships and career guidance",
+      link: "https://chat.whatsapp.com/HY3CoBGJjCVCWk9qZioP4E",
       hasWhatsApp: true,
     },
   ]
@@ -255,7 +255,7 @@ export default function HomePage() {
                 className="mb-10 sm:mb-16"
               >
                 <a
-                  href="https://chat.whatsapp.com/LqYC0LCO02hGCRTMeQoFLQ"
+                  href="https://chat.whatsapp.com/KCycVh7WjLT3l9RiTItb7O"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-2 sm:gap-4 bg-gradient-to-r from-green-500 via-green-600 to-emerald-600 hover:from-green-600 hover:via-green-700 hover:to-emerald-700 text-white font-bold px-6 sm:px-12 py-3 sm:py-5 rounded-xl sm:rounded-2xl text-base sm:text-xl transition-all duration-500 transform hover:scale-105 sm:hover:scale-110 hover:shadow-2xl hover:shadow-green-500/30 relative overflow-hidden"
@@ -278,7 +278,7 @@ export default function HomePage() {
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center relative z-10">
                     <motion.div whileHover={{ scale: 1.05 }} className="group">
                       <div className="text-3xl sm:text-4xl font-black text-white mb-1 sm:mb-2 group-hover:text-cyan-400 transition-colors">
-                        3300+
+                        3400+
                       </div>
                       <div className="text-gray-400 text-sm sm:text-base font-medium">Active Members</div>
                     </motion.div>
@@ -358,7 +358,7 @@ export default function HomePage() {
                   <div className="text-left">
                     <div className="flex items-center gap-3 mb-3">
                       <Users className="w-6 h-6 text-purple-400" />
-                      <div className="text-2xl font-black text-white">3300+</div>
+                      <div className="text-2xl font-black text-white">3400+</div>
                     </div>
                     <div className="text-gray-400 text-sm">Active Members</div>
                   </div>
