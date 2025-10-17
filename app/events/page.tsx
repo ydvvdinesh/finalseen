@@ -91,19 +91,24 @@ export default function EventsPage() {
       duration: "2 Hours",
       highlights: ["React Native", "Flutter", "App Store Deployment", "UI/UX Design"]
     },
-   /* {
-      id: 4,
-      title: "Cybersecurity Awareness Seminar",
-      description: "Essential cybersecurity practices for developers and IT professionals in the modern digital landscape.",
-      date: "December 10, 2023",
-      location: "Security Center, Business District",
-      attendees: 120,
-      image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800",
-      category: "Seminar",
-      duration: "Half Day",
-      highlights: ["Threat Detection", "Secure Coding", "Network Security", "Incident Response"]
-    },
     {
+       id: 4,
+  title: "From Tier-3 to Flipkart : A Complete Software Developer Roadmap",
+  description: "An inspiring session with Mansi Somani, Software Developer at Flipkart, sharing her journey from a Tier-3 college to a top product-based company. Learn the roadmap, interview strategy, and mindset to land your dream tech role.",
+  date: "October 15, 2025",
+  location: "Online",
+  attendees: 136,
+  image: "/images/Mansi Somani - 1.webp",
+  category: "Webinar",
+ duration: "2 Hours",
+  highlights: [
+    "Roadmap",
+    "Resources & Strategies",
+    "Building a strong resume and projects",
+    "Insights from Mansi’s journey to Flipkart"
+  ],
+    },
+   /* {
       id: 5,
       title: "Cloud Computing Masterclass",
       description: "Deep dive into cloud architecture, deployment strategies, and best practices for scalable applications.",

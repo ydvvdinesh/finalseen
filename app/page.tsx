@@ -159,15 +159,15 @@ export default function HomePage() {
 
   const events: EventType[] = [
     {
-      title: "From Tier-3 to Flipkart : A Complete Software Developer Roadmap",
-      date: "October 15,2025",
-      time: "06:00 PM - 8:00 PM",
-      location: "Online",
-      type: "Webinar",
-      description: "Join our expert-led session by Mansi Somani and take the first step toward yours goal.",
-      status: "coming soon",
-      registrationLink: "https://luma.com/wzwud1ym",
-      image: "/images/Mansi Somani - 1.webp",
+  title: "Journey to Microsoft : From Student to Software Engineer",
+  date: "November 15, 2025",
+  time: "06:00 PM - 8:00 PM",
+  location: "Online",
+  type: "Webinar",
+  description: "Join our expert-led session by Parth Thakrar and learn how he turned his dream of working at Microsoft into reality.",
+  status: "coming soon",
+  registrationLink: "https://luma.com/6qdj9g4e",
+  image: "/images/CodeNeuraX (1080 x 1080 px) - Parth.png",
     },
   ];
 

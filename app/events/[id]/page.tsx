@@ -154,26 +154,39 @@ testimonials: [
     },
     "4": {
       id: 4,
-      title: "Cybersecurity Awareness Seminar",
-      description: "Essential cybersecurity practices for developers and IT professionals in the modern digital landscape. Learn about threat detection, secure coding practices, and incident response.",
-      date: "December 10, 2023",
-      location: "Security Center, Business District",
-      attendees: 120,
-      image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      category: "Seminar",
-      duration: "Half Day",
-      highlights: ["Threat Detection", "Secure Coding", "Network Security", "Incident Response"],
-      youtubeId: "bFEoMO0pc7k", // Sample YouTube video ID
-      instructor: "Robert Anderson",
-      rating: 4.6,
-      totalRatings: 98,
-      agenda: [
-        { day: "Morning", topics: ["Current Threat Landscape", "Secure Development Practices", "Network Security Fundamentals"] }
-      ],
-      testimonials: [
-        { name: "Emily Davis", role: "Security Analyst", comment: "Eye-opening session on modern security threats." },
-        { name: "James Brown", role: "DevOps Engineer", comment: "Practical tips I can implement immediately." }
-      ]
+  title: "From Tier-3 to Flipkart : A Complete Software Developer Roadmap",
+  description: "An inspiring session with Mansi Somani, Software Developer at Flipkart, sharing her journey from a Tier-3 college to a top product-based company. Learn the roadmap, interview strategy, and mindset to land your dream tech role.",
+  date: "October 15, 2025",
+  location: "Online",
+  attendees: 136,
+  image: "/images/Mansi Somani - 1.webp",
+  category: "Webinar",
+ duration: "2 Hours",
+  highlights: [
+    "Step-by-step roadmap for software developers",
+    "Effective coding interview preparation",
+    "Building a strong resume and projects",
+    "Insights from Mansi’s journey to Flipkart"
+  ],
+  youtubeId: "t_MyTagczmQ", // Placeholder YouTube video ID
+  instructor: "Mansi Somani",
+  rating: 4.8,
+  totalRatings: 60,
+agenda: [
+    { 
+      day: "Evening", 
+      topics: [
+        "Mansi’s Journey from Tier-3 College to Flipkart",
+        "Roadmap to Become a Software Developer",
+        "Interview Preparation & DSA Strategy",
+        "Q&A and Career Guidance"
+      ] 
+    }
+  ],
+  testimonials: [
+    { name: "Kiran Patil", role: "CS Student", comment: "Truly motivating! Helped me understand how to plan my career roadmap effectively." },
+    { name: "Neha Sharma", role: "Aspiring Developer", comment: "Mansi’s insights were so practical and relatable. Loved every minute!" }
+  ],
     },
     "5": {
       id: 5,
