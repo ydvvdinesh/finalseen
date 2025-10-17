@@ -170,8 +170,8 @@ testimonials: [
   ],
   youtubeId: "t_MyTagczmQ", // Placeholder YouTube video ID
   instructor: "Mansi Somani",
-  rating: 4.8,
-  totalRatings: 60,
+  rating: 5,
+  totalRatings: 30,
 agenda: [
     { 
       day: "Evening", 
