@@ -89,7 +89,7 @@ export default function EventsPage() {
       image: "/images/Abhinav Kumar - CodeNeuraX - 11 - Final.webp",
       category: "Webinar",
       duration: "2 Hours",
-      highlights: ["React Native", "Flutter", "App Store Deployment", "UI/UX Design"]
+      highlights: ["Data Science", "Machine Learning", "LLM", "Research Papers"]
     },
     {
        id: 4,
