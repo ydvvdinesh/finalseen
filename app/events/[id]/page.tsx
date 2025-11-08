@@ -168,7 +168,7 @@ testimonials: [
     "Building a strong resume and projects",
     "Insights from Mansi’s journey to Flipkart"
   ],
-  youtubeId: "t_MyTagczmQ", // Placeholder YouTube video ID
+  youtubeId: "ebuN8SHIkLw", // Placeholder YouTube video ID
   instructor: "Mansi Somani",
   rating: 5,
   totalRatings: 30,

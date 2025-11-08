@@ -341,8 +341,7 @@ export default function HomePage() {
                     </p>
                     <p>
                       Through workshops, hackathons, research projects, and industry partnerships, we provide our members
-                      with the resources and opportunities they need to excel in the fields of robotics and artificial
-                      intelligence.
+                      with the resources and opportunities they need to excel in the fields of Computer Science.
                     </p>
                   </div>
                 </motion.div>
