@@ -159,15 +159,15 @@ export default function HomePage() {
 
   const events: EventType[] = [
     {
-  title: "Journey to Microsoft : From Student to Software Engineer",
-  date: "November 15, 2025",
+  title: "Crack Amazon Internship in 2nd & 3rd year",
+  date: "December 25, 2025",
   time: "06:00 PM - 8:00 PM",
   location: "Online",
   type: "Webinar",
-  description: "Join our expert-led session by Parth Thakrar and learn how he turned his dream of working at Microsoft into reality.",
+  description: "Join our expert-led session by TBA and learn how he turned his dream of working at Amazon into reality.",
   status: "coming soon",
-  registrationLink: "https://luma.com/6qdj9g4e",
-  image: "/images/CodeNeuraX (1080 x 1080 px) - Parth.png",
+  registrationLink: "#",
+  image: "/images/CodeNeuraX.webp",
     },
   ];
 

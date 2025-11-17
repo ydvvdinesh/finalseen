@@ -189,27 +189,42 @@ agenda: [
   ],
     },
     "5": {
-      id: 5,
-      title: "Cloud Computing Masterclass",
-      description: "Deep dive into cloud architecture, deployment strategies, and best practices for scalable applications. Comprehensive coverage of AWS services, containerization, and DevOps practices.",
-      date: "November 25, 2023",
-      location: "Cloud Campus, Tech Valley",
-      attendees: 200,
-      image: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      category: "Masterclass",
-      duration: "1 Day",
-      highlights: ["AWS Services", "Docker & Kubernetes", "Microservices", "DevOps Practices"],
-      youtubeId: "3c-iBn73dDE", // Sample YouTube video ID
-      instructor: "Mark Thompson",
-      rating: 4.8,
-      totalRatings: 189,
-      agenda: [
-        { day: "Full Day", topics: ["Cloud Architecture", "Containerization", "Orchestration", "CI/CD Pipelines"] }
-      ],
-      testimonials: [
-        { name: "Sophie Miller", role: "Cloud Architect", comment: "Comprehensive coverage of cloud technologies!" },
-        { name: "Ryan Clark", role: "DevOps Engineer", comment: "The hands-on labs were extremely valuable." }
-      ]
+  id: 5,
+  title: "Journey to Microsoft: From Student to Software Engineer",
+  description: "Learn how Parth Thakrar turned his dream of working at Microsoft into reality. This session covers his journey, preparation strategy, roadmap, and insights for aspiring software engineers.",
+  date: "November 15, 2025",
+  location: "Online",
+  attendees: 119,
+  image: "/images/CodeNeuraX (1080 x 1080 px) - Parth.png",
+  category: "Webinar",
+  duration: "2 Hours",
+  highlights: [
+    "Career Journey",
+    "Microsoft Preparation Strategy",
+    "Interview Insights",
+    "Roadmap for Microsoft",
+    "Live Q&A"
+  ],
+  youtubeId: "t_MyTagczmQ", // Add if you have a YouTube recording
+  instructor: "Parth Thakrar",
+  rating: 5.0, // You can adjust
+  totalRatings: 20,
+  agenda: [
+    { 
+      day: "Single Session", 
+      topics: [
+        "Parth's Journey & Challenges",
+        "Microsoft Recruitment Preparation",
+        "DSA + System Design Approach",
+        "Resume & Project Strategy",
+        "Q&A with Speaker"
+      ] 
+    }
+  ],
+  testimonials: [
+    { name: "Meet Parsna", role: "Aspiring Software Engineer", comment: "Very inspiring and practical journey shared by Parth!" },
+    { name: "Shwati", role: "Tech Enthusiast", comment: "Loved the clarity and roadmap he provided!" }
+  ]
     },
     "6": {
       id: 6,

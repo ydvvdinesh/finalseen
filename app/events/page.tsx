@@ -108,19 +108,19 @@ export default function EventsPage() {
     "Insights from Mansi’s journey to Flipkart"
   ],
     },
+ {
+  id: 5,
+  title: "Journey to Microsoft : From Student to Software Engineer",
+  description: "Join our expert-led session by Parth Thakrar and learn how he turned his dream of working at Microsoft into reality.",
+  date: "November 15, 2025",
+  location: "Online",
+  attendees: 119,
+  image: "/images/CodeNeuraX (1080 x 1080 px) - Parth.png",
+  category: "Webinar",
+  duration: "2 Hours",
+  highlights: ["Career Journey", "Microsoft Preparation Strategy", "Roadmap & Learnings", "Q&A with Parth Thakrar"]
+},
    /* {
-      id: 5,
-      title: "Cloud Computing Masterclass",
-      description: "Deep dive into cloud architecture, deployment strategies, and best practices for scalable applications.",
-      date: "November 25, 2023",
-      location: "Cloud Campus, Tech Valley",
-      attendees: 200,
-      image: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800",
-      category: "Masterclass",
-      duration: "1 Day",
-      highlights: ["AWS Services", "Docker & Kubernetes", "Microservices", "DevOps Practices"]
-    },
-    {
       id: 6,
       title: "Data Science & Analytics Workshop",
       description: "Practical data science techniques using Python, pandas, and machine learning libraries for real-world projects.",
