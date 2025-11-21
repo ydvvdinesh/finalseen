@@ -159,14 +159,14 @@ export default function HomePage() {
 
   const events: EventType[] = [
     {
-  title: "Crack Amazon Internship in 2nd & 3rd year",
+  title: "Crack Amazon Internship in 2nd & 3rd Year",
   date: "December 25, 2025",
   time: "06:00 PM - 8:00 PM",
   location: "Online",
   type: "Webinar",
-  description: "Join our expert-led session by TBA and learn how he turned his dream of working at Amazon into reality.",
+  description: "Join our expert-led session by Amulya and learn how he turned his dream of working at Amazon into reality.",
   status: "coming soon",
-  registrationLink: "#",
+  registrationLink: "https://luma.com/x0o0ffpy",
   image: "/images/6.jpg",
     },
   ];
