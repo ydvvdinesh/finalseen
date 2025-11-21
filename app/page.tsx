@@ -167,7 +167,7 @@ export default function HomePage() {
   description: "Join our expert-led session by TBA and learn how he turned his dream of working at Amazon into reality.",
   status: "coming soon",
   registrationLink: "#",
-  image: "/images/CodeNeuraX.webp",
+  image: "/images/6.jpg",
     },
   ];
 
