@@ -71,6 +71,17 @@ export const AMBASSADORS: Ambassador[] = [
     avatar: "/images/CodeNeuraX.webp",
     email: "hiteshparihar8780@gmail.com",
     socials: [{ platform: "LinkedIn", url: "https://www.linkedin.com/in/gecrai240200143027/" }],
+  },
+    {
+    id: "6",
+    name: "Sejal Jain",
+    tenure: "Tenure (2025–26)",
+    university: "Oriental Institute of Science & Technology",
+    department: "Computer Science and Engineering",
+    year: "4th Year",
+    avatar: "/images/CodeNeuraX.webp",
+    email: "sejaljain6004@gmail.com",
+    socials: [{ platform: "LinkedIn", url: "https://www.linkedin.com/in/sejaljain6004/" }],
   }
 ]
 
