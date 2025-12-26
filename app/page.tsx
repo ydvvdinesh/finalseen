@@ -159,15 +159,15 @@ export default function HomePage() {
 
   const events: EventType[] = [
     {
-  title: "Crack Amazon Internship in 2nd & 3rd Year",
-  date: "December 25, 2025",
+  title: "CodeNeuraX : A Journey into Data Science",
+  date: "January 17, 2026",
   time: "06:00 PM - 8:00 PM",
   location: "Online",
   type: "Webinar",
-  description: "Join our expert-led session by Amulya and learn how he turned his dream of working at Amazon into reality.",
+  description: "Nivedita will walk you through her real-world journey, sharing practical insights on how data science works in top product-based companies like Flipkart.",
   status: "coming soon",
-  registrationLink: "https://luma.com/x0o0ffpy",
-  image: "/images/6.jpg",
+  registrationLink: "https://luma.com/z5kzueip",
+  image: "/images/7.png",
     },
   ];
 
@@ -178,6 +178,7 @@ export default function HomePage() {
     "/images/techxninja.jpg",
     "/images/pec.png",
     "/images/Marwadi university.png",
+    "/images/1.png"
   ];
 
   const autoplay = useRef(

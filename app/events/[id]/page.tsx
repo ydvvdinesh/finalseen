@@ -227,28 +227,52 @@ agenda: [
   ]
     },
     "6": {
-      id: 6,
-      title: "Data Science & Analytics Workshop",
-      description: "Practical data science techniques using Python, pandas, and machine learning libraries for real-world projects. Learn statistical analysis, data visualization, and predictive modeling.",
-      date: "October 15, 2023",
-      location: "Data Center, Analytics Hub",
-      attendees: 90,
-      image: "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      category: "Workshop",
-      duration: "2 Days",
-      highlights: ["Python for Data Science", "Statistical Analysis", "Data Visualization", "Predictive Modeling"],
-      youtubeId: "LHBE6Q9XlzI", // Sample YouTube video ID
-      instructor: "Dr. Amanda Foster",
-      rating: 4.7,
-      totalRatings: 84,
-      agenda: [
-        { day: "Day 1", topics: ["Python Fundamentals", "Pandas & NumPy", "Data Cleaning"] },
-        { day: "Day 2", topics: ["Statistical Analysis", "Machine Learning", "Data Visualization"] }
-      ],
-      testimonials: [
-        { name: "Kevin Zhang", role: "Data Analyst", comment: "Perfect introduction to data science!" },
-        { name: "Rachel Green", role: "Business Analyst", comment: "Learned practical skills I use daily now." }
+  id: 6,
+  title: "CodeNeuraX Webinar: Crack Amazon Internship in 2nd & 3rd Year",
+  description: "An exclusive career-focused session with Amulya Bharti J, Upcoming SDE Intern at Amazon. Learn the exact preparation roadmap, DSA strategies, project-building approach, and behavioral preparation Amazon looks for in its interns.",
+  date: "December 25, 2025",
+  location: "Online",
+  attendees: 114,
+  image: "/images/6.jpg",
+  category: "Career Session",
+  duration: "2 Hours",
+  highlights: [
+    "Amazon Internship Preparation Roadmap",
+    "DSA & Problem-Solving Strategy",
+    "Project Building & Resume Optimization",
+    "Amazon Leadership Principles Deep Dive",
+    "Behavioral Interview Preparation",
+    "Live Q&A Session"
+  ],
+  youtubeId: "t_MyTagczmQ", // Replace with actual session recording ID
+  instructor: "Amulya Bharti J",
+  rating: 4.9,
+  totalRatings: 18,
+  agenda: [
+    {
+      day: "Session Flow",
+      topics: [
+        "How to Start Amazon Internship Preparation",
+        "DSA Strategy & Resources",
+        "Building Strong Projects",
+        "Understanding Amazon Leadership Principles",
+        "Interview Experience & Insights",
+        "Live Q&A"
       ]
+    }
+  ],
+  testimonials: [
+    {
+      name: "Rishi Verma",
+      role: "2nd Year CSE Student",
+      comment: "This session gave me absolute clarity on how to prepare for Amazon internships."
+    },
+    {
+      name: "Priya Sharma",
+      role: "Aspiring Software Engineer",
+      comment: "The breakdown of DSA and leadership principles was extremely practical and motivating."
+    }
+  ]
     }
   }
 

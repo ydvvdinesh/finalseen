@@ -120,18 +120,25 @@ export default function EventsPage() {
   duration: "2 Hours",
   highlights: ["Career Journey", "Microsoft Preparation Strategy", "Roadmap & Learnings", "Q&A with Parth Thakrar"]
 },
-   /* {
-      id: 6,
-      title: "Data Science & Analytics Workshop",
-      description: "Practical data science techniques using Python, pandas, and machine learning libraries for real-world projects.",
-      date: "October 15, 2023",
-      location: "Data Center, Analytics Hub",
-      attendees: 90,
-      image: "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800",
-      category: "Workshop",
-      duration: "2 Days",
-      highlights: ["Python for Data Science", "Statistical Analysis", "Data Visualization", "Predictive Modeling"]
-    }*/
+{
+  id: 6,
+  title: "CodeNeuraX Webinar: Crack Amazon Internship in 2nd & 3rd Year",
+  description: "An exclusive career session with Amulya Bharti J, Upcoming SDE Intern at Amazon, covering the exact preparation strategies, DSA roadmap, project building, and behavioral insights required to crack Amazon internships.",
+  date: "December 25, 2025",
+  location: "Online",
+  attendees: 114,
+  image: "/images/6.jpg",
+  category: "Career Session",
+  duration: "2 Hours",
+  highlights: [
+    "Amazon Internship Roadmap",
+    "DSA & Problem-Solving Strategy",
+    "Project Building & Profile Optimization",
+    "Amazon Leadership Principles",
+    "Interview Preparation & Real Insights",
+    "Live Q&A Session"
+  ]
+}
   ]
 
 
