@@ -159,15 +159,15 @@ export default function HomePage() {
 
   const events: EventType[] = [
     {
-  title: "CodeNeuraX : A Journey into Data Science",
-  date: "January 17, 2026",
+  title: "CodeNeuraX : A Journey into Data Analytics",
+  date: "February 25, 2026",
   time: "06:00 PM - 8:00 PM",
   location: "Online",
   type: "Webinar",
-  description: "Nivedita will walk you through her real-world journey, sharing practical insights on how data science works in top product-based companies like Flipkart.",
+  description: "Expert will walk you through her real-world journey, sharing practical insights on how data Analytics  works in top product-based companies.",
   status: "coming soon",
-  registrationLink: "https://luma.com/z5kzueip",
-  image: "/images/7.png",
+  registrationLink: "#",
+  image: "/images/CodeNeuraX.webp",
     },
   ];
 

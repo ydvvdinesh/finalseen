@@ -244,7 +244,7 @@ agenda: [
     "Behavioral Interview Preparation",
     "Live Q&A Session"
   ],
-  youtubeId: "t_MyTagczmQ", // Replace with actual session recording ID
+  youtubeId: "4Ayw7ajVi28", // Replace with actual session recording ID
   instructor: "Amulya Bharti J",
   rating: 4.9,
   totalRatings: 18,
@@ -273,8 +273,54 @@ agenda: [
       comment: "The breakdown of DSA and leadership principles was extremely practical and motivating."
     }
   ]
-    }
+    },
+  "7": {
+    "id": 7,
+    "title": "CodeNeuraX: A Journey into Data Science",
+    "description": "CodeNeuraX proudly presents an exclusive career-focused session — A Journey into Data Science — featuring Nivedita Gupta, Data Scientist at Flipkart. This session covers her journey, roadmap, required skills, real-world applications of data science at Flipkart, and career guidance for aspiring data scientists.",
+    "date": "January 17, 2026",
+    "location": "Google Meet",
+    "attendees": 96,
+    "image": "/images/7.png",
+    "category": "Webinar",
+    "duration": "2 Hours",
+    "highlights": [
+      "Data Science Career Roadmap",
+      "Beginner to Advanced Skill Progression",
+      "Real-world Applications at Flipkart",
+      "Tools & Technologies",
+      "Live Q&A"
+    ],
+    "youtubeId": "t_MyTagczmQ",
+    "instructor": "Nivedita Gupta",
+    "rating": 4.2,
+    "totalRatings": 48,
+    "agenda": [
+      {
+        "day": "Single Session",
+        "topics": [
+          "Speaker's Journey into Data Science",
+          "Data Science Fundamentals & Skills",
+          "Industry Use-Cases at Flipkart",
+          "Project & Career Guidance",
+          "Q&A with Speaker"
+        ]
+      }
+    ],
+    "testimonials": [
+      {
+        "name": "Aarav Patel",
+        "role": "Data Science Student",
+        "comment": "The session gave a very clear roadmap and real industry perspective on data science."
+      },
+      {
+        "name": "Sneha Sharma",
+        "role": "Aspiring Data Analyst",
+        "comment": "Very insightful session with practical guidance and honest career advice."
+      }
+    ]
   }
+}
 
   const event = eventsData[params.id]
 

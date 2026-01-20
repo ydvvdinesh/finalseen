@@ -138,7 +138,26 @@ export default function EventsPage() {
     "Interview Preparation & Real Insights",
     "Live Q&A Session"
   ]
-}
+},
+{
+    "id": 7,
+    "title": "CodeNeuraX: A Journey into Data Science",
+    "description": "An exclusive career-focused session with Nivedita Gupta, Data Scientist at Flipkart, covering her journey into data science, the complete roadmap from fundamentals to advanced level, real-world applications at Flipkart, and career guidance for aspiring data scientists.",
+    "date": "January 17, 2026",
+    "location": "Online",
+    "attendees": 96,
+    "image": "/images/7.png",
+    "category": "Webinar",
+    "duration": "2 Hours",
+    "highlights": [
+      "Data Science Career Roadmap",
+      "Beginner to Advanced Skill Progression",
+      "Real-world Data Science at Flipkart",
+      "Tools & Technologies for Data Science",
+      "Project Building Strategy",
+      "Live Q&A Session"
+    ]
+  }
   ]
 
 
