@@ -291,7 +291,7 @@ agenda: [
       "Tools & Technologies",
       "Live Q&A"
     ],
-    "youtubeId": "t_MyTagczmQ",
+    "youtubeId": "cBNuPgm6_8w",
     "instructor": "Nivedita Gupta",
     "rating": 4.2,
     "totalRatings": 48,
