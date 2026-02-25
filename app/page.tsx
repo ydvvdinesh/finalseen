@@ -159,12 +159,12 @@ export default function HomePage() {
 
   const events: EventType[] = [
     {
-  title: "CodeNeuraX : A Journey into Data Analytics",
-  date: "February 25, 2026",
+  title: "Cracking Google Internships: By Divanshi Jain",
+  date: "March 15, 2026",
   time: "06:00 PM - 8:00 PM",
   location: "Online",
   type: "Webinar",
-  description: "Expert will walk you through her real-world journey, sharing practical insights on how data Analytics  works in top product-based companies.",
+  description: "Expert will walk you through her real-world journey, sharing practical insights on how to get internship in top product-based companies.",
   status: "coming soon",
   registrationLink: "#",
   image: "/images/CodeNeuraX.webp",
@@ -688,7 +688,7 @@ export default function HomePage() {
                     <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2 group-hover:text-cyan-400 transition-colors">
                       Dinesh Yadav
                     </h3>
-                    <p className="text-cyan-400 font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Founder & Convener</p>
+                    <p className="text-cyan-400 font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Founder</p>
                     <p className="text-gray-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
                       Passionate about empowering the next generation of developers through community-driven learning and
                       innovation.
@@ -729,7 +729,7 @@ export default function HomePage() {
                     <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2 group-hover:text-purple-400 transition-colors">
                       Rayan Ishani
                     </h3>
-                    <p className="text-purple-400 font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Content Head</p>
+                    <p className="text-purple-400 font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Convener</p>
                     <p className="text-gray-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
                       Creative content strategist focused on delivering engaging educational materials and community-driven content.
                     </p>
@@ -764,12 +764,12 @@ export default function HomePage() {
                   
                   <div className="relative z-10">
                     <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 rounded-full bg-gradient-to-r from-blue-400 to-cyan-500 flex items-center justify-center text-white text-2xl sm:text-3xl font-bold">
-                      SN
+                      IT
                     </div>
                     <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2 group-hover:text-blue-400 transition-colors">
-                      Shiva Nagesh
+                      Isha Thaker
                     </h3>
-                    <p className="text-blue-400 font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Outreach Manager</p>
+                    <p className="text-blue-400 font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Content Head</p>
                     <p className="text-gray-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
                     Forging powerful partnerships and driving greater impact and extending our reach to empower more tech enthusiasts worldwide.
                     </p>
@@ -777,7 +777,7 @@ export default function HomePage() {
                     {/* Social Links */}
                     <div className="flex justify-center gap-3 sm:gap-4">
                       <a
-                        href="https://www.linkedin.com/in/padala-siva-nagesh-908300343"
+                        href="https://www.linkedin.com/in/isha-thaker/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group/social bg-blue-600 hover:bg-blue-700 p-2 sm:p-3 rounded-lg sm:rounded-xl transition-all duration-300 transform hover:scale-110"
@@ -791,7 +791,7 @@ export default function HomePage() {
                 </div>
               </motion.div>
 
-              {/* NEW: Navadeep Gandloju - Social Media Manager */}
+              {/* NEW: Prachi Doshi - Host */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -804,19 +804,19 @@ export default function HomePage() {
                   
                   <div className="relative z-10">
                     <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 rounded-full bg-gradient-to-r from-pink-400 to-purple-500 flex items-center justify-center text-white text-2xl sm:text-3xl font-bold">
-                      NG
+                      PD
                     </div>
                     <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2 group-hover:text-pink-400 transition-colors">
-                      Navadeep Gandloju
+                      Prachi Doshi
                     </h3>
                     <p className="text-pink-400 font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Social Media Manager</p>
                     <p className="text-gray-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
-                      Manages our social presence, grows community engagement across platforms.
+                      Manages our stage with a vision.
                     </p>
 
                     <div className="flex justify-center gap-3 sm:gap-4">
                       <a
-                        href="https://www.linkedin.com/in/navadeep-gandloju/"
+                        href="https://www.linkedin.com/in/prachi-doshi-679119303/"
                         className="group/social bg-blue-600 hover:bg-blue-700 p-2 sm:p-3 rounded-lg sm:rounded-xl transition-all duration-300 transform hover:scale-110"
                       >
                         <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -828,44 +828,7 @@ export default function HomePage() {
                 </div>
               </motion.div>
 
-              {/* NEW: Harsha - Content Creator */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.35 }}
-                viewport={{ once: true }}
-                className="group text-center"
-              >
-                <div className="bg-gray-900/50 backdrop-blur-xl border border-gray-800/50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-cyan-500/30 transition-all duration-500 hover:transform hover:scale-[1.02] sm:hover:scale-105 relative overflow-hidden h-full">
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
-                  <div className="relative z-10">
-                    <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 flex items-center justify-center text-white text-2xl sm:text-3xl font-bold">
-                      H
-                    </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2 group-hover:text-cyan-400 transition-colors">
-                      Harshavardhan Reddy
-                    </h3>
-                    <p className="text-cyan-400 font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Content Creator</p>
-                    <p className="text-gray-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
-                      Crafts written and visual content for tutorials, event promotion, and member learning resources.
-                    </p>
-
-                    <div className="flex justify-center gap-3 sm:gap-4">
-                      <a
-                        href="https://www.linkedin.com/in/nadagouni-harshavardhan-reddy/"
-                        className="group/social bg-blue-600 hover:bg-blue-700 p-2 sm:p-3 rounded-lg sm:rounded-xl transition-all duration-300 transform hover:scale-110"
-                      >
-                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* NEW: Subash Reddy - Video Editor */}
+              {/* NEW:  Divya Thakur - Video Editor */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -878,10 +841,10 @@ export default function HomePage() {
                   
                   <div className="relative z-10">
                     <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 flex items-center justify-center text-white text-2xl sm:text-3xl font-bold">
-                      SR
+                      DT
                     </div>
                     <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2 group-hover:text-yellow-400 transition-colors">
-                      Subash Reddy
+                      Divya Thakur
                     </h3>
                     <p className="text-yellow-400 font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Video Editor</p>
                     <p className="text-gray-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
@@ -890,7 +853,7 @@ export default function HomePage() {
 
                     <div className="flex justify-center gap-3 sm:gap-4">
                       <a
-                        href="#"
+                        href="https://www.linkedin.com/in/divya-thakur-6b02a6300/"
                         className="group/social bg-blue-600 hover:bg-blue-700 p-2 sm:p-3 rounded-lg sm:rounded-xl transition-all duration-300 transform hover:scale-110"
                       >
                         <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
