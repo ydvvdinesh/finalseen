@@ -809,7 +809,7 @@ export default function HomePage() {
                     <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2 group-hover:text-pink-400 transition-colors">
                       Prachi Doshi
                     </h3>
-                    <p className="text-pink-400 font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Social Media Manager</p>
+                    <p className="text-pink-400 font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Host & Content <Creator></Creator></p>
                     <p className="text-gray-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
                       Manages our stage with a vision.
                     </p>
