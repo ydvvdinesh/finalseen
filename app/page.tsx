@@ -160,14 +160,14 @@ export default function HomePage() {
   const events: EventType[] = [
     {
   title: "Cracking Google Internships: By Divanshi Jain",
-  date: "March 15, 2026",
+  date: "April 17, 2026",
   time: "06:00 PM - 8:00 PM",
   location: "Online",
   type: "Webinar",
-  description: "Expert will walk you through her real-world journey, sharing practical insights on how to get internship in top product-based companies.",
+  description: "Divanshi will walk you through her real-world journey, sharing practical insights on how to get internship in top product-based companies like Google.",
   status: "coming soon",
-  registrationLink: "#",
-  image: "/images/CodeNeuraX.webp",
+  registrationLink: "https://luma.com/qi6o26xo",
+  image: "/images/8.png",
     },
   ];
 
@@ -731,7 +731,7 @@ export default function HomePage() {
                     </h3>
                     <p className="text-purple-400 font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Convener</p>
                     <p className="text-gray-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
-                      Creative content strategist focused on delivering engaging educational materials and community-driven content.
+                       Ensuring smooth operations, and creating a welcoming environment for all members.
                     </p>
 
                     {/* Social Links */}
@@ -771,8 +771,8 @@ export default function HomePage() {
                     </h3>
                     <p className="text-blue-400 font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Content Head</p>
                     <p className="text-gray-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
-                    Forging powerful partnerships and driving greater impact and extending our reach to empower more tech enthusiasts worldwide.
-                    </p>
+                     Creative content strategist focused on delivering engaging educational materials and community-driven content.
+                  </p>
 
                     {/* Social Links */}
                     <div className="flex justify-center gap-3 sm:gap-4">
