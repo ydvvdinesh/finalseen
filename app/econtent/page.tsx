@@ -181,7 +181,7 @@ export default function EContentPage() {
   const [activeCategory, setActiveCategory] = useState<Category>("Previous Year Question");
 
   // Simple external redirect for the "hello" button (replace with your link or set NEXT_PUBLIC_HELLO_URL)
-  const HELLO_URL = process.env.NEXT_PUBLIC_HELLO_URL || "https://forms.gle/T7RBi8dk1LS9XFkH7";
+  const HELLO_URL = process.env.NEXT_PUBLIC_HELLO_URL || "https://forms.gle/qPwKoUDGnvjfKzQB8";
 
   const handleAuth = (type: "login" | "signup") => {
     setAuthModal({ type })
@@ -253,7 +253,7 @@ export default function EContentPage() {
                className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-400 text-white font-bold px-6 py-3 rounded-xl shadow hover:scale-105 transition-transform"
              >
                <BookOpen className="w-5 h-5" />
-               Upload Your E-content
+               Click here to get all Company LeetCode Question With Leetcode Link
              </a>
            </div>
           </motion.div>
