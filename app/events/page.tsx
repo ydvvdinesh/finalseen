@@ -135,11 +135,11 @@ export default function EventsPage() {
     {
       id: 6,
       title: "CodeNeuraX: Master the Amazon Interview",
-      description: "An exclusive career-focused session with Vanshika Goyal, Incoming SDE at Amazon, sharing her comprehensive roadmap to crack top tech interviews, DSA strategy, project recommendations, and real interview insights.",
+      description: "An exclusive career-focused session with Vanshika Amulya Bharti J, Incoming SDE at Amazon, sharing her comprehensive roadmap to crack top tech interviews, DSA strategy, project recommendations, and real interview insights.",
       date: "December 08, 2025",
       location: "Online",
       attendees: 180,
-      image: "/images/vanshika-goyal.webp",
+      image: "/images/6.jpg",
       category: "Webinar",
       duration: "2 Hours",
       highlights: [
