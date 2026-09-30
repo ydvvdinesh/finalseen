@@ -17,6 +17,7 @@ import {
   Instagram
 } from "lucide-react"
 import Header from "@/components/header"
+import { getAssetUrl } from "@/lib/storage"
 import {
   AI_SPARK_OVERVIEW,
   AI_SPARK_SPEAKERS,
@@ -118,7 +119,7 @@ export default function AiSparkRegistrationPage() {
             playsInline
             className="absolute inset-0 w-full h-full object-cover opacity-40"
           >
-            <source src="/videos/hero-bg.mp4" type="video/mp4" />
+            <source src={getAssetUrl("/videos/hero-bg.mp4")} type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505] z-10" />
         </div>

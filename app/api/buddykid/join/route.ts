@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 import { checkRateLimit, getClientIp } from '@/lib/rate-limiter'
 import { getAuthenticatedCaller } from '@/lib/auth-util'
+import { createNotification } from '@/lib/notifications'
 
 // Use service role key to bypass RLS for inserts
 function getSupabaseAdmin() {
@@ -87,7 +88,7 @@ export async function POST(req: Request) {
     // Verify team exists and is open
     const { data: team, error: teamError } = await supabase
       .from('buddykid_teams')
-      .select('id, max_members, status, creator_email')
+      .select('id, max_members, status, creator_email, team_name')
       .eq('id', team_id)
       .maybeSingle()
 
@@ -155,6 +156,19 @@ export async function POST(req: Request) {
         return NextResponse.json({ error: 'Failed to submit application. Please try again.' }, { status: 500 })
       }
 
+      // Notify the Team Leader about the re-application
+      await createNotification({
+        recipient_email: team.creator_email,
+        sender_name: member_name.trim(),
+        sender_email: member_email.trim().toLowerCase(),
+        type: 'team_join_request',
+        title: 'New Squad Join Request',
+        message: `${member_name.trim()} wants to join your squad "${team.team_name || 'Team'}"!`,
+        team_id: team.id,
+        team_name: team.team_name,
+        link_url: '/buddykid',
+      })
+
       return NextResponse.json({
         ok: true,
         status: 'pending',
@@ -193,6 +207,19 @@ export async function POST(req: Request) {
         return NextResponse.json({ error: `Failed to apply: ${insertError.message || 'Please try again.'}` }, { status: 500 })
       }
     }
+
+    // Notify the Team Leader about the application
+    await createNotification({
+      recipient_email: team.creator_email,
+      sender_name: member_name.trim(),
+      sender_email: member_email.trim().toLowerCase(),
+      type: 'team_join_request',
+      title: 'New Squad Join Request',
+      message: `${member_name.trim()} requested to join your squad "${team.team_name || 'Team'}"!`,
+      team_id: team.id,
+      team_name: team.team_name,
+      link_url: '/buddykid',
+    })
 
     return NextResponse.json({
       ok: true,

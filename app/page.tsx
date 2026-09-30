@@ -23,6 +23,7 @@ import Header from "@/components/header"
 import CommunityFeed from "@/components/community-feed"
 import Image from "next/image"
 import Link from "next/link"
+import { getAssetUrl } from "@/lib/storage"
 import dynamic from "next/dynamic"
 
 const AuthModal = dynamic(() => import("@/components/auth-modal"), { ssr: false })
@@ -386,7 +387,7 @@ export default function HomePage() {
               aria-hidden="true"
               className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-screen scale-105"
             >
-              <source src="/images/gemini_generated_video_f7698634.mp4" type="video/mp4" />
+              <source src={getAssetUrl("/images/gemini_generated_video_f7698634.mp4")} type="video/mp4" />
             </video>
             <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/80 via-transparent to-[#050505] z-10" />
           </div>

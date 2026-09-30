@@ -1,3 +1,5 @@
+import { getAssetUrl } from "@/lib/storage"
+
 /** Bump when poster images change so browsers refetch */
 export const SPEAKER_IMAGE_VERSION = "3"
 
@@ -28,7 +30,7 @@ export const SPEAKER_EVENTS: SpeakerEvent[] = [
     date: "October 17, 2026",
     location: "Google Meet",
     expectedAudience: "100+ open-source beginners",
-    image: "/images/CodeNeuraX.webp",
+    image: getAssetUrl("/images/CodeNeuraX.webp"),
     category: "Workshop",
     duration: "90 minutes",
     highlights: ["First PR", "GSoC Overview", "Maintainer Tips", "Live Demo"],

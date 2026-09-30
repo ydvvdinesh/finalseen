@@ -118,6 +118,24 @@ const nextConfig = {
     ]
   },
 
+  // Fallback rewrites to Supabase Storage CDN for assets moved to cloud
+  async rewrites() {
+    return [
+      {
+        source: '/downloads/:path*',
+        destination: 'https://vyyrpodenrxjgjgmlxeu.supabase.co/storage/v1/object/public/assets/downloads/:path*',
+      },
+      {
+        source: '/videos/:path*',
+        destination: 'https://vyyrpodenrxjgjgmlxeu.supabase.co/storage/v1/object/public/assets/videos/:path*',
+      },
+      {
+        source: '/images/:path*',
+        destination: 'https://vyyrpodenrxjgjgmlxeu.supabase.co/storage/v1/object/public/assets/images/:path*',
+      },
+    ]
+  },
+
   // Environment variables
   env: {
     CUSTOM_KEY: process.env.CUSTOM_KEY,

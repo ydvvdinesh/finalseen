@@ -3,6 +3,7 @@ import { createClient } from '@supabase/supabase-js'
 import { checkRateLimit } from '@/lib/rate-limiter'
 import { getAuthenticatedCaller } from '@/lib/auth-util'
 import { archiveDeletedTeam } from '@/lib/audit-logger'
+import { createNotification } from '@/lib/notifications'
 
 function getSupabaseAdmin() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL
@@ -343,6 +344,13 @@ export async function POST(req: Request) {
         return NextResponse.json({ error: 'Team is already at maximum member capacity' }, { status: 400 })
       }
 
+      // Fetch applicant details to notify them
+      const { data: applicant } = await supabase
+        .from('buddykid_members')
+        .select('member_email, member_name')
+        .eq('id', member_id)
+        .maybeSingle()
+
       // Update applicant to approved
       const { error: approveError } = await supabase
         .from('buddykid_members')
@@ -353,6 +361,21 @@ export async function POST(req: Request) {
       if (approveError) {
         console.error('Approve member error:', approveError)
         return NextResponse.json({ error: 'Failed to approve applicant' }, { status: 500 })
+      }
+
+      // Notify the approved applicant
+      if (applicant?.member_email) {
+        await createNotification({
+          recipient_email: applicant.member_email,
+          sender_name: team.creator_name || 'Team Leader',
+          sender_email: team.creator_email,
+          type: 'team_accepted',
+          title: 'Squad Application Approved! 🎉',
+          message: `Great news! You have been accepted into "${team.team_name || 'the team'}" by ${team.creator_name || 'the Team Leader'}.`,
+          team_id: team.id,
+          team_name: team.team_name,
+          link_url: '/buddykid',
+        })
       }
 
       // If team is now full, auto-close it
@@ -376,6 +399,13 @@ export async function POST(req: Request) {
         return NextResponse.json({ error: 'Applicant ID required' }, { status: 400 })
       }
 
+      // Fetch applicant details to notify them
+      const { data: applicant } = await supabase
+        .from('buddykid_members')
+        .select('member_email, member_name')
+        .eq('id', member_id)
+        .maybeSingle()
+
       const { error: rejectError } = await supabase
         .from('buddykid_members')
         .update({ status: 'rejected' })
@@ -385,6 +415,21 @@ export async function POST(req: Request) {
       if (rejectError) {
         console.error('Reject member error:', rejectError)
         return NextResponse.json({ error: 'Failed to reject applicant' }, { status: 500 })
+      }
+
+      // Notify the rejected applicant
+      if (applicant?.member_email) {
+        await createNotification({
+          recipient_email: applicant.member_email,
+          sender_name: team.creator_name || 'Team Leader',
+          sender_email: team.creator_email,
+          type: 'team_rejected',
+          title: 'Squad Application Update',
+          message: `Your application to join "${team.team_name || 'the team'}" was not accepted. Keep exploring other squads!`,
+          team_id: team.id,
+          team_name: team.team_name,
+          link_url: '/buddykid',
+        })
       }
 
       return NextResponse.json({ ok: true, message: 'Application rejected.' })
@@ -400,6 +445,13 @@ export async function POST(req: Request) {
         return NextResponse.json({ error: 'Member ID required' }, { status: 400 })
       }
 
+      // Fetch member details before deletion to notify them
+      const { data: memberToRemove } = await supabase
+        .from('buddykid_members')
+        .select('member_email, member_name')
+        .eq('id', member_id)
+        .maybeSingle()
+
       // Delete member from team
       const { error: deleteError } = await supabase
         .from('buddykid_members')
@@ -410,6 +462,21 @@ export async function POST(req: Request) {
       if (deleteError) {
         console.error('Remove member error:', deleteError)
         return NextResponse.json({ error: 'Failed to remove member' }, { status: 500 })
+      }
+
+      // Notify the removed member
+      if (memberToRemove?.member_email) {
+        await createNotification({
+          recipient_email: memberToRemove.member_email,
+          sender_name: team.creator_name || 'Team Leader',
+          sender_email: team.creator_email,
+          type: 'team_removed',
+          title: 'Squad Membership Update',
+          message: `You have been removed from "${team.team_name || 'the team'}".`,
+          team_id: team.id,
+          team_name: team.team_name,
+          link_url: '/buddykid',
+        })
       }
 
       // Re-open team if it was closed
@@ -441,6 +508,19 @@ export async function POST(req: Request) {
         console.error('Leave team error:', leaveError)
         return NextResponse.json({ error: 'Failed to leave team' }, { status: 500 })
       }
+
+      // Notify the Team Leader that a teammate left
+      await createNotification({
+        recipient_email: team.creator_email,
+        sender_name: email,
+        sender_email: email,
+        type: 'team_left',
+        title: 'Teammate Left Squad',
+        message: `A member (${email}) has left your squad "${team.team_name || 'the team'}".`,
+        team_id: team.id,
+        team_name: team.team_name,
+        link_url: '/buddykid',
+      })
 
       // Re-open team if it was closed
       if (team.status === 'closed') {

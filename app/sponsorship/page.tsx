@@ -18,6 +18,7 @@ import {
 import Header from "@/components/header"
 import AuthModal from "@/components/auth-modal"
 import SponsorshipPersonCard from "@/components/sponsorship-person-card"
+import { getAssetUrl } from "@/lib/storage"
 import {
   SPONSORSHIP_HERO,
   FEATURED_EVENTS,
@@ -114,7 +115,7 @@ export default function SponsorshipPage() {
             playsInline
             className="absolute inset-0 w-full h-full object-cover opacity-40"
           >
-            <source src="/videos/hero-bg.mp4" type="video/mp4" />
+            <source src={getAssetUrl("/videos/hero-bg.mp4")} type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505] z-10" />
         </div>

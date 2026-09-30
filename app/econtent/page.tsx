@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { BookOpen, FileText, Download } from "lucide-react"
 import Header from "@/components/header"
 import AuthModal from "@/components/auth-modal"
+import { getAssetUrl } from "@/lib/storage"
 
 type Section = {
   title: string;
@@ -16,16 +17,16 @@ type Category = "Previous Year Question" | "Notes" | "Problem Statement / Practi
 
 const categorizedSections: Record<Category, Section[]> = {
   "Previous Year Question": [
-    { title: "Google DSA Ques", description: "150+ previous Google DSA interview questions.", link: "/downloads/Google DSA.pdf" },
-    { title: "Microsoft DSA Ques", description: "150+ previous Microsoft DSA interview questions.", link: "/downloads/Microsoft DSA.pdf" },
-    { title: "GATE - CS Previous Year Ques", description: "All GATE CSE previous year papers.", link: "/downloads/Computer Science and Information Technology (CS).zip" },
-    { title: "GATE - DA Previous Year Ques", description: "All GATE DA previous year papers.", link: "/downloads/Data Science and Artificial Intelligence (DA).zip" },
-    { title: "Linkedin DSA Ques", description: "150+ previous Linkedin DSA interview questions.", link: "/downloads/Linkedin DSA.pdf" },
-    { title: "Adobe DSA Ques", description: "150+ previous Adobe DSA interview questions.", link: "/downloads/Adobe DSA.pdf" },
-    { title: "Amazon DSA Ques", description: "150+ previous Amazon DSA interview questions.", link: "/downloads/Amazon DSA.pdf" },
-    { title: "Capgemini DSA Ques", description: "150+ previous Capgemini DSA interview questions.", link: "/downloads/capgemini question.pdf" },
-    { title: "Deloitte DSA Ques", description: "150+ previous Deloitte DSA interview questions.", link: "/downloads/deloitte question.pdf" },
-    { title: "TCS DSA Ques", description: "150+ previous TCS DSA interview questions.", link: "/downloads/tcs question.pdf" },
+    { title: "Google DSA Ques", description: "150+ previous Google DSA interview questions.", link: getAssetUrl("/downloads/Google DSA.pdf") },
+    { title: "Microsoft DSA Ques", description: "150+ previous Microsoft DSA interview questions.", link: getAssetUrl("/downloads/Microsoft DSA.pdf") },
+    { title: "GATE - CS Previous Year Ques", description: "All GATE CSE previous year papers.", link: getAssetUrl("/downloads/Computer Science and Information Technology (CS).zip") },
+    { title: "GATE - DA Previous Year Ques", description: "All GATE DA previous year papers.", link: getAssetUrl("/downloads/Data Science and Artificial Intelligence (DA).zip") },
+    { title: "Linkedin DSA Ques", description: "150+ previous Linkedin DSA interview questions.", link: getAssetUrl("/downloads/Linkedin DSA.pdf") },
+    { title: "Adobe DSA Ques", description: "150+ previous Adobe DSA interview questions.", link: getAssetUrl("/downloads/Adobe DSA.pdf") },
+    { title: "Amazon DSA Ques", description: "150+ previous Amazon DSA interview questions.", link: getAssetUrl("/downloads/Amazon DSA.pdf") },
+    { title: "Capgemini DSA Ques", description: "150+ previous Capgemini DSA interview questions.", link: getAssetUrl("/downloads/capgemini question.pdf") },
+    { title: "Deloitte DSA Ques", description: "150+ previous Deloitte DSA interview questions.", link: getAssetUrl("/downloads/deloitte question.pdf") },
+    { title: "TCS DSA Ques", description: "150+ previous TCS DSA interview questions.", link: getAssetUrl("/downloads/tcs question.pdf") },
   ],
   Notes: [
     { title: "Python Notes", description: "Python Handwritten Notes for beginners and advanced learners.", link: "https://vyyrpodenrxjgjgmlxeu.supabase.co/storage/v1/object/sign/Notes/python%20programming-notes.pdf?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8wMDUxZTBjYS05MDlmLTQxMWItYjc1NC0wODM3NjdlY2YyNjYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJOb3Rlcy9weXRob24gcHJvZ3JhbW1pbmctbm90ZXMucGRmIiwiaWF0IjoxNzU4Mzk2NTU2LCJleHAiOjIwNzM3NTY1NTZ9.6iFn4Jn7CkoWgV1vY5i5SSqrNv8olpmipcAM3r8fAVM" },
@@ -37,19 +38,19 @@ const categorizedSections: Record<Category, Section[]> = {
     { title: "Javascript Concept Notes", description: "Javascript Handwritten Notes for beginners and advanced learners", link: "https://vyyrpodenrxjgjgmlxeu.supabase.co/storage/v1/object/sign/Notes/JavaScript%20Handwritten%20Notes.pdf?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8wMDUxZTBjYS05MDlmLTQxMWItYjc1NC0wODM3NjdlY2YyNjYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJOb3Rlcy9KYXZhU2NyaXB0IEhhbmR3cml0dGVuIE5vdGVzLnBkZiIsImlhdCI6MTc1OTcxMDUwMiwiZXhwIjoyMDc1MDcwNTAyfQ.D8j8dp6CUQZs8lmJKjwJ4rGpphYgY9lyKg8AOdzpQ4o" },
   ],
   "Problem Statement / Practice Question": [
-    { title: "Bharatiya Antariksh 2025", description: "Organized by government of India.", link: "/downloads/antariksha problem.pdf" },
-    { title: "Intellify Hackathon 2025", description: "Organized by - Marwadi University.", link: "/downloads/intellify_hackathon.pdf" },
-    { title: "Code Coalescence-2025", description: "Organized by MITS-DU, Gwalior.", link: "/downloads/Code Coalescence-2025.pdf" },
-    { title: "CNX Selected 2025", description: "Selected by CodeNeuraX.", link: "/downloads/cnx-problem statement.pdf" },
-    { title: "Online Hackathon 2025", description: "Organized by Cloud Technologies.", link: "/downloads/cloud problem.pdf" },
-    { title: "Oddo Hackathon 2025", description: "Organized by Oddo.", link: "/downloads/oddo problem.pdf" },
-    { title: "Traffic Hackathon 2024", description: "Organized by - IIT Jammu.", link: "/downloads/Traffic hackathon Problem Statements.pdf" },
-    { title: "Smart India Hackathon 2024", description: "Organized by government of India.", link: "/downloads/SIH_PS_2024.xlsx" },
-    { title: "Hackfest Hackathon - 2024", description: "Organized by CMR COLLEGE OF ENGINEERING.", link: "/downloads/CMR HACKFEST HACKATHON.pdf" },
-    { title: "Python Practice Questions", description: "Python questions for beginners and advanced learners.", link: "/downloads/python-notes.pdf" },
-    { title: "C Practice Questions", description: "C questions for beginners and advanced learners.", link: "/downloads/c question.pdf" },
-    { title: "C++ Practice Questions", description: "C++ questions for beginners and advanced learners.", link: "/downloads/c++ questions.pdf" },
-    { title: "Java Practice Questions", description: "Java questions for beginners and advanced learners.", link: "/downloads/java question.pdf" },
+    { title: "Bharatiya Antariksh 2025", description: "Organized by government of India.", link: getAssetUrl("/downloads/antariksha problem.pdf") },
+    { title: "Intellify Hackathon 2025", description: "Organized by - Marwadi University.", link: getAssetUrl("/downloads/intellify_hackathon.pdf") },
+    { title: "Code Coalescence-2025", description: "Organized by MITS-DU, Gwalior.", link: getAssetUrl("/downloads/Code Coalescence-2025.pdf") },
+    { title: "CNX Selected 2025", description: "Selected by CodeNeuraX.", link: getAssetUrl("/downloads/cnx-problem statement.pdf") },
+    { title: "Online Hackathon 2025", description: "Organized by Cloud Technologies.", link: getAssetUrl("/downloads/cloud problem.pdf") },
+    { title: "Oddo Hackathon 2025", description: "Organized by Oddo.", link: getAssetUrl("/downloads/oddo problem.pdf") },
+    { title: "Traffic Hackathon 2024", description: "Organized by - IIT Jammu.", link: getAssetUrl("/downloads/Traffic hackathon Problem Statements.pdf") },
+    { title: "Smart India Hackathon 2024", description: "Organized by government of India.", link: getAssetUrl("/downloads/SIH_PS_2024.xlsx") },
+    { title: "Hackfest Hackathon - 2024", description: "Organized by CMR COLLEGE OF ENGINEERING.", link: getAssetUrl("/downloads/CMR HACKFEST HACKATHON.pdf") },
+    { title: "Python Practice Questions", description: "Python questions for beginners and advanced learners.", link: getAssetUrl("/downloads/python-notes.pdf") },
+    { title: "C Practice Questions", description: "C questions for beginners and advanced learners.", link: getAssetUrl("/downloads/c question.pdf") },
+    { title: "C++ Practice Questions", description: "C++ questions for beginners and advanced learners.", link: getAssetUrl("/downloads/c++ questions.pdf") },
+    { title: "Java Practice Questions", description: "Java questions for beginners and advanced learners.", link: getAssetUrl("/downloads/java question.pdf") },
   ],
 };
 

@@ -1,3 +1,5 @@
+import { getAssetUrl } from "@/lib/storage"
+
 /** Bump when event copy or images change (forces browsers to refetch) */
 export const UPCOMING_EVENTS_VERSION = "6"
 
@@ -27,7 +29,7 @@ export const UPCOMING_EVENTS: UpcomingEvent[] = [
       "CodeNeuraX proudly presents an exclusive open-source and career-focused session featuring Nidhi Singh — GSoC Contributor & Mentor at AOSSIE and Software Engineer at Amazon. Discover how GSoC works, how to get started with open source, find the right organizations, submit winning proposals, avoid common pitfalls, and build a strong software engineering profile for top tech companies like Amazon — followed by a live interactive Q&A.",
     status: "registration-open",
     registrationLink: "https://luma.com/cnojw1t3",
-    image: "/images/gsoc-amazon-event.png",
+    image: getAssetUrl("/images/gsoc-amazon-event.png"),
     speaker: "Nidhi Singh — GSoC Contributor & Mentor at AOSSIE, Software Engineer at Amazon",
   },
   // Hackathon of CodeNeuraX (commented out as requested, do not remove)
