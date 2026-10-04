@@ -126,6 +126,14 @@ export const SITE_KNOWLEDGE_CHUNKS: SiteKnowledgeChunk[] = [
     tags: ["events", "webinar", "register", "upcoming", "calendar", "luma"],
   },
   {
+    id: "event-neuraknockout-2026",
+    title: "CodeNeuraX : NeuraKnockout 2026 (Offline Web Dev Challenge)",
+    body: `NeuraKnockout 2026 is an offline web development hackathon organized by CodeNeuraX and the Department of AI, ML & DS at Marwadi University on October 24, 2026 (9:00 AM - 4:00 PM). Problem statements release at 12:00 AM Midnight. Open to all college and university students. AI tools, frameworks, and dev resources are fully allowed. Prizes: 1st ₹2,100, 2nd ₹1,500, 3rd ₹1,100 + certificates for all. Registration deadline: 23 October 2026. Register at: https://unstop.com/hackathons/codeneurax-neuraknockout-2026-codeneurax-1765131`,
+    path: "https://unstop.com/hackathons/codeneurax-neuraknockout-2026-codeneurax-1765131",
+    pathLabel: "NeuraKnockout on Unstop",
+    tags: ["neuraknockout", "hackathon", "web dev", "unstop", "competition", "marwadi", "challenge", "offline", "prize"],
+  },
+  {
     id: "econtent",
     title: "E-content library",
     body: `E-content at /econtent is the curated learning library for the community (resources, materials). Linked from the main navigation as "Econtent".`,

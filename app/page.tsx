@@ -28,7 +28,7 @@ import dynamic from "next/dynamic"
 
 const AuthModal = dynamic(() => import("@/components/auth-modal"), { ssr: false })
 import Autoplay from "embla-carousel-autoplay"
-import { UPCOMING_EVENTS, UPCOMING_EVENTS_VERSION } from "@/data/upcoming-events"
+import { UPCOMING_EVENTS, UPCOMING_EVENTS_VERSION } from "@/data/upcoming-events" // v9 updated
 
 // Dynamic imports for better performance
 const Carousel = dynamic(() => import("@/components/ui/carousel").then(mod => mod.Carousel), {
@@ -267,14 +267,14 @@ export default function HomePage() {
                 </button>
 
                 {/* Poster Image */}
-                <div className="relative w-full h-44 sm:h-52 rounded-2xl overflow-hidden mb-5 border border-purple-500/25 group">
+                <div className="relative w-full h-48 sm:h-56 rounded-2xl overflow-hidden mb-5 border border-purple-500/25 group">
                   <Image
-                    src={`${events[0].image || "/images/gsoc-amazon-event.png"}?v=${UPCOMING_EVENTS_VERSION}`}
+                    src={`${events[0].image || "/images/neuraknockout-2026.jpg"}?v=${UPCOMING_EVENTS_VERSION}`}
                     alt={events[0].title}
                     fill
                     sizes="(max-width: 640px) 100vw, 550px"
                     priority
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#100524] via-black/20 to-transparent" />
 
@@ -282,11 +282,16 @@ export default function HomePage() {
                   <div className="absolute top-3 left-3 flex flex-wrap items-center gap-2">
                     <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-[11px] font-mono font-semibold backdrop-blur-md">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                      REGISTRATION OPEN
+                      {events[0].status === "registration-open" ? "REGISTRATION OPEN" : "UPCOMING"}
                     </span>
                     <span className="px-2.5 py-1 rounded-full bg-purple-500/30 border border-purple-400/35 text-purple-200 text-[11px] font-mono backdrop-blur-md">
                       {events[0].type}
                     </span>
+                    {events[0].entryFee && (
+                      <span className="px-2.5 py-1 rounded-full bg-amber-500/25 border border-amber-400/35 text-amber-200 text-[11px] font-mono font-semibold backdrop-blur-md">
+                        {events[0].entryFee}
+                      </span>
+                    )}
                   </div>
                 </div>
 
@@ -306,12 +311,21 @@ export default function HomePage() {
                     {events[0].title}
                   </h3>
 
-                  {/* Speaker */}
+                  {/* Speaker or Organizer */}
                   {events[0].speaker && (
                     <div className="mb-3.5 inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-purple-500/10 border border-purple-500/20 text-xs sm:text-sm text-purple-200">
                       <Users className="w-3.5 h-3.5 text-purple-400 shrink-0" />
                       <span className="line-clamp-1">
                         <strong className="text-white/90 font-medium">Speaker:</strong> {events[0].speaker}
+                      </span>
+                    </div>
+                  )}
+
+                  {events[0].organizer && (
+                    <div className="mb-3.5 inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-purple-500/10 border border-purple-500/20 text-xs sm:text-sm text-purple-200">
+                      <Users className="w-3.5 h-3.5 text-purple-400 shrink-0" />
+                      <span className="line-clamp-1">
+                        <strong className="text-white/90 font-medium">Presented by:</strong> {events[0].organizer}
                       </span>
                     </div>
                   )}
@@ -333,17 +347,18 @@ export default function HomePage() {
                   </div>
 
                   {/* Highlights / Pills */}
-                  <div className="flex flex-wrap gap-1.5 mb-5 text-[11px] font-mono">
-                    <span className="px-2.5 py-1 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-300">
-                      ⚡ GSoC 2026 Strategy
-                    </span>
-                    <span className="px-2.5 py-1 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-300">
-                      💼 Amazon SWE Insights
-                    </span>
-                    <span className="px-2.5 py-1 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-300">
-                      🎯 Live Q&amp;A
-                    </span>
-                  </div>
+                  {events[0].highlights && events[0].highlights.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5 mb-5 text-[11px] font-mono">
+                      {events[0].highlights.map((highlight, idx) => (
+                        <span
+                          key={idx}
+                          className="px-2.5 py-1 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-300"
+                        >
+                          {highlight}
+                        </span>
+                      ))}
+                    </div>
+                  )}
 
                   {/* Action Buttons */}
                   <div className="flex flex-col sm:flex-row gap-2.5">
@@ -352,10 +367,14 @@ export default function HomePage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => setShowEventPopup(false)}
-                      className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold bg-white text-black hover:bg-white/90 shadow-lg shadow-white/10 transition-all"
+                      className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold bg-white text-black hover:bg-white/90 shadow-lg shadow-white/10 transition-all group"
                     >
-                      <span>Register on Lu.ma</span>
-                      <ArrowRight className="w-4 h-4 text-black" />
+                      <span>
+                        {events[0].registrationPlatform
+                          ? `Register on ${events[0].registrationPlatform}`
+                          : "Register Now"}
+                      </span>
+                      <ArrowRight className="w-4 h-4 text-black group-hover:translate-x-0.5 transition-transform" />
                     </a>
                     <a
                       href="#upcoming-events"
@@ -706,7 +725,7 @@ export default function HomePage() {
                         fill
                         sizes="(max-width: 1024px) 100vw, 50vw"
                         priority
-                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-black/85 via-black/30 to-transparent" />
 
@@ -734,6 +753,17 @@ export default function HomePage() {
                         >
                           {events[0].type}
                         </span>
+                        {events[0].entryFee && (
+                          <span
+                            className="px-3 py-1 rounded-full text-xs font-medium backdrop-blur-md border"
+                            style={{
+                              fontFamily: "var(--font-mono)",
+                              background: "rgba(245,158,11,0.15)", color: "#fbbf24", borderColor: "rgba(245,158,11,0.25)"
+                            }}
+                          >
+                            {events[0].entryFee}
+                          </span>
+                        )}
                       </div>
                     </div>
 
@@ -748,6 +778,13 @@ export default function HomePage() {
                           <div className="mb-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-purple-500/10 border border-purple-500/20 text-xs sm:text-sm text-purple-300">
                             <Users className="w-3.5 h-3.5 text-purple-400 shrink-0" />
                             <span><strong className="text-white/80 font-medium">Speaker:</strong> {events[0].speaker}</span>
+                          </div>
+                        )}
+
+                        {events[0].organizer && (
+                          <div className="mb-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-purple-500/10 border border-purple-500/20 text-xs sm:text-sm text-purple-300">
+                            <Users className="w-3.5 h-3.5 text-purple-400 shrink-0" />
+                            <span><strong className="text-white/80 font-medium">Organizer:</strong> {events[0].organizer}</span>
                           </div>
                         )}
 
@@ -766,6 +803,16 @@ export default function HomePage() {
                           </div>
                         </div>
 
+                        {events[0].highlights && events[0].highlights.length > 0 && (
+                          <div className="flex flex-wrap gap-1.5 mb-6 text-[11px] font-mono">
+                            {events[0].highlights.map((h, i) => (
+                              <span key={i} className="px-2.5 py-1 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-300">
+                                {h}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+
                         <p className="text-white/45 text-sm sm:text-base leading-relaxed mb-6">
                           {events[0].description}
                         </p>
@@ -779,33 +826,27 @@ export default function HomePage() {
                             rel="noopener noreferrer"
                             className="btn-premium text-sm py-3 px-6 inline-flex items-center gap-2"
                           >
-                            {events[0].status === "registration-open" ? "Register Now" : "Stay Tuned (TBA)"}
+                            <span>
+                              {events[0].registrationPlatform
+                                ? `Register on ${events[0].registrationPlatform}`
+                                : (events[0].status === "registration-open" ? "Register Now" : "Stay Tuned (TBA)")}
+                            </span>
                             <ExternalLink className="w-4 h-4" />
                           </a>
-                          {events[0].type?.toLowerCase().includes("hackathon") ? (
-                            <Link
-                              href="/buddykid"
-                              className="px-5 py-3 rounded-xl text-sm font-semibold text-cyan-300 bg-cyan-500/10 border border-cyan-500/25 hover:bg-cyan-500/20 hover:border-cyan-500/40 transition-all inline-flex items-center gap-2 font-mono"
-                            >
-                              <Users className="w-4 h-4" />
-                              <span>Need Teammates? Try BuddyKid</span>
-                            </Link>
-                          ) : (
-                            <Link
-                              href="/events"
-                              className="px-5 py-3 rounded-xl text-sm font-semibold text-purple-300 bg-purple-500/10 border border-purple-500/25 hover:bg-purple-500/20 hover:border-purple-500/40 transition-all inline-flex items-center gap-2 font-mono"
-                            >
-                              <span>Explore All Events</span>
-                              <ArrowRight className="w-4 h-4" />
-                            </Link>
-                          )}
+                          <Link
+                            href="/events"
+                            className="px-5 py-3 rounded-xl text-sm font-semibold text-purple-300 bg-purple-500/10 border border-purple-500/25 hover:bg-purple-500/20 hover:border-purple-500/40 transition-all inline-flex items-center gap-2 font-mono"
+                          >
+                            <span>Explore All Events</span>
+                            <ArrowRight className="w-4 h-4" />
+                          </Link>
                         </div>
                       )}
                     </div>
                   </div>
                 </motion.div>
               ) : (
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
                   {events.map((event, index) => (
                     <motion.div
                       key={event.id}
@@ -813,80 +854,138 @@ export default function HomePage() {
                       variants={fadeUp} custom={index * 0.1}
                       className="group"
                     >
-                      <div className="glass-card overflow-hidden h-full">
-                        {/* Event Image */}
-                        <div className="relative h-48 sm:h-56 overflow-hidden">
-                          <Image
-                            src={`${event.image || "/placeholder.svg"}?v=${UPCOMING_EVENTS_VERSION}`}
-                            alt={event.title}
-                            fill
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                            loading="lazy"
-                            className="object-cover group-hover:scale-105 transition-transform duration-700"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                      <div className="glass-card overflow-hidden h-full flex flex-col justify-between border border-white/[0.08] hover:border-purple-500/30 transition-all duration-500">
+                        <div>
+                          {/* Event Image */}
+                          <div className="relative h-56 sm:h-64 overflow-hidden">
+                            <Image
+                              src={`${event.image || "/placeholder.svg"}?v=${UPCOMING_EVENTS_VERSION}`}
+                              alt={event.title}
+                              fill
+                              sizes="(max-width: 768px) 100vw, 50vw"
+                              loading="lazy"
+                              className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
 
-                          <div className="absolute top-4 left-4 flex gap-2">
-                            <span
-                              className="px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm border"
-                              style={{
-                                fontFamily: "var(--font-mono)",
-                                ...(event.status === "upcoming"
-                                  ? { background: "rgba(34,197,94,0.15)", color: "#4ade80", borderColor: "rgba(34,197,94,0.2)" }
-                                  : event.status === "registration-open"
-                                    ? { background: "rgba(59,130,246,0.15)", color: "#60a5fa", borderColor: "rgba(59,130,246,0.2)" }
-                                    : { background: "rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.5)", borderColor: "rgba(255,255,255,0.1)" }
-                              )
-                            }}
-                          >
-                            {event.status === "upcoming" ? "To Be Announced" : event.status === "registration-open" ? "Registration Open" : "Upcoming"}
-                          </span>
-                          <span
-                            className="px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm border"
-                            style={{
-                              fontFamily: "var(--font-mono)",
-                              background: "rgba(168,85,247,0.15)", color: "#c084fc", borderColor: "rgba(168,85,247,0.2)"
-                            }}
-                          >
-                            {event.type}
-                          </span>
-                        </div>
-                      </div>
-
-                      <div className="p-6 sm:p-8">
-                        <h4 className="text-xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors">
-                          {event.title}
-                        </h4>
-                        {event.speaker && (
-                          <div className="mb-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-purple-500/10 border border-purple-500/20 text-xs text-purple-300">
-                            <Users className="w-3 h-3 text-purple-400 shrink-0" />
-                            <span><strong className="text-white/70 font-medium">Speaker:</strong> {event.speaker}</span>
+                            <div className="absolute top-4 left-4 flex flex-wrap gap-2 z-10">
+                              <span
+                                className="px-3 py-1 rounded-full text-xs font-medium backdrop-blur-md border"
+                                style={{
+                                  fontFamily: "var(--font-mono)",
+                                  ...(event.status === "upcoming"
+                                    ? { background: "rgba(34,197,94,0.15)", color: "#4ade80", borderColor: "rgba(34,197,94,0.2)" }
+                                    : event.status === "registration-open"
+                                      ? { background: "rgba(59,130,246,0.15)", color: "#60a5fa", borderColor: "rgba(59,130,246,0.2)" }
+                                      : { background: "rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.5)", borderColor: "rgba(255,255,255,0.1)" }
+                                  )
+                                }}
+                              >
+                                {event.status === "upcoming" ? "To Be Announced" : event.status === "registration-open" ? "Registration Open" : "Upcoming"}
+                              </span>
+                              <span
+                                className="px-3 py-1 rounded-full text-xs font-medium backdrop-blur-md border"
+                                style={{
+                                  fontFamily: "var(--font-mono)",
+                                  background: "rgba(168,85,247,0.15)", color: "#c084fc", borderColor: "rgba(168,85,247,0.2)"
+                                }}
+                              >
+                                {event.type}
+                              </span>
+                              {event.entryFee && (
+                                <span
+                                  className="px-3 py-1 rounded-full text-xs font-medium backdrop-blur-md border"
+                                  style={{
+                                    fontFamily: "var(--font-mono)",
+                                    background: "rgba(245,158,11,0.15)", color: "#fbbf24", borderColor: "rgba(245,158,11,0.25)"
+                                  }}
+                                >
+                                  {event.entryFee}
+                                </span>
+                              )}
+                            </div>
                           </div>
-                        )}
-                        <div className="flex flex-col gap-2 mb-4 text-sm text-white/40">
-                          <div className="flex items-center gap-2"><Calendar className="w-3.5 h-3.5 text-purple-400/60" /><span>{event.date}</span></div>
-                          <div className="flex items-center gap-2"><Clock className="w-3.5 h-3.5 text-purple-400/60" /><span>{event.time}</span></div>
-                          <div className="flex items-center gap-2"><MapPin className="w-3.5 h-3.5 text-purple-400/60" /><span>{event.location}</span></div>
-                        </div>
-                        <p className="text-white/35 text-sm leading-relaxed mb-6">{event.description}</p>
 
-                        {event.status !== "Ongoing" && (
-                          <a
-                            href={event.registrationLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="btn-premium text-sm py-2.5 px-5"
-                          >
-                            {event.status === "registration-open" ? "Register Now" : "Stay Tuned (TBA)"}
-                            <ExternalLink className="w-3.5 h-3.5" />
-                          </a>
-                        )}
+                          <div className="p-6 sm:p-8">
+                            <h4 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors leading-snug">
+                              {event.title}
+                            </h4>
+
+                            {event.speaker && (
+                              <div className="mb-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-purple-500/10 border border-purple-500/20 text-xs sm:text-sm text-purple-300">
+                                <Users className="w-3.5 h-3.5 text-purple-400 shrink-0" />
+                                <span><strong className="text-white/80 font-medium">Speaker:</strong> {event.speaker}</span>
+                              </div>
+                            )}
+
+                            {event.organizer && (
+                              <div className="mb-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-purple-500/10 border border-purple-500/20 text-xs sm:text-sm text-purple-300">
+                                <Users className="w-3.5 h-3.5 text-purple-400 shrink-0" />
+                                <span><strong className="text-white/80 font-medium">Organizer:</strong> {event.organizer}</span>
+                              </div>
+                            )}
+
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 mb-4 p-3 rounded-xl bg-white/[0.02] border border-white/[0.06] text-xs text-white/60">
+                              <div className="flex items-center gap-1.5">
+                                <Calendar className="w-3.5 h-3.5 text-purple-400 shrink-0" />
+                                <span className="font-mono truncate">{event.date}</span>
+                              </div>
+                              <div className="flex items-center gap-1.5">
+                                <Clock className="w-3.5 h-3.5 text-purple-400 shrink-0" />
+                                <span className="font-mono truncate">{event.time}</span>
+                              </div>
+                              <div className="flex items-center gap-1.5">
+                                <MapPin className="w-3.5 h-3.5 text-purple-400 shrink-0" />
+                                <span className="truncate">{event.location}</span>
+                              </div>
+                            </div>
+
+                            {event.highlights && event.highlights.length > 0 && (
+                              <div className="flex flex-wrap gap-1.5 mb-4 text-[11px] font-mono">
+                                {event.highlights.map((h, i) => (
+                                  <span
+                                    key={i}
+                                    className="px-2.5 py-1 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-300"
+                                  >
+                                    {h}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
+
+                            <p className="text-white/45 text-sm sm:text-base leading-relaxed mb-6">
+                              {event.description}
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="p-6 sm:p-8 pt-0 flex flex-wrap items-center justify-between gap-3">
+                          {event.status !== "Ongoing" && (
+                            <a
+                              href={event.registrationLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="btn-premium text-sm py-2.5 px-5 inline-flex items-center gap-2"
+                            >
+                              <span>
+                                {event.registrationPlatform
+                                  ? `Register on ${event.registrationPlatform}`
+                                  : (event.status === "registration-open" ? "Register Now" : "Stay Tuned (TBA)")}
+                              </span>
+                              <ExternalLink className="w-3.5 h-3.5" />
+                            </a>
+                          )}
+                          {event.prizes && (
+                            <span className="text-[11px] font-mono text-amber-300/90 px-2.5 py-1 rounded-lg bg-amber-500/10 border border-amber-500/20">
+                              🏆 Prizes Pool: ₹4,700+
+                            </span>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            )}
+                    </motion.div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </section>
