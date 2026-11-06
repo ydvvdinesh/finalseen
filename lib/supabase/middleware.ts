@@ -50,6 +50,7 @@ export async function updateSession(request: NextRequest) {
     pathname.startsWith("/auth/") ||
     pathname.startsWith("/reset-password") ||
     pathname.startsWith("/verify-registration") ||
+    pathname.startsWith("/neurasprint") ||
     pathname.startsWith("/api/")
 
   // Strictly protected paths requiring full Google login (even guest cannot access)

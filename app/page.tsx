@@ -17,7 +17,6 @@ import {
   Clock,
   MapPin,
   Youtube,
-  X,
 } from "lucide-react"
 import Header from "@/components/header"
 import CommunityFeed from "@/components/community-feed"
@@ -132,16 +131,6 @@ export default function HomePage() {
   const [cfSuccess, setCfSuccess] = useState<string | null>(null)
   const [cfError, setCfError] = useState<string | null>(null)
 
-  // Upcoming Event popup state (appears on open / refresh)
-  const [showEventPopup, setShowEventPopup] = useState(false)
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowEventPopup(true)
-    }, 700)
-    return () => clearTimeout(timer)
-  }, [])
-
   const submitContact = async (e: React.FormEvent) => {
     e.preventDefault()
     setCfError(null)
@@ -222,173 +211,6 @@ export default function HomePage() {
           <AuthModal type={authType} onClose={() => setShowAuthModal(false)} />
         )}
 
-        {/* ═══════════════════════════════════════════════════════════════
-            UPCOMING EVENT POPUP (ON OPEN / REFRESH)
-           ═══════════════════════════════════════════════════════════════ */}
-        <AnimatePresence>
-          {showEventPopup && events && events.length > 0 && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
-            >
-              {/* Backdrop */}
-              <div
-                className="fixed inset-0 bg-black/80 backdrop-blur-md"
-                onClick={() => setShowEventPopup(false)}
-              />
-
-              {/* Event Modal Card */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.92, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.92, y: 20 }}
-                transition={{ type: "spring", damping: 26, stiffness: 320 }}
-                className="relative w-full max-w-lg overflow-hidden rounded-3xl bg-gradient-to-b from-[#1b0a36] via-[#100524] to-[#070114] border border-purple-500/40 shadow-[0_0_90px_-15px_rgba(168,85,247,0.5)] p-5 sm:p-7 my-auto z-10"
-              >
-                {/* Ambient Radial Glows */}
-                <div
-                  className="absolute -top-24 -right-24 w-64 h-64 rounded-full pointer-events-none"
-                  style={{ background: "radial-gradient(circle, rgba(168,85,247,0.4), transparent 70%)" }}
-                />
-                <div
-                  className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full pointer-events-none"
-                  style={{ background: "radial-gradient(circle, rgba(34,211,238,0.25), transparent 70%)" }}
-                />
-
-                {/* Close Button */}
-                <button
-                  onClick={() => setShowEventPopup(false)}
-                  className="absolute top-4 right-4 z-20 p-2 rounded-xl bg-black/50 hover:bg-white/10 text-white/70 hover:text-white transition-colors border border-white/15 backdrop-blur-md"
-                  aria-label="Close popup"
-                >
-                  <X className="w-4 h-4" />
-                </button>
-
-                {/* Poster Image */}
-                <div className="relative w-full h-48 sm:h-56 rounded-2xl overflow-hidden mb-5 border border-purple-500/25 group">
-                  <Image
-                    src={`${events[0].image || "/images/neuraknockout-2026.jpg"}?v=${UPCOMING_EVENTS_VERSION}`}
-                    alt={events[0].title}
-                    fill
-                    sizes="(max-width: 640px) 100vw, 550px"
-                    priority
-                    className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#100524] via-black/20 to-transparent" />
-
-                  {/* Top Floating Badges */}
-                  <div className="absolute top-3 left-3 flex flex-wrap items-center gap-2">
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-[11px] font-mono font-semibold backdrop-blur-md">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                      {events[0].status === "registration-open" ? "REGISTRATION OPEN" : "UPCOMING"}
-                    </span>
-                    <span className="px-2.5 py-1 rounded-full bg-purple-500/30 border border-purple-400/35 text-purple-200 text-[11px] font-mono backdrop-blur-md">
-                      {events[0].type}
-                    </span>
-                    {events[0].entryFee && (
-                      <span className="px-2.5 py-1 rounded-full bg-amber-500/25 border border-amber-400/35 text-amber-200 text-[11px] font-mono font-semibold backdrop-blur-md">
-                        {events[0].entryFee}
-                      </span>
-                    )}
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="relative z-10">
-                  {/* Category & Badge */}
-                  <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-purple-500/15 border border-purple-500/30 text-purple-300 text-[11px] font-mono font-semibold uppercase tracking-wider mb-2.5">
-                    <Sparkles className="w-3 h-3 text-purple-400" />
-                    Featured Upcoming Event
-                  </div>
-
-                  {/* Title */}
-                  <h3
-                    className="text-xl sm:text-2xl font-bold text-white mb-2 leading-tight"
-                    style={{ fontFamily: "var(--font-serif)" }}
-                  >
-                    {events[0].title}
-                  </h3>
-
-                  {/* Speaker or Organizer */}
-                  {events[0].speaker && (
-                    <div className="mb-3.5 inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-purple-500/10 border border-purple-500/20 text-xs sm:text-sm text-purple-200">
-                      <Users className="w-3.5 h-3.5 text-purple-400 shrink-0" />
-                      <span className="line-clamp-1">
-                        <strong className="text-white/90 font-medium">Speaker:</strong> {events[0].speaker}
-                      </span>
-                    </div>
-                  )}
-
-                  {events[0].organizer && (
-                    <div className="mb-3.5 inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-purple-500/10 border border-purple-500/20 text-xs sm:text-sm text-purple-200">
-                      <Users className="w-3.5 h-3.5 text-purple-400 shrink-0" />
-                      <span className="line-clamp-1">
-                        <strong className="text-white/90 font-medium">Presented by:</strong> {events[0].organizer}
-                      </span>
-                    </div>
-                  )}
-
-                  {/* Quick Meta Grid */}
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-4 p-3 rounded-xl bg-white/[0.03] border border-purple-500/15 text-xs text-purple-200/80">
-                    <div className="flex items-center gap-1.5">
-                      <Calendar className="w-3.5 h-3.5 text-purple-400 shrink-0" />
-                      <span className="font-mono truncate">{events[0].date}</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <Clock className="w-3.5 h-3.5 text-purple-400 shrink-0" />
-                      <span className="font-mono truncate">{events[0].time}</span>
-                    </div>
-                    <div className="col-span-2 sm:col-span-1 flex items-center gap-1.5">
-                      <MapPin className="w-3.5 h-3.5 text-purple-400 shrink-0" />
-                      <span className="font-mono truncate">{events[0].location}</span>
-                    </div>
-                  </div>
-
-                  {/* Highlights / Pills */}
-                  {events[0].highlights && events[0].highlights.length > 0 && (
-                    <div className="flex flex-wrap gap-1.5 mb-5 text-[11px] font-mono">
-                      {events[0].highlights.map((highlight, idx) => (
-                        <span
-                          key={idx}
-                          className="px-2.5 py-1 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-300"
-                        >
-                          {highlight}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-
-                  {/* Action Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-2.5">
-                    <a
-                      href={events[0].registrationLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => setShowEventPopup(false)}
-                      className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold bg-white text-black hover:bg-white/90 shadow-lg shadow-white/10 transition-all group"
-                    >
-                      <span>
-                        {events[0].registrationPlatform
-                          ? `Register on ${events[0].registrationPlatform}`
-                          : "Register Now"}
-                      </span>
-                      <ArrowRight className="w-4 h-4 text-black group-hover:translate-x-0.5 transition-transform" />
-                    </a>
-                    <a
-                      href="#upcoming-events"
-                      onClick={() => setShowEventPopup(false)}
-                      className="px-4 py-3 rounded-xl text-sm font-medium text-purple-200/80 hover:text-white bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/25 transition-all text-center"
-                    >
-                      View Details
-                    </a>
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
 
         {/* ═══════════════════════════════════════════════════════════════
             HERO SECTION
