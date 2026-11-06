@@ -24,11 +24,12 @@ export function getAssetUrl(path: string): string {
   // Strip leading slash
   const cleanPath = path.startsWith('/') ? path.slice(1) : path
 
-  // Keep essential root icons local
+  // Keep essential root icons and local videos local
   if (
     cleanPath.startsWith('favicon') ||
     cleanPath.startsWith('android-chrome') ||
     cleanPath.startsWith('apple-touch-icon') ||
+    cleanPath.startsWith('videos') ||
     cleanPath === 'site.webmanifest'
   ) {
     return `/${cleanPath}`

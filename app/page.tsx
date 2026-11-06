@@ -26,30 +26,11 @@ import { getAssetUrl } from "@/lib/storage"
 import dynamic from "next/dynamic"
 
 const AuthModal = dynamic(() => import("@/components/auth-modal"), { ssr: false })
-import Autoplay from "embla-carousel-autoplay"
-import { UPCOMING_EVENTS, UPCOMING_EVENTS_VERSION } from "@/data/upcoming-events" // v9 updated
-
-// Dynamic imports for better performance
-const Carousel = dynamic(() => import("@/components/ui/carousel").then(mod => mod.Carousel), {
+const HomePhotoCarousel = dynamic(() => import("@/components/home-photo-carousel"), {
   ssr: false,
-  loading: () => <div className="w-full h-96 bg-white/[0.02] rounded-2xl animate-pulse" />
+  loading: () => <div className="w-full h-96 sm:h-[26rem] bg-white/[0.02] rounded-2xl animate-pulse" />
 })
-
-const CarouselContent = dynamic(() => import("@/components/ui/carousel").then(mod => mod.CarouselContent), {
-  ssr: false
-})
-
-const CarouselItem = dynamic(() => import("@/components/ui/carousel").then(mod => mod.CarouselItem), {
-  ssr: false
-})
-
-const CarouselPrevious = dynamic(() => import("@/components/ui/carousel").then(mod => mod.CarouselPrevious), {
-  ssr: false
-})
-
-const CarouselNext = dynamic(() => import("@/components/ui/carousel").then(mod => mod.CarouselNext), {
-  ssr: false
-})
+import { UPCOMING_EVENTS, UPCOMING_EVENTS_VERSION } from "@/data/upcoming-events" // v9 updated
 
 // ─── Count-up hook ──────────────────────────────────────────────────────────
 function useCountUp(target: number, duration = 2000) {
@@ -176,8 +157,6 @@ export default function HomePage() {
     "/images/1.png"
   ]
 
-  const autoplay = useRef(Autoplay({ delay: 4000, stopOnInteraction: false }))
-
   // Team data
   const team = [
     { initials: "DY", name: "Dinesh Yadav", role: "Founder", desc: "Passionate about empowering the next generation of developers through community-driven learning and innovation.", linkedin: "https://www.linkedin.com/in/dinesh-yadav-1b462831a/", gradient: "from-cyan-400 to-blue-500" },
@@ -216,20 +195,22 @@ export default function HomePage() {
             HERO SECTION
            ═══════════════════════════════════════════════════════════════ */}
         <section className="relative pt-36 pb-20 lg:pt-44 lg:pb-32 min-h-[90vh] flex items-center overflow-hidden" aria-label="Hero section">
-          {/* Background Video Layer: Logo Animation (Desktop Only for extreme mobile speed) */}
-          <div className="hidden md:block absolute inset-0 z-0 pointer-events-none overflow-hidden">
-            <div className="absolute inset-0 bg-[#050505]/65 z-10" />
+          {/* Background Video Layer: Stars in Space */}
+          <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
             <video
               autoPlay
               loop
               muted
               playsInline
-              preload="none"
+              preload="auto"
               aria-hidden="true"
-              className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-screen scale-105"
+              className="absolute inset-0 w-full h-full object-cover opacity-75 scale-105"
             >
-              <source src={getAssetUrl("/images/gemini_generated_video_f7698634.mp4")} type="video/mp4" />
+              <source src="/videos/hero-background.mp4" type="video/mp4" />
             </video>
+            {/* Subtle darkening overlay to ensure perfect contrast for text & badges */}
+            <div className="absolute inset-0 bg-[#050505]/40 z-10" />
+            {/* Smooth top & bottom vignette gradients */}
             <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/80 via-transparent to-[#050505] z-10" />
           </div>
 
@@ -403,44 +384,7 @@ export default function HomePage() {
                 initial="hidden" whileInView="visible" viewport={{ once: true }}
                 variants={fadeUp} custom={0.2}
               >
-                <div className="relative h-96 sm:h-[26rem] rounded-2xl overflow-hidden glass-card p-1">
-                  <Carousel opts={{ loop: true }} plugins={[autoplay.current as any]} className="w-full h-full">
-                    <CarouselContent className="h-96 sm:h-[26rem]">
-                      {[
-                        "/images/slideshow/auditorium-stage.png",
-                        "/images/slideshow/slide-1.jpg",
-                        "/images/slideshow/slide-2.jpg",
-                        "/images/slideshow/slide-3.jpg",
-                        "/images/slideshow/slide-4.jpg",
-                        "/images/slideshow/slide-5.jpg",
-                        "/images/CodeNeuraX.webp",
-                        "/images/Founder - CNX -1.webp",
-                        "/images/From the backstage.webp",
-                        "/images/Founder - CNX -2.webp",
-                        "/images/Career Guidance by sonu yadav.webp",
-                        "/images/mam with cnxx.webp",
-                        "/images/conxx-team.webp",
-                        "/images/Thanking Founder.webp",
-                      ].map((image, index) => (
-                        <CarouselItem key={index} className="relative h-96 sm:h-[26rem]">
-                          <Image
-                            src={image}
-                            alt={`CodeNeuraX Community photo ${index + 1}`}
-                            fill
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                            className="object-cover rounded-xl"
-                            priority={index === 0}
-                            loading={index === 0 ? "eager" : "lazy"}
-                            quality={85}
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-xl" />
-                        </CarouselItem>
-                      ))}
-                    </CarouselContent>
-                    <CarouselPrevious className="left-3 bg-black/50 border-white/10 hover:bg-black/80 text-white" />
-                    <CarouselNext className="right-3 bg-black/50 border-white/10 hover:bg-black/80 text-white" />
-                  </Carousel>
-                </div>
+                <HomePhotoCarousel />
               </motion.div>
             </div>
           </div>
